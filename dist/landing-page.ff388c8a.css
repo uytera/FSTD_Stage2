@@ -1,0 +1,19 @@
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.company_icon {
+  width: 40px;
+  margin-right: 12.5px;
+}
+
+.company_name {
+  width: 53.19px;
+}
+
+.header-logo {
+  margin-left: 100px;
+}
+
+/*# sourceMappingURL=/landing-page.ff388c8a.css.map */
