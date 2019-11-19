@@ -1,5 +1,7 @@
 doctype
-include /header/header.pug
+mixin light_button(modificator, text)
+    div(class="logo "+ modificator)= text
+
 html(lang="ru")
     head
         meta(charset="utf-8")
@@ -7,5 +9,5 @@ html(lang="ru")
         link(rel = "stylesheet" href = "landing-page.scss")
     body
         header
-            +logotype("header-logo")
+            include /header/header.pug
             

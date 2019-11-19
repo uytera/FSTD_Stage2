@@ -1,3 +1,6 @@
+include ../../ui_kit/header_elements/company_icon/logotype.pug
+include ../../ui_kit/header_elements/buttons/light/button-light.pug
 .header_content
     .company_icons
-        include ../../ui_kit/header_elements/company_icon/logotype.pug
+            +logotype("header-logo")
+            +button-light("header-button-light", "LOGIN")      
