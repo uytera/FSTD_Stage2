@@ -1,10 +1,1 @@
-@import "../ui_kit/header_elements/company_icon/_logotype.scss";
-@import "../ui_kit/header_elements/buttons/light/button-light.scss";
-
-.header-logo{
-    margin-left: 10px;
-}
-
-.header-button-light{
-    margin: 18px 30px;
-}
+@import "/header/_header.scss"

@@ -1,0 +1,33 @@
+@import "../ui_kit/header_elements/company_icon/_logotype.scss";
+@import "../ui_kit/header_elements/buttons/light/button-light.scss";
+@import "../ui_kit/header_elements/buttons/filled/button-filled.scss";
+
+.header-logo{
+    margin-left: 10px;
+}
+
+.company-icons{
+    margin-right: auto;
+}
+
+.header-button-light{
+    
+}
+
+.header-button-filled{
+    margin-left: 10px;
+}
+
+.header_content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-buttons{
+    align-self: flex-end;
+    //margin: 18px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
