@@ -1,0 +1,105 @@
+@import "header_elements/company_icon/_logotype.scss";
+@import "header_elements/buttons/light/button-light.scss";
+@import "header_elements/buttons/filled/button-filled.scss";
+@import "header_elements/navigation/drop-down/drop-down-element.scss";
+@import "header_elements/navigation/simple/simple-element.scss";
+//@import "../fonts/montserrat/montserrat";
+body{
+    margin: 0px 0px;
+}
+.header-content{
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    width: 100%;
+    min-height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    .header-content__company-icons{
+        margin-left: 140px;
+        margin-right: auto;
+    }
+
+    .header-content__navigation{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        margin: 0px 15px;
+        > * {
+            margin: 0px 15px;
+        }
+    }
+
+    .header-content__header-buttons{
+        margin-right: 140px;
+        //margin: 18px 30px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+
+        .header-content__button-light{
+            //font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        .header-content__button-filled{
+            //font-family: Montserrat;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            margin-left: 20px;
+        }
+    }     
+}
+
+@media all and (max-width: 1130px){
+    .header-content{
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+
+        > * {
+            margin: 10px 0px !important;
+        }
+    }
+}
+
+@media all and (max-width: 500px){
+    .header-content{
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+
+        > * {
+            flex-direction: column !important;
+            align-items: center !important;
+            margin: 10px 0px !important;
+        }
+
+        .header-content__navigation{
+            > * {
+                margin: 10px 0px !important;
+            }
+        }
+
+        .header-content__header-buttons{
+            > * {
+                margin: 5px 0px !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
