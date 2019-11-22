@@ -1,8 +1,7 @@
-include header_elements/company_icon/logotype.pug
-include header_elements/buttons/light/button-light.pug
-include header_elements/buttons/filled/button-filled.pug
-include header_elements/navigation/drop-down/drop-down-element.pug
-include header_elements/navigation/simple/simple-element.pug
+include ../header_elements/company_icon/logotype.pug
+include ../header_elements/navigation/drop-down/drop-down-element.pug
+include ../header_elements/navigation/simple/simple-element.pug
+include ../header_elements/username/username.pug
 .header-content
         .header-content__company-icons
                 +logotype("header-content__header-logo")
@@ -13,7 +12,6 @@ include header_elements/navigation/simple/simple-element.pug
                 +simple-element("header-content__nav-simple", "Careers")
                 +simple-element("header-content__nav-simple", "News")
                 +drop-down-element("header-content__nav-drop", "Documentation")
-        .header-content__header-buttons
-                +button-light("header-content__button-light", "LOGIN")
-                +button-filled("header-content__button-filled", "REGISTRATION")
+        .header-content__username
+                +username("header-content__username-line", "Cosmin Negoita")
         

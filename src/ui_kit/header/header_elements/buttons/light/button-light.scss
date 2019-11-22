@@ -2,16 +2,16 @@
     display: flex;
     justify-content: center;
     position: relative;
-    width: 79px;
     height: 30px;
     border: 2px solid transparent;
     border-radius: 30px;
     background: white;
     background-clip: padding-box;
     color: #BC9CFF;
-    
+    padding: 0px 20px;
+
     div {
-        margin: auto;
+        margin: auto 0px; 
         align-items: center;
     }
 }

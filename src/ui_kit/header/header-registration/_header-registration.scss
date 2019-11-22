@@ -1,8 +1,8 @@
-@import "header_elements/company_icon/_logotype.scss";
-@import "header_elements/buttons/light/button-light.scss";
-@import "header_elements/buttons/filled/button-filled.scss";
-@import "header_elements/navigation/drop-down/drop-down-element.scss";
-@import "header_elements/navigation/simple/simple-element.scss";
+@import "../header_elements/company_icon/_logotype.scss";
+@import "../header_elements/buttons/light/button-light.scss";
+@import "../header_elements/buttons/filled/button-filled.scss";
+@import "../header_elements/navigation/drop-down/drop-down-element.scss";
+@import "../header_elements/navigation/simple/simple-element.scss";
 //@import "../fonts/montserrat/montserrat";
 body{
     margin: 0px 0px;
@@ -24,7 +24,6 @@ body{
         display: flex;
         flex-direction: row;
         align-content: center;
-        margin: 0px 15px;
         > * {
             margin: 0px 15px;
         }

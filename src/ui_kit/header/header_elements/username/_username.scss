@@ -1,0 +1,16 @@
+.username {
+    display: flex;
+    align-items: center;
+    
+    .username__vertical-line {
+        display: inline-block;
+        margin-right: 30px;      
+    }
+    .username__name {
+        display: inline-block;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: rgba(31, 32, 65, 0.5);
+    }
+}

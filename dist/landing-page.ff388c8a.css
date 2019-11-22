@@ -16,16 +16,16 @@
   display: flex;
   justify-content: center;
   position: relative;
-  width: 79px;
   height: 30px;
   border: 2px solid transparent;
   border-radius: 30px;
   background: white;
   background-clip: padding-box;
   color: #BC9CFF;
+  padding: 0px 20px;
 }
 .button-light div {
-  margin: auto;
+  margin: auto 0px;
   align-items: center;
 }
 
@@ -49,9 +49,10 @@
   height: 34px;
   width: 101px;
   color: white;
+  padding: 0px 20px;
 }
 .button-filled div {
-  margin: auto;
+  margin: auto 0px;
   align-items: center;
 }
 
@@ -69,6 +70,22 @@
   height: 18px;
 }
 .simple-element a {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.username {
+  display: flex;
+  align-items: center;
+}
+.username .username__vertical-line {
+  display: inline-block;
+  margin-right: 30px;
+}
+.username .username__name {
+  display: inline-block;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -96,30 +113,13 @@ body {
   display: flex;
   flex-direction: row;
   align-content: center;
-  margin: 0px 15px;
 }
 .header-content .header-content__navigation > * {
   margin: 0px 15px;
 }
-.header-content .header-content__header-buttons {
+.header-content .header-content__username {
+  margin-left: 30px;
   margin-right: 140px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  align-content: center;
-}
-.header-content .header-content__header-buttons .header-content__button-light {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-}
-.header-content .header-content__header-buttons .header-content__button-filled {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  margin-left: 20px;
 }
 
 @media all and (max-width: 1130px) {
@@ -145,9 +145,6 @@ body {
   }
   .header-content .header-content__navigation > * {
     margin: 10px 0px !important;
-  }
-  .header-content .header-content__header-buttons > * {
-    margin: 5px 0px !important;
   }
 }
 
