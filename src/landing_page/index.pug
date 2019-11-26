@@ -7,7 +7,14 @@ html(lang="ru")
         meta(charset="utf-8")
         title= "Главная страница"
         link(rel = "stylesheet" href = "landing-page.scss")
+
     body
         header
             include ../ui_kit/header/header-no-registration/header-no-registration.pug
+            +header-no-registration("landing-header")
+        .main
+        footer
+            include ../ui_kit/footer/footer_elements/footer-main-content/footer-main-content.pug
+            +footer-main-content("landing-page-footer")
+
             

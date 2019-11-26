@@ -1,17 +1,18 @@
-include ../header_elements/company_icon/logotype.pug
-include ../header_elements/navigation/drop-down/drop-down-element.pug
-include ../header_elements/navigation/simple/simple-element.pug
-include ../header_elements/username/username.pug
-.header-content
+mixin header-no-registration(modificator)
+    .header-content
         .header-content__company-icons
-                +logotype("header-content__header-logo")
+            include ../../icons/company_icon/logotype.pug
+            +logotype("header-content__header-logo")
         .header-content__navigation
-                +simple-element("header-content__nav-simple", "Home")
-                +simple-element("header-content__nav-simple", "About Us")
-                +drop-down-element("header-content__nav-drop", "Services")
-                +simple-element("header-content__nav-simple", "Careers")
-                +simple-element("header-content__nav-simple", "News")
-                +drop-down-element("header-content__nav-drop", "Documentation")
+            include ../header_elements/navigation/drop-down/drop-down-element.pug
+            include ../header_elements/navigation/simple/simple-element.pug
+            +simple-element("header-content__nav-simple", "Home")
+            +simple-element("header-content__nav-simple", "About Us")
+            +drop-down-element("header-content__nav-drop", "Services")
+            +simple-element("header-content__nav-simple", "Careers")
+            +simple-element("header-content__nav-simple", "News")
+            +drop-down-element("header-content__nav-drop", "Documentation")
         .header-content__username
-                +username("header-content__username-line", "Cosmin Negoita")
+            include ../header_elements/username/username.pug
+            +username("header-content__username-line", "Cosmin Negoita")
         

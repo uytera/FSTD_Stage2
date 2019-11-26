@@ -1,6 +1,6 @@
-@import "../header_elements/company_icon/_logotype.scss";
-@import "../header_elements/buttons/light/button-light.scss";
-@import "../header_elements/buttons/filled/button-filled.scss";
+@import "../../icons/company_icon/logotype";
+@import "../../buttons/filled/button-filled.scss";
+@import "../../buttons/light/button-light.scss";
 @import "../header_elements/navigation/drop-down/drop-down-element.scss";
 @import "../header_elements/navigation/simple/simple-element.scss";
 //@import "../fonts/montserrat/montserrat";
@@ -15,6 +15,11 @@ body{
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+
+    * {
+        font-family: Montserrat;
+    }
+
     .header-content__company-icons{
         margin-left: 140px;
         margin-right: auto;

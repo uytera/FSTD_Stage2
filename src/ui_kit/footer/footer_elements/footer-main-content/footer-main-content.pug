@@ -1,0 +1,18 @@
+mixin footer-main-content(modificator)
+    div(class="footer-main-content " + modificator)
+        .footer-main-content__element-logo
+            include ../../../icons/company_icon/logotype.pug
+            +logotype("footer-logo")
+            p.footer-main-content__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        include item-list/item-list.pug
+        +item-list("", "navigation", "About Us", "News", "Support", "Products")
+        +item-list("", "About us", "Who we are", "Our team", "Careers", "Investors")
+        +item-list("", "Support", "Documentation", "Community", "Get in Touch")   
+        .footer-main-content__element-subscribe
+            p.footer-main-content__subscribe-header Subscribe to our newsletter
+            p.footer-main-content__subscribe-description Receive our latest news and promotions in your inbox!
+            form(action="")
+                .email-submit-field
+                    input#email-input(name="email" type="text" value="Your email address")
+                    button.image-select-label__cancel
+                        include ../../../icons/button_icons/arrow.svg

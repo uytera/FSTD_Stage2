@@ -184,12 +184,17 @@ function reloadCSS() {
 }
 
 module.exports = reloadCSS;
-},{"./bundle-url":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"landing-page.scss":[function(require,module,exports) {
+},{"./bundle-url":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"../ui_kit/fonts/montserrat/montserrat.css":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./montserrathairline.woff2":[["montserrathairline.09e99298.woff2","../ui_kit/fonts/montserrat/montserrathairline.woff2"],"../ui_kit/fonts/montserrat/montserrathairline.woff2"],"./montserrathairline.woff":[["montserrathairline.b1eccdde.woff","../ui_kit/fonts/montserrat/montserrathairline.woff"],"../ui_kit/fonts/montserrat/montserrathairline.woff"],"./montserrathairline.ttf":[["montserrathairline.2a18a101.ttf","../ui_kit/fonts/montserrat/montserrathairline.ttf"],"../ui_kit/fonts/montserrat/montserrathairline.ttf"],"./montserratlight.woff2":[["montserratlight.e817c0a7.woff2","../ui_kit/fonts/montserrat/montserratlight.woff2"],"../ui_kit/fonts/montserrat/montserratlight.woff2"],"./montserratlight.woff":[["montserratlight.7e540114.woff","../ui_kit/fonts/montserrat/montserratlight.woff"],"../ui_kit/fonts/montserrat/montserratlight.woff"],"./montserratlight.ttf":[["montserratlight.be6cbe26.ttf","../ui_kit/fonts/montserrat/montserratlight.ttf"],"../ui_kit/fonts/montserrat/montserratlight.ttf"],"./montserrat.woff2":[["montserrat.1fb71a71.woff2","../ui_kit/fonts/montserrat/montserrat.woff2"],"../ui_kit/fonts/montserrat/montserrat.woff2"],"./montserrat.woff":[["montserrat.75b9afb7.woff","../ui_kit/fonts/montserrat/montserrat.woff"],"../ui_kit/fonts/montserrat/montserrat.woff"],"./montserrat.ttf":[["montserrat.975d7c73.ttf","../ui_kit/fonts/montserrat/montserrat.ttf"],"../ui_kit/fonts/montserrat/montserrat.ttf"],"./montserratbold.woff2":[["montserratbold.cb5fcd85.woff2","../ui_kit/fonts/montserrat/montserratbold.woff2"],"../ui_kit/fonts/montserrat/montserratbold.woff2"],"./montserratbold.woff":[["montserratbold.834bcbcb.woff","../ui_kit/fonts/montserrat/montserratbold.woff"],"../ui_kit/fonts/montserrat/montserratbold.woff"],"./montserratbold.ttf":[["montserratbold.8ae5eaa0.ttf","../ui_kit/fonts/montserrat/montserratbold.ttf"],"../ui_kit/fonts/montserrat/montserratbold.ttf"],"./montserratblack.woff2":[["montserratblack.da4f904c.woff2","../ui_kit/fonts/montserrat/montserratblack.woff2"],"../ui_kit/fonts/montserrat/montserratblack.woff2"],"./montserratblack.woff":[["montserratblack.c71a9fe2.woff","../ui_kit/fonts/montserrat/montserratblack.woff"],"../ui_kit/fonts/montserrat/montserratblack.woff"],"./montserratblack.ttf":[["montserratblack.318a11cf.ttf","../ui_kit/fonts/montserrat/montserratblack.ttf"],"../ui_kit/fonts/montserrat/montserratblack.ttf"],"_css_loader":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"landing-page.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"../ui_kit/fonts/montserrat/montserrat.css":"../ui_kit/fonts/montserrat/montserrat.css","_css_loader":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53136" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61659" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

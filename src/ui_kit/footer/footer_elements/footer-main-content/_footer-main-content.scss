@@ -1,0 +1,79 @@
+@import "../../../icons/company_icon/logotype";
+@import "item-list/item-list";
+
+.footer-main-content{
+    background: #FFFFFF;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    * {
+        font-family: Montserrat;
+    }
+
+    .footer-main-content__element-logo{
+        margin-left: 140px;
+        width: 260px;
+
+        .footer-main-content__text{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+
+    .footer-main-content__element-subscribe{
+        margin-right: 140px;
+        width: 260px;
+
+        .footer-main-content__subscribe-header{
+            text-transform: uppercase;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            color: #1F2041;
+            margin-bottom: 21px;
+        }
+
+        .footer-main-content__subscribe-description{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+
+        .email-submit-field{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            box-sizing: border-box;
+            border-radius: 4px;
+            width: 260px;
+            height: 44px;
+
+            #email-input{
+                border: none;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                color: rgba(31, 32, 65, 0.25);
+                margin-left: 15px;
+                margin-right: auto;
+            }
+            .image-select-label__cancel{
+                background: none;
+                border: none;
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+}

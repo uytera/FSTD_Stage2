@@ -1,0 +1,5 @@
+mixin item-list(modificator, ...items)
+    div(class="item-list " + modificator)
+        ul
+            each item in items
+                li= item
