@@ -1,0 +1,13 @@
+.social_networks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .twitter-svg{
+        margin-right: 20px;
+    }
+
+    .facebook-svg{
+        margin-right: 20px;
+    }
+}

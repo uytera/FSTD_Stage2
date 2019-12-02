@@ -1,0 +1,17 @@
+mixin search-form(modificator)
+    div(class="search-form " + modificator)
+        div.search-form-desctiption Найдём номера под ваши пожелания
+        form(action="")
+            div.search-form__date-input
+                div.search-form__date-input-field
+                    div.search-form__start-date-desctiption прибытие
+                    input.search-form__start-date(type="date")
+                div.search-form__date-input-field
+                    div.search-form__end-date-desctiption выезд
+                    input.search-form__end-date(type="date")
+            div.search-form__people-input
+                div.search-form__input-field
+                    div.search-form__number-of-people-desctiption гости
+                    input.search-form__number-of-people(type="text" placeholder="Сколько гостей")
+    include ../../../ui_kit/calendar/calendar.pug
+    +calendar('search-form-calendar')

@@ -1,8 +1,20 @@
 @import "../ui_kit/header/header-no-registration/header-no-registration";
 @import "../ui_kit/footer/footer_elements/footer-main-content/footer-main-content";
 @import "../ui_kit/fonts/montserrat/montserrat.css";
+@import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
+@import "main/search-form/search-form";
+@import "../ui_kit/calendar/calendar";
 //@import "../ui_kit/icons/";
 
 .main{
-    height: 200px;
+    .landing-page-search-form{
+        margin: 100px 100px;
+    }
+}
+.landing-page-footer-underline{
+    margin-top: 1px;
+}
+
+.search-form-calendar{
+    margin: 50px;
 }

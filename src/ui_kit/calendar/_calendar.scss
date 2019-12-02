@@ -1,0 +1,55 @@
+@import "sass/calendar-main";
+
+.calendar{
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    border-radius: 4px;
+    width: 320px;
+    height: 369px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+    .calendar__main{
+        .calendar__days-name{
+            font-family: Montserrat;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+            * { 
+                height: 40px;
+                line-height: 40px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;    
+                color: #BC9CFF;
+            }
+        }
+        .calendar__days{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        
+            .day{
+                text-align: center;
+                line-height: 40px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                width: 14.2%;
+                height: 40px;
+            }
+
+            .other-month-day{
+                color: rgba(31, 32, 65, 0.25);
+            }
+
+            .curr-month-day{
+                color: rgba(31, 32, 65, 0.5);
+            }    
+        }
+        
+    }
+}
