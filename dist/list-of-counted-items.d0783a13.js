@@ -10929,86 +10929,12 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-},{"process":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../ui_kit/calendar/js/calendar-main.js":[function(require,module,exports) {
+},{"process":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../ui_kit/list-of-counted-items/list-of-counted-items.js":[function(require,module,exports) {
 window.jQuery = window.$ = require('jquery');
-var months = {
-  0: "Январь",
-  1: "Февраль",
-  2: "Март",
-  3: "Апрель",
-  4: "Май",
-  5: "Июнь",
-  6: "Июль",
-  7: "Август",
-  8: "Сентябрь",
-  9: "Октябрь",
-  10: "Ноябрь",
-  11: "Декабрь"
-};
-var pushedElement = document.createElement("div");
-var startElement = document.createElement("div");
-var endElement = document.createElement("div");
-var startDate;
-var endDate;
-$(document).ready(function () {
-  var currDate = new Date();
-  fill_calendar(currDate);
-  add_elements_event();
-  document.getElementById('calendar-forward-btn').addEventListener("click", function (e) {
-    currDate.setMonth(currDate.getMonth() + 1);
-    fill_calendar(currDate);
-    add_elements_event();
-  });
-  document.getElementById('calendar-backward-btn').addEventListener("click", function (e) {
-    currDate.setMonth(currDate.getMonth() - 1);
-    fill_calendar(currDate);
-    add_elements_event();
-  });
-  document.getElementById('calendar__clean-button').addEventListener("click", function (e) {
-    if (currentState == 'start' && (endDate == null || endDate > pushedDate)) {
-      startElement.classList.remove('selected-day');
-      startElement = document.createElement("div");
-      startDate = null;
-      $('.search-form__start-date').val("");
-    }
-
-    if (currentState == 'end' && (startDate == null || pushedDate > startDate)) {
-      endElement.classList.remove('selected-day');
-      endElement = document.createElement("div");
-      endDate = null;
-      $('.search-form__end-date').val("");
-    }
-  });
-  document.getElementById('calendar__save-button').addEventListener("click", function (e) {
-    pushedDate = new Date(pushedElement.getAttribute('data-year'), pushedElement.getAttribute('data-month'), pushedElement.innerHTML);
-
-    if (currentState == 'start' && (endDate == null || endDate > pushedDate)) {
-      startElement.classList.remove('selected-day');
-      startElement = pushedElement;
-      startDate = pushedDate;
-      pushedElement.classList.add('selected-day');
-      $('.search-form__start-date').val(pushedDate.getDate() + "." + pushedDate.getMonth() + "." + pushedDate.getFullYear());
-    }
-
-    if (currentState == 'end' && (startDate == null || pushedDate > startDate)) {
-      endElement.classList.remove('selected-day');
-      endElement = pushedElement;
-      endDate = pushedDate;
-      pushedElement.classList.add('selected-day');
-      $('.search-form__end-date').val(pushedDate.getDate() + "." + pushedDate.getMonth() + "." + pushedDate.getFullYear());
-    }
-
-    if (startDate != null && endDate != null) {
-      startDate.setHours(0, 0, 0, 0);
-      endDate.setHours(0, 0, 0, 0);
-      fill_days_in_calendar(currDate.getMonth(), currDate.getFullYear());
-    }
-  });
-});
+$(document).ready(function () {});
 
 function add_elements_event() {
-  var massOfDays = document.getElementsByClassName('day');
-  var pushed_day = document.createElement("div");
+  var massOfButtons = document.getElementsByClassName('button');
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -11016,29 +10942,15 @@ function add_elements_event() {
   try {
     var _loop = function _loop() {
       var item = _step.value;
-      item.addEventListener("mouseover", function (e) {
-        item.classList.add("mouse-on");
-      });
-      item.addEventListener("mouseout", function (e) {
-        item.classList.remove("pushed-down");
-        item.classList.remove("mouse-on");
-      });
       item.addEventListener("mouseup", function (e) {
-        pushed_day.classList.remove("pushed-down");
         item.classList.add("pushed-up");
-        pushed_day = item;
-        pushedElement = pushed_day;
       });
       item.addEventListener("mousedown", function (e) {
-        item.classList.remove("mouse-on");
-        pushed_day.classList.remove("pushed-up");
-        pushed_day.classList.remove("pushed-down");
-        item.classList.add("pushed-down");
-        pushed_day = item;
+        item.classList.remove("pushed-up");
       });
     };
 
-    for (var _iterator = massOfDays[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator = massOfButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       _loop();
     }
   } catch (err) {
@@ -11055,72 +10967,6 @@ function add_elements_event() {
       }
     }
   }
-}
-
-function fill_calendar(date) {
-  fill_date_in_calendar(date.getMonth(), date.getFullYear());
-  fill_days_in_calendar(date.getMonth(), date.getFullYear());
-}
-
-function fill_date_in_calendar(month, year) {
-  var string_month = months[month];
-  $('.calendar__date').text(string_month + " " + year);
-}
-
-function fill_days_in_calendar(month, year) {
-  var lastDateOfLastMonth = new Date(new Date(year, month, 1) - 1);
-  var lastDateOfCurrMonth = new Date(new Date(year, month + 1, 1) - 1);
-  var weekdayOfFirstDayOfMonth = new Date(year, month, 1).getDay() == 0 ? 7 : new Date(year, month, 1).getDay();
-  var weekdayOfLastDayOfMonth = lastDateOfCurrMonth.getDay() == 0 ? 7 : lastDateOfCurrMonth.getDay();
-  var html = "";
-  var startDay = new Date(lastDateOfLastMonth.getFullYear(), lastDateOfLastMonth.getMonth(), lastDateOfLastMonth.getDate() - weekdayOfFirstDayOfMonth + 2);
-  var modificator;
-
-  while (startDay < lastDateOfCurrMonth) {
-    modificator = "";
-    startDay.setHours(0, 0, 0, 0);
-
-    if (startDate != null && endDate != null) {
-      if (startDay.getTime() == startDate.getTime()) {
-        modificator = "selected-day-in-period start";
-      }
-
-      if (startDay.getTime() == endDate.getTime()) {
-        modificator = "selected-day-in-period end";
-      }
-    }
-
-    if (startDate != null && endDate != null && startDay.getTime() > startDate.getTime() && startDay.getTime() < endDate.getTime()) {
-      modificator = "day-in-period";
-    }
-
-    if (startDay.getMonth() != month) html += '<div class="day other-month-day ' + modificator + '" data-year=' + startDay.getFullYear() + ' data-month=' + startDay.getMonth() + '>' + startDay.getDate() + '</div>';else html += '<div class="day curr-month-day ' + modificator + '" data-year=' + startDay.getFullYear() + ' data-month=' + startDay.getMonth() + '>' + startDay.getDate() + '</div>';
-    startDay.setDate(startDay.getDate() + 1);
-  }
-
-  for (weekdayOfLastDayOfMonth; weekdayOfLastDayOfMonth < 7; weekdayOfLastDayOfMonth++) {
-    modificator = "";
-    startDay.setHours(0, 0, 0, 0);
-
-    if (startDate != null && endDate != null) {
-      if (startDay.getTime() == startDate.getTime()) {
-        modificator = "selected-day-in-period start";
-      }
-
-      if (startDay.getTime() == endDate.getTime()) {
-        modificator = "selected-day-in-period end";
-      }
-    }
-
-    if (startDate != null && endDate != null && startDay.getTime() > startDate.getTime() && startDay.getTime() < endDate.getTime()) {
-      modificator = "day-in-period";
-    }
-
-    html += '<div class="day other-month-day ' + modificator + '" data-year=' + startDay.getFullYear() + ' data-month=' + startDay.getMonth() + '>' + startDay.getDate() + '</div>';
-    startDay.setDate(startDay.getDate() + 1);
-  }
-
-  document.getElementsByClassName('calendar__days')[0].innerHTML = html;
 }
 },{"jquery":"../../node_modules/jquery/dist/jquery.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11326,5 +11172,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../ui_kit/calendar/js/calendar-main.js"], null)
-//# sourceMappingURL=/calendar-main.ee2b3099.js.map
+},{}]},{},["../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../ui_kit/list-of-counted-items/list-of-counted-items.js"], null)
+//# sourceMappingURL=/list-of-counted-items.d0783a13.js.map

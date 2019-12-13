@@ -1,0 +1,11 @@
+mixin list-of-counted-items(modificator, ...items)
+    script(src="../ui_kit/list-of-counted-items/list-of-counted-items.js")
+    div(class="list-of-counted-items " + modificator)
+        each item in items
+            div.list-of-counted-items__item
+                div.list-of-counted-items__item-description= item
+                div.button#minus-button -
+                div.item-number 0
+                div.button#plus-button +
+        include ../buttons/clear-accept-buttons/clear-accept-buttons.pug
+        +clear-accept-buttons("list-of-counted-items__down-buttons", "list-of-counted-items__clean-button", "list-of-counted-items__save-button")

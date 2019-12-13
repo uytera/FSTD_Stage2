@@ -32,6 +32,43 @@
     font-weight: 900;
     font-style: normal;
 }
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/MaterialIcons-Regular.ed912cd2.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/MaterialIcons-Regular.9551ec3f.woff2) format('woff2'),
+       url(/MaterialIcons-Regular.34588fa6.woff) format('woff'),
+       url(/MaterialIcons-Regular.6074b66d.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -46,11 +83,17 @@
 
 .drop-down-element {
   height: 18px;
+  display: flex;
+  align-items: flex-start;
 }
 .drop-down-element a {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.drop-down-element .expand-elemet {
+  line-height: 20px;
   color: rgba(31, 32, 65, 0.5);
 }
 
@@ -222,6 +265,14 @@ body {
   width: 260px;
   height: 44px;
 }
+.footer-main-content .footer-main-content__element-subscribe .email-submit-field .material-icons.email-submit-arrow {
+  width: 44px;
+  text-align: center;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: initial;
+}
 .footer-main-content .footer-main-content__element-subscribe .email-submit-field #email-input {
   border: none;
   font-style: normal;
@@ -315,7 +366,87 @@ body {
     margin-right: 0px !important;
   }
 }
+.list-of-counted-items {
+  display: flex;
+  flex-direction: column;
+  width: 318px;
+  height: 159px;
+  border: 1px solid rgba(31, 32, 65, 0.5);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  background: white;
+}
+.list-of-counted-items .list-of-counted-items__down-buttons {
+  margin-top: 19px;
+}
+.list-of-counted-items #list-of-counted-items__clean-button {
+  margin-left: 15px;
+}
+.list-of-counted-items #list-of-counted-items__save-button {
+  margin-right: 7px;
+}
+.list-of-counted-items .clear-accept-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+.list-of-counted-items .clear-accept-buttons .clean-button {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.list-of-counted-items .clear-accept-buttons .save-button {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #BC9CFF;
+}
+.list-of-counted-items .list-of-counted-items__item {
+  margin-top: 7px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.list-of-counted-items .list-of-counted-items__item .list-of-counted-items__item-description {
+  margin-right: auto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #1F2041;
+  margin-left: 15px;
+}
+.list-of-counted-items .list-of-counted-items__item .button {
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 22px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.list-of-counted-items .list-of-counted-items__item .pushed-up {
+  background: gray;
+}
+.list-of-counted-items .list-of-counted-items__item #minus-button {
+  line-height: 25px;
+  margin-right: 10px;
+}
+.list-of-counted-items .list-of-counted-items__item #plus-button {
+  line-height: 30px;
+  margin-left: 10px;
+  margin-right: 7px;
+}
+
 .search-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -350,6 +481,7 @@ body {
 }
 .search-form .search-form__people-input .search-form__number-of-people-desctiption {
   font-family: Montserrat;
+  width: 320px;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -357,10 +489,25 @@ body {
   text-transform: uppercase;
   color: #1F2041;
 }
-.search-form .search-form__people-input .search-form__number-of-people {
-  width: 320px;
-  padding-top: 13px;
-  padding-bottom: 13px;
+.search-form .search-form__people-input .search-form__number-of-people-input-field {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  width: 318px;
+  border-radius: 4px;
+  display: flex;
+  align-content: center;
+}
+.search-form .search-form__people-input .search-form__number-of-people-input-field .search-form__number-of-people {
+  margin-right: auto;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 13px;
+}
+.search-form .search-form__people-input .search-form__number-of-people-input-field .people-expand-elemet {
+  text-align: center;
+  line-height: 44px;
+  width: 44px;
+  color: rgba(31, 32, 65, 0.5);
 }
 .search-form input {
   font-family: Montserrat;
@@ -370,36 +517,72 @@ body {
   line-height: 18px;
   color: rgba(31, 32, 65, 0.75);
   height: 44px;
-  background: #FFFFFF;
+  background: none;
   border: 1px solid rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
   border-radius: 4px;
   padding-left: 15px;
 }
-.search-form .search-form__date-input-field .search-form__start-date-desctiption {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #1F2041;
+.search-form .search-form-calendar {
+  display: none;
+  position: absolute;
+  top: 210px;
+  left: 29px;
 }
-.search-form .search-form__date-input-field .search-form__end-date-desctiption {
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: #1F2041;
+.search-form .search-form-list {
+  position: absolute;
+  top: 278px;
 }
-.search-form .search-form__date-input-field .search-form__start-date {
-  width: 150px;
+.search-form .search-form__date-input-place input {
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.search-form .search-form__date-input-place .search-form__date-input-field {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.search-form .search-form__date-input-place .search-form__date-input-field .search-form__start-date {
+  width: 106px;
   padding-top: 12px;
   padding-bottom: 12px;
 }
-.search-form .search-form__date-input-field .search-form__end-date {
+.search-form .search-form__date-input-place .search-form__date-input-field .search-form__end-date {
+  width: 106px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.search-form .search-form__date-input-place .search-form__date-input-field .calendar-expand-elemet {
+  text-align: center;
+  line-height: 44px;
+  width: 44px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.search-form .search-form__date-input-place .search-form__start-date-desctiption {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.search-form .search-form__date-input-place .search-form__end-date-desctiption {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.search-form .search-form__date-input-place .search-form__end-date {
   width: 150px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -417,9 +600,29 @@ body {
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
   width: 320px;
-  height: 369px;
   padding-left: 20px;
   padding-right: 20px;
+}
+.calendar .calendar__selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.calendar .calendar__selector .calendar__date {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+}
+.calendar .calendar__selector .material-icons.calendar-arrow {
+  width: 44px;
+  text-align: center;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: initial;
 }
 .calendar .calendar__main .calendar__days-name {
   font-family: Montserrat;
@@ -449,11 +652,89 @@ body {
   width: 14.2%;
   height: 40px;
 }
+.calendar .calendar__main .calendar__days .pushed-up {
+  background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  border-radius: 22px;
+  color: #FFFFFF !important;
+}
+.calendar .calendar__main .calendar__days .pushed-down {
+  background: linear-gradient(180deg, rgba(111, 207, 151, 0.445) 0%, rgba(102, 210, 234, 0.466) 100%);
+  border-radius: 22px;
+  color: #FFFFFF !important;
+}
+.calendar .calendar__main .calendar__days .mouse-on {
+  background: rgba(145, 145, 145, 0.11);
+  border-radius: 22px;
+}
 .calendar .calendar__main .calendar__days .other-month-day {
   color: rgba(31, 32, 65, 0.25);
 }
 .calendar .calendar__main .calendar__days .curr-month-day {
   color: rgba(31, 32, 65, 0.5);
+}
+.calendar .calendar__main .calendar__days .selected-day {
+  z-index: 10;
+  font-weight: bold;
+  border-radius: 22px;
+  color: #FFFFFF !important;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
+}
+.calendar .calendar__main .calendar__days .selected-day-in-period {
+  position: relative;
+  z-index: 10;
+  font-weight: bold;
+  border-radius: 22px;
+  color: #FFFFFF !important;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%) !important;
+}
+.calendar .calendar__main .calendar__days .selected-day-in-period.start::before {
+  width: 20px;
+  height: 40px;
+  content: "";
+  right: 0px;
+  z-index: -1;
+  position: absolute;
+  border-radius: 0px;
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 80%);
+}
+.calendar .calendar__main .calendar__days .selected-day-in-period.end::before {
+  width: 20px;
+  height: 40px;
+  content: "";
+  right: 20px;
+  z-index: -1;
+  position: absolute;
+  border-radius: 0px;
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 80%);
+}
+.calendar .calendar__main .calendar__days .day-in-period {
+  background: linear-gradient(180deg, rgba(188, 156, 255, 0.25) 0%, rgba(139, 164, 249, 0.25) 80%);
+}
+.calendar .clear-accept-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+}
+.calendar .clear-accept-buttons .clean-button {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.calendar .clear-accept-buttons .save-button {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: #BC9CFF;
+}
+.calendar .calendar__down-buttons {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .main .landing-page-search-form {
@@ -464,8 +745,8 @@ body {
   margin-top: 1px;
 }
 
-.search-form-calendar {
-  margin: 50px;
+* {
+  font-family: Montserrat;
 }
 
 /*# sourceMappingURL=/landing-page.ff388c8a.css.map */

@@ -1,6 +1,12 @@
 mixin calendar(modificator)
     script(src="../ui_kit/calendar/js/calendar-main.js")
     div(class='calendar ' + modificator)
+        div.calendar__selector
+            div#calendar-backward-btn
+                i.material-icons.calendar-arrow arrow_back
+            div.calendar__date Август 2019
+            div#calendar-forward-btn
+                i.material-icons.calendar-arrow arrow_forward
         div.calendar__main
             div.calendar__days-name
                 div Пн
@@ -11,3 +17,5 @@ mixin calendar(modificator)
                 div Сб
                 div Вс
             div.calendar__days
+        include ../buttons/clear-accept-buttons/clear-accept-buttons.pug
+        +clear-accept-buttons("calendar__down-buttons", "calendar__clean-button", "calendar__save-button")

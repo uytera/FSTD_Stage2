@@ -1,17 +1,28 @@
 mixin search-form(modificator)
+    script(src="main/search-form/search-from.js")
     div(class="search-form " + modificator)
+        include ../../../ui_kit/calendar/calendar.pug
+        +calendar('search-form-calendar')
+        
+        include ../../../ui_kit/list-of-counted-items/list-of-counted-items.pug
+        +list-of-counted-items('search-form-list', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
+
         div.search-form-desctiption Найдём номера под ваши пожелания
         form(action="")
             div.search-form__date-input
-                div.search-form__date-input-field
-                    div.search-form__start-date-desctiption прибытие
-                    input.search-form__start-date(type="date")
-                div.search-form__date-input-field
-                    div.search-form__end-date-desctiption выезд
-                    input.search-form__end-date(type="date")
+                div.search-form__date-input-place
+                    div.search-form__start-date-desctiption выезд
+                    div.search-form__date-input-field#start-date-input-field
+                        input.search-form__start-date(type="text" disabled)
+                        i.material-icons.calendar-expand-elemet#start-date-expand expand_more
+                div.search-form__date-input-place
+                    div.search-form__end-date-desctiption прибытие
+                    div.search-form__date-input-field#end-date-input-field
+                        input.search-form__end-date(type="text" disabled)
+                        i.material-icons.calendar-expand-elemet#end-date-expand expand_more
             div.search-form__people-input
                 div.search-form__input-field
                     div.search-form__number-of-people-desctiption гости
-                    input.search-form__number-of-people(type="text" placeholder="Сколько гостей")
-    include ../../../ui_kit/calendar/calendar.pug
-    +calendar('search-form-calendar')
+                    div.search-form__number-of-people-input-field
+                        input.search-form__number-of-people(type="text" placeholder="Сколько гостей")
+                        i.material-icons.people-expand-elemet#people-expand expand_more

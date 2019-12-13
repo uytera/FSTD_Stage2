@@ -1,4 +1,7 @@
+@import "../../../ui_kit/list-of-counted-items/list-of-counted-items";
+
 .search-form{
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,6 +40,7 @@
 
         .search-form__number-of-people-desctiption{
             font-family: Montserrat;
+            width: 320px;
             font-style: normal;
             font-weight: bold;
             font-size: 12px;
@@ -45,11 +49,29 @@
             color: #1F2041;
         }
 
-        .search-form__number-of-people{
-            width: 320px;
-            padding-top: 13px;
-            padding-bottom: 13px;
+        .search-form__number-of-people-input-field{
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            width: 318px;
+            border-radius: 4px;
+            display: flex;
+            align-content: center;
+
+            .search-form__number-of-people{
+                margin-right: auto;
+                background: none;
+                border: none;
+                box-sizing: border-box;
+                padding-left: 13px;
+            }
+
+            .people-expand-elemet{
+                text-align: center;
+                line-height: 44px;
+                width: 44px;
+                color: rgba(31, 32, 65, 0.5);
+            }
         }
+        
     }
 
     input{
@@ -61,14 +83,62 @@
         color: rgba(31, 32, 65, 0.75);
         height: 44px;
 
-        background: #FFFFFF;
+        background: none;
         border: 1px solid rgba(31, 32, 65, 0.25);
         box-sizing: border-box;
         border-radius: 4px;
         padding-left: 15px;
     }
 
-    .search-form__date-input-field{
+    .search-form-calendar{
+        display: none;
+        position: absolute;
+        top: 210px;
+        left: 29px;
+    }
+
+    .search-form-list{
+        position: absolute;
+        top: 278px;
+    }
+
+    .search-form__date-input-place{
+
+        input{    
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            padding-left: 15px;
+        }
+
+        .search-form__date-input-field{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            background: #FFFFFF;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            box-sizing: border-box;
+            border-radius: 4px;
+
+            .search-form__start-date{
+                width: 106px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .search-form__end-date{
+                width: 106px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .calendar-expand-elemet{
+                text-align: center;
+                line-height: 44px;
+                width: 44px;
+                color: rgba(31, 32, 65, 0.5);
+            }
+        }
 
         .search-form__start-date-desctiption{
             font-family: Montserrat;
@@ -88,12 +158,6 @@
             line-height: 15px;
             text-transform: uppercase;
             color: #1F2041;
-        }
-
-        .search-form__start-date{
-            width: 150px;
-            padding-top: 12px;
-            padding-bottom: 12px;
         }
 
         .search-form__end-date{
