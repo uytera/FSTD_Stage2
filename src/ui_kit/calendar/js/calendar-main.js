@@ -13,16 +13,19 @@ let months = {
     9: "Октябрь", 
     10: "Ноябрь", 
     11: "Декабрь"    
-  };
+};
 
-var pushedElement = document.createElement("div");
+var pushedElementsCount = 0;
+
 var startElement = document.createElement("div");
 var endElement = document.createElement("div");
-var startDate;
-var endDate;
+
+var pushedElementDate = "";
+var startDate = "";
+var endDate = "";
+var currDate = new Date();
 
 $(document).ready(function () {
-    var currDate = new Date();
     fill_calendar(currDate);
     add_elements_event();
 
@@ -39,7 +42,14 @@ $(document).ready(function () {
     });
 
     document.getElementById('calendar__clean-button').addEventListener("click", (e) => {
-        if(currentState == 'start' && (endDate == null || endDate > pushedDate)){
+        pushedElementsCount = 0;
+        CalendarStartDate = startDate = "";
+        CalendarEndDate = endDate = "";
+        pushedElementDate = "";
+        fillDate();
+        fill_calendar(currDate);
+        add_elements_event();
+        /*if(currentState == 'start' && (endDate == null || endDate > pushedDate)){
             startElement.classList.remove('selected-day');
             startElement = document.createElement("div");
             startDate = null;
@@ -51,11 +61,15 @@ $(document).ready(function () {
             endElement = document.createElement("div");
             endDate = null;
             $('.search-form__end-date').val("");
-        } 
+        }*/
     });
 
     document.getElementById('calendar__save-button').addEventListener("click", (e) => {
-        pushedDate = new Date(pushedElement.getAttribute('data-year'), pushedElement.getAttribute('data-month'), pushedElement.innerHTML); 
+        CalendarStartDate = startDate;
+        CalendarEndDate = endDate;
+        fillDate();
+        fill_calendar(currDate);
+        /*pushedDate = new Date(pushedElement.getAttribute('data-year'), pushedElement.getAttribute('data-month'), pushedElement.innerHTML); 
   
         if(currentState == 'start' && (endDate == null || endDate > pushedDate)){
             startElement.classList.remove('selected-day');
@@ -77,7 +91,7 @@ $(document).ready(function () {
             startDate.setHours(0,0,0,0);
             endDate.setHours(0,0,0,0);
             fill_days_in_calendar(currDate.getMonth(), currDate.getFullYear())
-        }
+        }*/
     });
 
 });
@@ -86,7 +100,7 @@ function add_elements_event(){
 
     var massOfDays = document.getElementsByClassName('day');
     var pushed_day = document.createElement("div");
-
+    /*
     for (let item of massOfDays) {
         item.addEventListener("mouseover", (e) => {      
             item.classList.add("mouse-on");
@@ -105,6 +119,7 @@ function add_elements_event(){
         }); 
 
         item.addEventListener("mousedown", (e) => {
+            pushedElementsCount += 1;
             item.classList.remove("mouse-on");   
             pushed_day.classList.remove("pushed-up");
             pushed_day.classList.remove("pushed-down");
@@ -112,7 +127,63 @@ function add_elements_event(){
             pushed_day=item;
         }); 
     }
+    */
+   for (let item of massOfDays) {
+        item.addEventListener("mouseover", (e) => {      
+            item.classList.add("mouse-on");
+        }); 
+
+        item.addEventListener("mouseout", (e) => {      
+            item.classList.remove("pushed-down");
+            item.classList.remove("mouse-on");
+        }); 
+
+        item.addEventListener("mouseup", (e) => {  
+            pushedElementsCount += 1;  
+            pushed_day.classList.remove("pushed-down");
+            item.classList.add("selected-day");
+            pushed_day = item;
+            pushedElementDate = new Date(pushed_day.getAttribute('data-year'), pushed_day.getAttribute('data-month'), pushed_day.innerHTML);
+
+            if(pushedElementsCount == 1)
+                startElement = pushed_day;
+            else{
+                endElement = pushed_day;
+            }
+
+            if(pushedElementsCount == 2){
+                startElementDate = new Date(startElement.getAttribute('data-year'), startElement.getAttribute('data-month'), startElement.innerHTML);
+                endElementDate = new Date(endElement.getAttribute('data-year'), endElement.getAttribute('data-month'), endElement.innerHTML);
+
+                if(startElementDate < endElementDate){
+                    startDate = startElementDate;
+                    endDate = endElementDate;
+                }
+                else{
+                    startDate = endElementDate;
+                    endDate = startElementDate;
+                }
+
+                //alert(startDate.getMonth() + " " + startDate.getFullYear() + " " + startDate.getDate());
+                //alert(endDate.getMonth() + " " + endDate.getFullYear() + " " + endDate.getDate());
+                startDate.setHours(0,0,0,0);
+                endDate.setHours(0,0,0,0);
+
+                fill_days_in_calendar(currDate.getMonth(), currDate.getFullYear())
+            }
+        }); 
+
+        item.addEventListener("mousedown", (e) => {
+            item.classList.remove("mouse-on");   
+            pushed_day.classList.remove("pushed-up");
+            pushed_day.classList.remove("pushed-down");
+            item.classList.add("pushed-down");
+            pushed_day=item;
+        }); 
+    } 
 }
+
+
 
 function fill_calendar(date){
     fill_date_in_calendar(date.getMonth(), date.getFullYear());
@@ -137,8 +208,11 @@ function fill_days_in_calendar(month, year){
     while(startDay < lastDateOfCurrMonth){
         modificator = "";
         startDay.setHours(0,0,0,0);
-        
-        if(startDate != null && endDate != null){ 
+
+        if(pushedElementDate != "" && startDay.getTime() == pushedElementDate.getTime()){
+            modificator = "selected-day";
+        }
+        if(startDate != "" && endDate != ""){ 
             if(startDay.getTime() == startDate.getTime()){
                 modificator = "selected-day-in-period start";
             } 
@@ -146,7 +220,7 @@ function fill_days_in_calendar(month, year){
                 modificator = "selected-day-in-period end";
             }
         }
-        if(startDate != null && endDate != null && (startDay.getTime() > startDate.getTime() && startDay.getTime() < endDate.getTime())){
+        if(startDate != "" && endDate != "" && (startDay.getTime() > startDate.getTime() && startDay.getTime() < endDate.getTime())){
             modificator = "day-in-period";
         }
 
@@ -160,8 +234,11 @@ function fill_days_in_calendar(month, year){
     for(weekdayOfLastDayOfMonth; weekdayOfLastDayOfMonth < 7; weekdayOfLastDayOfMonth++){
         modificator = "";
         startDay.setHours(0,0,0,0);
-        
-        if(startDate != null && endDate != null){ 
+
+        if(pushedElementDate != "" && startDay.getTime() == pushedElementDate.getTime()){
+            modificator = "selected-day";
+        }
+        if(startDate != "" && endDate != ""){ 
             if(startDay.getTime() == startDate.getTime()){
                 modificator = "selected-day-in-period start";
             } 
@@ -169,8 +246,7 @@ function fill_days_in_calendar(month, year){
                 modificator = "selected-day-in-period end";
             }
         }
-        
-        if(startDate != null && endDate != null && (startDay.getTime() > startDate.getTime() && startDay.getTime() < endDate.getTime())){
+        if(startDate != "" && endDate != "" && (startDay.getTime() > startDate.getTime() && startDay.getTime() < endDate.getTime())){
             modificator = "day-in-period";
         }
 

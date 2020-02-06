@@ -1,3 +1,4 @@
-mixin button-filled(modificator, text)
+mixin button-filled(modificator, text, icon)
     div(class="button-filled "+ modificator)
-        div= text
+        div.innerText= text
+        i.material-icons.additional-icon= icon

@@ -10932,8 +10932,8 @@ return jQuery;
 },{"process":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"main/search-form/search-from.js":[function(require,module,exports) {
 window.jQuery = window.$ = require('jquery');
 $(document).ready(function () {
-  var massOfButtons = document.getElementsByClassName('calendar-expand-elemet');
-  var angle = 0;
+  var massOfCalendarButtons = document.getElementsByClassName('calendar-expand-elemet');
+  var angleCalendar = 0;
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
@@ -10942,10 +10942,10 @@ $(document).ready(function () {
     var _loop = function _loop() {
       var item = _step.value;
       item.addEventListener("click", function (e) {
-        angle += 180; //глобальная переменная на лэндинг странице
+        angleCalendar += 180; //глобальная переменная на лэндинг странице
 
         if (item.id == 'start-date-expand') {
-          if (angle / 180 % 2 != 0) {
+          if (angleCalendar / 180 % 2 != 0) {
             $('#start-date-input-field').css({
               border: "1px solid #BC9CFF"
             });
@@ -10957,12 +10957,10 @@ $(document).ready(function () {
               border: "1px solid rgba(31, 32, 65, 0.25)"
             });
           }
-
-          currentState = 'start';
         }
 
         if (item.id == 'end-date-expand') {
-          if (angle / 180 % 2 != 0) {
+          if (angleCalendar / 180 % 2 != 0) {
             $('#end-date-input-field').css({
               border: "1px solid #BC9CFF"
             });
@@ -10974,21 +10972,19 @@ $(document).ready(function () {
               border: "1px solid rgba(31, 32, 65, 0.25)"
             });
           }
-
-          currentState = 'end';
         }
 
         $('.search-form-calendar').slideToggle();
         $('.calendar-expand-elemet').each(function (e) {
           $(this).css({
             transition: 'transform 0.5s',
-            transform: 'rotate(' + angle + 'deg)'
+            transform: 'rotate(' + angleCalendar + 'deg)'
           });
         }); //item.style.transform = 'rotate(180deg)';
       });
     };
 
-    for (var _iterator = massOfButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator = massOfCalendarButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       _loop();
     }
   } catch (err) {
@@ -11005,6 +11001,18 @@ $(document).ready(function () {
       }
     }
   }
+
+  var anglePeople = 0;
+  document.getElementById("people-expand").addEventListener("click", function (e) {
+    anglePeople += 180;
+    $('.search-form-list').slideToggle();
+    $('.people-expand-elemet').each(function (e) {
+      $(this).css({
+        transition: 'transform 0.5s',
+        transform: 'rotate(' + anglePeople + 'deg)'
+      });
+    });
+  });
 });
 },{"jquery":"../../node_modules/jquery/dist/jquery.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11034,7 +11042,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53049" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52203" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

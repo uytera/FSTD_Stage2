@@ -5,7 +5,7 @@ mixin search-form(modificator)
         +calendar('search-form-calendar')
         
         include ../../../ui_kit/list-of-counted-items/list-of-counted-items.pug
-        +list-of-counted-items('search-form-list', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
+        +list-of-counted-items(".search-form__number-of-people", 'search-form-list', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
 
         div.search-form-desctiption Найдём номера под ваши пожелания
         form(action="")
@@ -24,5 +24,7 @@ mixin search-form(modificator)
                 div.search-form__input-field
                     div.search-form__number-of-people-desctiption гости
                     div.search-form__number-of-people-input-field
-                        input.search-form__number-of-people(type="text" placeholder="Сколько гостей")
+                        input.search-form__number-of-people(type="text" placeholder="Сколько гостей" disabled)
                         i.material-icons.people-expand-elemet#people-expand expand_more
+            include ../../../ui_kit/buttons/filled/button-filled.pug
+            +button-filled("search-form__button-filled", "ПОДОБРАТЬ НОМЕР", "arrow_forward")

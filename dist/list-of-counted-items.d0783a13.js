@@ -10931,42 +10931,186 @@ return jQuery;
 
 },{"process":"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/node_modules/process/browser.js"}],"../ui_kit/list-of-counted-items/list-of-counted-items.js":[function(require,module,exports) {
 window.jQuery = window.$ = require('jquery');
-$(document).ready(function () {});
+var mapOfStrings = new Map();
+var mapOfConjugations = new Map([["ВЗРОСЛЫЕ", ["взрослый", "взрослых", "взрослых"]], ["ДЕТИ", ["ребёнок", "ребёнка", "детей"]], ["МЛАДЕНЦЫ", ["младенец", "младенца", "младенцев"]]]);
+$(document).ready(function () {
+  fillMap();
+  add_elements_event(); //fillTextField()    
+
+  document.getElementById("list-of-counted-items__clean-button").addEventListener("click", function (e) {
+    var massOflistItems = document.getElementsByClassName("list-of-counted-items__item");
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = massOflistItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var item = _step.value;
+        var massOfElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+        $(massOfElements[2]).text(0);
+        mapOfStrings.set(massOfElements[0].innerHTML, $(massOfElements[2]).text());
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    fillTextField();
+  }); //document.getElementById("list-of-counted-items__save-button").addEventListener()
+});
 
 function add_elements_event() {
   var massOfButtons = document.getElementsByClassName('button');
-  var _iteratorNormalCompletion = true;
-  var _didIteratorError = false;
-  var _iteratorError = undefined;
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
 
   try {
     var _loop = function _loop() {
-      var item = _step.value;
-      item.addEventListener("mouseup", function (e) {
-        item.classList.add("pushed-up");
-      });
+      var item = _step2.value;
       item.addEventListener("mousedown", function (e) {
+        item.classList.add("pushed-up");
+
+        if (item.id == "minus-button") {
+          decrement(item);
+        }
+
+        if (item.id == "plus-button") {
+          increment(item);
+        }
+      });
+      item.addEventListener("mouseup", function (e) {
         item.classList.remove("pushed-up");
       });
     };
 
-    for (var _iterator = massOfButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator2 = massOfButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       _loop();
     }
   } catch (err) {
-    _didIteratorError = true;
-    _iteratorError = err;
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion && _iterator.return != null) {
-        _iterator.return();
+      if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+        _iterator2.return();
       }
     } finally {
-      if (_didIteratorError) {
-        throw _iteratorError;
+      if (_didIteratorError2) {
+        throw _iteratorError2;
       }
     }
   }
+}
+
+function fillMap() {
+  var massOfItems = document.getElementsByClassName('list-of-counted-items__item');
+  var _iteratorNormalCompletion3 = true;
+  var _didIteratorError3 = false;
+  var _iteratorError3 = undefined;
+
+  try {
+    for (var _iterator3 = massOfItems[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+      var key = _step3.value;
+      mapOfStrings.set(key.children[0].innerHTML, 0); //alert(mapOfStrings.get(key.children[0].innerHTML));
+    }
+  } catch (err) {
+    _didIteratorError3 = true;
+    _iteratorError3 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion3 && _iterator3.return != null) {
+        _iterator3.return();
+      }
+    } finally {
+      if (_didIteratorError3) {
+        throw _iteratorError3;
+      }
+    }
+  }
+}
+
+function increment(item) {
+  var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+  $(massOfItems[2]).text(Number.parseInt($(massOfItems[2]).text()) + 1);
+  mapOfStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
+  fillTextField();
+}
+
+function decrement(item) {
+  var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+  var count = Number.parseInt($(massOfItems[2]).text());
+
+  if (count != 0) {
+    $(massOfItems[2]).text(count - 1);
+  } else {
+    $(massOfItems[2]).text(0);
+  }
+
+  mapOfStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
+  fillTextField();
+}
+
+function fillTextField() {
+  var resultString = "";
+  var count = 0;
+  var _iteratorNormalCompletion4 = true;
+  var _didIteratorError4 = false;
+  var _iteratorError4 = undefined;
+
+  try {
+    for (var _iterator4 = mapOfStrings[Symbol.iterator](), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+      var string = _step4.value;
+
+      if (string[1] != 0) {
+        if (resultString.length != 0) {
+          resultString += ", ";
+        }
+
+        try {
+          resultString += string[1] + " " + conjugation(string[1], mapOfConjugations.get(string[0]));
+        } catch (e) {
+          resultString += string[1] + " " + string[0].toLowerCase();
+        }
+
+        count += Number.parseInt(string[1]);
+      }
+    }
+  } catch (err) {
+    _didIteratorError4 = true;
+    _iteratorError4 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion4 && _iterator4.return != null) {
+        _iterator4.return();
+      }
+    } finally {
+      if (_didIteratorError4) {
+        throw _iteratorError4;
+      }
+    }
+  }
+
+  if (count != 0) {
+    $('' + inputField).val(resultString);
+  } else {
+    $('' + inputField).val("");
+  }
+}
+
+function conjugation(number, txt) {
+  var cases = [2, 0, 1, 1, 1, 2];
+  return txt[number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]];
 }
 },{"jquery":"../../node_modules/jquery/dist/jquery.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -10996,7 +11140,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53049" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52203" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

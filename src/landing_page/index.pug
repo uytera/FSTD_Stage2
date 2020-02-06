@@ -7,15 +7,27 @@ html(lang="ru")
         meta(charset="utf-8")
         title= "Главная страница"
         link(rel = "stylesheet" href = "landing-page.scss")
-        script(type="text/javascript") $(function(){ var currentState = "someText";});
+        script(type="text/javascript"). 
+            $(function(){ var CalendarStartDate = "someText"; var CalendarEndDate = "someText";});
+            function fillDate() {
+                if(CalendarStartDate == "" || CalendarEndDate == ""){
+                    $('.search-form__start-date').val("");
+                    $('.search-form__end-date').val("");
+                    return;
+                }
+                $('.search-form__start-date').val(CalendarStartDate.getDate() + "." + CalendarStartDate.getMonth() + "." + CalendarStartDate.getFullYear());
+                $('.search-form__end-date').val(CalendarEndDate.getDate() + "." + CalendarEndDate.getMonth() + "." + CalendarEndDate.getFullYear());
+            }
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     body
         header
-            include ../ui_kit/header/header-no-registration/header-no-registration.pug
-            +header-no-registration("landing-header")
+            include ../ui_kit/header/header-registration/header-registration.pug
+            +header-registration("landing-header")
         .main
             include main/search-form/search-form.pug
             +search-form("landing-page-search-form")
+            div.filler                  
+            img.main-image(src = "../ui_kit/images/FoneImage.svg")          
         footer
             include ../ui_kit/footer/footer_elements/footer-main-content/footer-main-content.pug
             +footer-main-content("landing-page-footer")

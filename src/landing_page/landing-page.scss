@@ -1,4 +1,4 @@
-@import "../ui_kit/header/header-no-registration/header-no-registration";
+@import "../ui_kit/header/header-registration/header-registration";
 @import "../ui_kit/footer/footer_elements/footer-main-content/footer-main-content";
 @import "../ui_kit/fonts/montserrat/montserrat.css";
 @import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
@@ -10,7 +10,9 @@
 
 .main{
     .landing-page-search-form{
-        margin: 100px 100px;
+        position: absolute;
+        top: 20%;
+        left: 140px; 
     }
 }
 .landing-page-footer-underline{
@@ -19,4 +21,62 @@
 
 * {
     font-family: Montserrat;
+}
+
+.main-image{
+    //overflow: hidden;
+    width: 100%;
+    top: 0px;
+    position: fixed;
+    z-index: -1000;
+}
+
+.filler{
+    width: 100%;
+    padding-bottom: 45%;
+}
+
+@media all and (max-width: 1250px){
+    .filler{
+        padding-bottom: 85%;
+    }
+    .main-image{
+        width: 200%;
+    }
+    .landing-page-search-form{
+        top: 30% !important;
+    }
+}
+
+@media all and (max-width: 880px){
+    .filler{
+        padding-bottom: 100%;
+    }
+    .main-image{
+        width: 200%;
+    }
+    .landing-page-search-form{
+        top: 0;
+        bottom: 0;
+        left: 0 !important;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+@media all and (max-width: 580px){
+    .landing-page-search-form{
+        top: 200px !important;
+    }
+}
+@media all and (max-width: 500px){
+    .filler{
+        padding-bottom: 125%;
+    }
+    .main-image{
+        width: 400%;
+    }
+    .landing-page-search-form{
+        top: 450px !important;
+    }
 }
