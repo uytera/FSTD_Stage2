@@ -1,0 +1,78 @@
+@import "../ui_kit/header/header-registration/header-registration";
+@import "../ui_kit/footer/footer_elements/footer-main-content/footer-main-content";
+@import "../ui_kit/fonts/montserrat/montserrat.css";
+@import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
+@import "../ui_kit/fonts/Material_Icons/material-icons.css";
+@import "../ui_kit/room_element/room.scss";
+@import "../ui_kit/calendar/calendar";
+@import "../ui_kit/list-of-counted-items/list-of-counted-items";
+
+* {
+    font-family: Montserrat;
+}
+.main{
+    padding: 100px;
+    background: white;
+    
+    .main__navigation-bar{
+        position: relative;
+
+        .navigation-bar__calendar{
+            width: 266px;
+            position: absolute;
+            top: 70px;
+            z-index: 10;
+        }
+        .navigation-bar__people-list{
+            display: none;
+            position: absolute;
+            width: 264px;
+            top: 126px;
+        }
+
+        #navigation-bar__slider{
+            height: 50px;
+            width: 100px;
+        }
+
+        .navigation-bar__window-input-description{
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;  
+            color: #1F2041;
+        }
+        
+        .navigation-bar__window-input{
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            width: 264px;
+            border-radius: 4px;
+            display: flex;
+            align-content: center;
+
+            .navigation-bar__window-input-field{
+                margin-right: auto;
+                background: none;
+                border: none;
+                box-sizing: border-box;
+                padding-left: 13px;
+                text-overflow: ellipsis;
+                width: 220px;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                color: rgba(31, 32, 65, 0.75);
+            }
+
+            .window-input-expand-elemet{
+                -webkit-user-select: none;
+                cursor: pointer;
+                text-align: center;
+                line-height: 44px;
+                width: 44px;
+                color: rgba(31, 32, 65, 0.5);
+            }
+        }    
+    }
+}

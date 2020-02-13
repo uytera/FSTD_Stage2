@@ -3,7 +3,7 @@ mixin search-form(modificator)
     div(class="search-form " + modificator)
         include ../../../ui_kit/calendar/calendar.pug
         +calendar('search-form-calendar')
-        
+
         include ../../../ui_kit/list-of-counted-items/list-of-counted-items.pug
         +list-of-counted-items(".search-form__number-of-people", 'search-form-list', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
 

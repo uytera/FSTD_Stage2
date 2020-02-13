@@ -7,7 +7,7 @@ $(document).ready(function () {
     for (let item of massOfCalendarButtons) {
         item.addEventListener("click", (e) => {   
             angleCalendar += 180;
-            //глобальная переменная на лэндинг странице
+
             if(item.id == 'start-date-expand'){
                 if((angleCalendar / 180) % 2 != 0){
                     $('#start-date-input-field').css({
@@ -43,7 +43,6 @@ $(document).ready(function () {
                     transform: 'rotate('+ angleCalendar +'deg)'
                 })
             });
-            //item.style.transform = 'rotate(180deg)';
         }); 
     }
 
@@ -52,6 +51,17 @@ $(document).ready(function () {
     document.getElementById("people-expand").addEventListener("click", (e) => {
         anglePeople += 180
         $('.search-form-list').slideToggle();
+
+        if((anglePeople / 180) % 2 != 0){
+            $('.search-form__number-of-people-input-field').css({
+                border: "1px solid rgba(31, 32, 65, 0.5)"
+            });
+        } else{
+            $('.search-form__number-of-people-input-field').css({
+                border: "1px solid rgba(31, 32, 65, 0.25)"
+            });
+        }
+
         $('.people-expand-elemet').each(function(e) {
             $(this).css({
                 transition: 'transform 0.5s',

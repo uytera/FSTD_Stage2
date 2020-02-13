@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/landing_page/index.pug --open",
-    "build": "parcel build src/landing_page/index.pug"
+    "start": "parcel src/landing_page/index.pug src/search_room_page/index.pug --open",
+    "build": "parcel build src/landing_page/index.pug src/search_room_page/index.pug"
   },
   "keywords": [],
   "author": "",

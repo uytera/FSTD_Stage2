@@ -1,0 +1,36 @@
+mixin room(number, type, price, rating, number_reviews, ...image_sources)
+    script(src="../ui_kit/room_element/room_script.js")
+    div.room
+        div.room__slider
+            i.material-icons#slider__left-button expand_more
+            div#slider__left-button-area
+            i.material-icons#slider__right-button expand_more
+            div#slider__right-button-area
+            ul.slider__legend
+                li.legend__el
+                li.legend__el
+                li.legend__el
+                li.legend__el
+            div.slider__image-container
+                each source in image_sources
+                    img.image-container__main_img(src=source)
+
+        div.room__up-container
+            div.up-container__type
+                span= number
+                span= type
+            div.up-container__price
+                span= price
+                span в сутки
+        div.room__down-container
+            div.down-container__rating
+                - for (var i=1; i<=rating; i++) {
+                    i.material-icons.down-container__star-elemet star
+                - }
+                - for (var i=1; i<=5 - rating; i++) {
+                    i.material-icons.down-container__star-elemet star_border
+                - }
+            div.down-container__rewiews
+                span=number_reviews
+                span  Отзывов
+

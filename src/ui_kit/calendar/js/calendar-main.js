@@ -25,7 +25,17 @@ var startDate = "";
 var endDate = "";
 var currDate = new Date();
 
+function day_resize() {
+    $('.day').height($('.day').width());
+    $('.day').css('line-height', $('.day').height() + "px");
+}
+
 $(document).ready(function () {
+    
+    $(window).resize(function(){
+        day_resize();
+    });
+
     fill_calendar(currDate);
     add_elements_event();
 
@@ -255,4 +265,6 @@ function fill_days_in_calendar(month, year){
     }
     
     document.getElementsByClassName('calendar__days')[0].innerHTML = html;
+
+    day_resize();
 }

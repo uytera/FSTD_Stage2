@@ -1,0 +1,73 @@
+doctype
+mixin light_button(modificator, text)
+    div(class="logo "+ modificator)= text
+
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        title= "Страница поиска комнат"
+        link(rel = "stylesheet" href = "search_room_page.scss")
+        link(rel = "stylesheet" href = "../ui_kit/jq/styles/jquery-ui.css")
+        script(src="../ui_kit/jq/scripts/jquery-ui.min.js")
+        script(src="search_room_page.js")
+        script(type="text/javascript").
+            let months = {     
+                0: "янв",  
+                1: "фев", 
+                2: "мар", 
+                3: "апр", 
+                4: "май", 
+                5: "июн", 
+                6: "июл", 
+                7: "авг", 
+                8: "сен", 
+                9: "окт", 
+                10: "ноя", 
+                11: "дек"    
+            };
+            $(function(){ var CalendarStartDate = "someText"; var CalendarEndDate = "someText";});
+            function fillDate() {
+                if(CalendarStartDate == "" || CalendarEndDate == ""){
+                    $('.navigation-bar__date-input-field').val("");
+                    return;
+                }
+                $('.navigation-bar__date-input-field').val(CalendarStartDate.getDate() + " " + months[CalendarStartDate.getMonth()] + " - " + CalendarEndDate.getDate() + " " + months[CalendarEndDate.getMonth()]);
+            }     
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    body
+        header
+            include ../ui_kit/header/header-registration/header-registration.pug
+            +header-registration("search-room-header")
+        .main
+            div.main__navigation-bar
+
+
+                span.navigation-bar__date-input-description.navigation-bar__window-input-description ДАТЫ ПРЕБЫВАНИЯ В ОТЕЛЕ
+                div.navigation-bar__date-input.navigation-bar__window-input
+                    input.navigation-bar__date-input-field.navigation-bar__window-input-field(type="text" disabled)
+                    i.material-icons.date-input-expand-elemet.window-input-expand-elemet#date-input-expand-button expand_more
+                include ../ui_kit/calendar/calendar.pug
+                +calendar('navigation-bar__calendar')
+
+                span.navigation-bar__people-input-description.navigation-bar__window-input-description ГОСТИ
+                div.navigation-bar__people-input.navigation-bar__window-input
+                    input.navigation-bar__people-input-field.navigation-bar__window-input-field(type="text" disabled)
+                    i.material-icons.people-input-expand-elemet.window-input-expand-elemet#people-input-expand-button expand_more
+                include ../ui_kit/list-of-counted-items/list-of-counted-items.pug
+                +list-of-counted-items(".navigation-bar__people-input-field", 'navigation-bar__people-list', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
+
+                div#navigation-bar__slider
+
+
+            include ../ui_kit/room_element/room.pug
+    <!--    +room("№ 888", "люкс", "9 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg") -->
+        footer
+            include ../ui_kit/footer/footer_elements/footer-main-content/footer-main-content.pug
+            +footer-main-content("search-room-footer")
+            include ../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content.pug
+            +footer-underline-content("search-room-footer-underline")
+
+        script(type="text/javascript").
+            $(document).ready(function(){
+                $('.navigation-bar__calendar').css('display', "none");
+            });
