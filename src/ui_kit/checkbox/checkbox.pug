@@ -1,0 +1,8 @@
+mixin checkbox(modificator, id, name, tick_href, description)
+    div(class=modificator + ' checkbox-container')
+        input(class=modificator + ' checkbox-option')(type="checkbox" id=id name=name)
+        label(for=id)
+            div(class=modificator + ' checkbox')
+                img(class=modificator + ' tick')(src=tick_href)
+            div(class=modificator + ' checkbox-descritpion')!= description
+    

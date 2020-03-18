@@ -6,10 +6,13 @@
 @import "../ui_kit/room_element/room.scss";
 @import "../ui_kit/calendar/calendar";
 @import "../ui_kit/list-of-counted-items/list-of-counted-items";
+@import "../ui_kit/jq/styles/jquery-ui.css";
+@import "../ui_kit/checkbox/checkbox.scss";
 
 * {
     font-family: Montserrat;
 }
+
 .main{
     padding: 100px;
     background: white;
@@ -17,24 +20,34 @@
     .main__navigation-bar{
         position: relative;
 
+        
+        .navigation-bar__date-input-description{
+            margin-bottom: 5px;
+        }
         .navigation-bar__calendar{
             width: 266px;
             position: absolute;
             top: 70px;
-            z-index: 10;
-        }
-        .navigation-bar__people-list{
-            display: none;
-            position: absolute;
-            width: 264px;
-            top: 126px;
+            z-index: 20;
         }
 
-        #navigation-bar__slider{
-            height: 50px;
-            width: 100px;
+
+        .navigation-bar__people-input-description{
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+        .navigation-bar__people-input-container{
+            position: relative;
+            .navigation-bar__people-list{
+                display: none;
+                position: absolute;
+                width: 264px;
+                top: 43px;
+                z-index: 15;
+            }
         }
 
+        //Общие свойства инпутов со занчениями///////////////////////
         .navigation-bar__window-input-description{
             font-style: normal;
             font-weight: bold;
@@ -42,6 +55,7 @@
             line-height: 15px;  
             color: #1F2041;
         }
+
         
         .navigation-bar__window-input{
             border: 1px solid rgba(31, 32, 65, 0.25);
@@ -73,6 +87,193 @@
                 width: 44px;
                 color: rgba(31, 32, 65, 0.5);
             }
-        }    
+        }
+
+        .navigation-bar__slider-description{
+            margin-top: 30px;
+            position: relative;
+            width: 266px;
+            height: 15px;
+
+            .navigation-bar__slider-description-row{
+                left: 0px;
+                width: 121px;
+                height: 15px;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 15px;
+                color: #1F2041;
+            }
+            .navigation-bar__slider-values{
+                position: absolute;
+                right: 0px;
+                width: 102px;
+                height: 15px;
+                border: none;
+
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 15px;
+                text-align: right;
+                text-transform: uppercase;
+                color: rgba(31, 32, 65, 0.5);
+            }
+        }
+        //////////////////////////////////////////////////////
+
+        .navigation-bar__slider{
+            margin-top: 24px;
+            
+            #slider{
+                width: 266px;
+                height: 6px;
+            }
+
+            .ui-slider{
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                border-radius: 3px;
+            }
+            .ui-slider-range{
+                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+            }
+
+            .ui-slider-handle{
+                width: 12px;
+                height: 12px;
+                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+                border: 2px solid #FFFFFF;
+                border-radius: 10px;
+            }
+        }
+
+        .navigation-bar__slider-annotation{
+            margin-top: 13px;
+            width: 264px;
+            height: 14px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+
+            color: rgba(31, 32, 65, 0.5);
+        }
+
+        .navigation-bar__options-description{
+            margin-top: 30px;
+            left: 0px;
+            width: 121px;
+            height: 15px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            color: #1F2041;
+        }
+
+        .navigation-bar__options{
+            
+            .navigation-bar__smoke-option.checkbox-container{  
+                margin-top: 17px;
+                width: 266px;
+            }
+            .navigation-bar__pet-option.checkbox-container{
+                margin-top: 10px;  
+                width: 266px;
+            }
+            .navigation-bar__guests-option.checkbox-container{  
+                margin-top: 10px;    
+                width: 266px;
+                .checkbox{
+                    align-self: flex-start;
+                }
+            }
+        }
+
+        .navigation-bar__availability-options-description{
+            margin-top: 30px;
+            left: 0px;
+            width: 121px;
+            height: 15px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+            color: #1F2041;
+        }
+
+        .navigation-bar__availability-options{
+            width: 266px;
+            display: flex;
+            flex-direction: column;
+            
+            .navigation-bar__wide-option.checkbox-container{  
+                margin-top: 17px;
+                width: 266px;
+            }
+            .navigation-bar__helper-option.checkbox-container{
+                margin-top: 10px;  
+                width: 266px;
+            }
+
+            .checkbox-descritpion{
+                font-weight: bold;
+                color: rgba(31, 32, 65, 0.75);
+            }
+
+            .navigation-bar__chekbox-addition{
+                align-self: flex-start;
+                margin-top: 5px;
+                margin-left: 12%;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 14px;
+                color: rgba(31, 32, 65, 0.5);
+            }
+        }
+
+        .navigation-bar__room-input-description{
+            margin-top: 30px;
+            margin-bottom: 5px;
+        }
+        
+        .navigation-bar__room-input-container{
+            position: relative;
+            .navigation-bar__room-list{
+                display: none;
+                position: absolute;
+                width: 264px;
+                top: 43px;
+                z-index: 15;
+            }
+        }
+
+        .navigation-bar__additional-options{
+            margin-top: 16px;
+            width: 266px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+
+            .navigation-bar__additional-options-description{
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 15px;
+                color: #1F2041;
+                margin-right: auto;
+            }
+
+            .additional-options-expand-elemet{
+                -webkit-user-select: none;      
+                text-align: center;
+                line-height: 44px;
+                width: 45px;
+                color: rgba(31, 32, 65, 0.5);
+            }
+        }
     }
 }

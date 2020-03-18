@@ -1,4 +1,4 @@
-window.jQuery = window.$ = require('jquery');
+//window.jQuery = window.$ = require('jquery');
 
 var numberOfSlide = 1;
 

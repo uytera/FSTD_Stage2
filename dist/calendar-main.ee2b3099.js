@@ -10952,7 +10952,16 @@ var pushedElementDate = "";
 var startDate = "";
 var endDate = "";
 var currDate = new Date();
+
+function day_resize() {
+  $('.day').height($('.day').width());
+  $('.day').css('line-height', $('.day').height() + "px");
+}
+
 $(document).ready(function () {
+  $(window).resize(function () {
+    day_resize();
+  });
   fill_calendar(currDate);
   add_elements_event();
   document.getElementById('calendar-forward-btn').addEventListener("click", function (e) {
@@ -11187,6 +11196,7 @@ function fill_days_in_calendar(month, year) {
   }
 
   document.getElementsByClassName('calendar__days')[0].innerHTML = html;
+  day_resize();
 }
 },{"jquery":"../../node_modules/jquery/dist/jquery.js"}],"../../../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -11216,7 +11226,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49182" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63106" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

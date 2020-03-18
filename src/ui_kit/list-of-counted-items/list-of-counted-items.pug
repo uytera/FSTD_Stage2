@@ -1,7 +1,5 @@
-mixin list-of-counted-items(variableHtml, modificator, ...items)
-    script.
-        var inputField = "#{variableHtml}";
-    script(src="../ui_kit/list-of-counted-items/list-of-counted-items.js")
+mixin list-of-counted-items(modificator, script, ...items)
+    script(src = script)
     div(class="list-of-counted-items " + modificator)
         each item in items
             div.list-of-counted-items__item

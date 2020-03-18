@@ -1,4 +1,4 @@
-window.jQuery = window.$ = require('jquery');
+//window.jQuery = window.$ = require('jquery');
 
 $(document).ready(function () {
     var massOfCalendarButtons = document.getElementsByClassName('calendar-expand-elemet');
@@ -49,6 +49,9 @@ $(document).ready(function () {
     var anglePeople = 0;
 
     document.getElementById("people-expand").addEventListener("click", (e) => {
+
+        inputField = ".search-form__number-of-people";
+        
         anglePeople += 180
         $('.search-form-list').slideToggle();
 
