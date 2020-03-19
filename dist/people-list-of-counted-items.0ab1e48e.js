@@ -124,21 +124,20 @@ var mapOfPeopleConjugations = new Map([["ВЗРОСЛЫЕ", ["взрослый",
 var peopleRootElement;
 $(document).ready(function () {
   peopleRootElement = document.getElementsByClassName("navigation-bar__people-list")[0];
-  fillMap();
-  add_elements_event(); //fillTextField()    
-
-  peopleRootElement.getElementById("list-of-counted-items__clean-button").addEventListener("click", function (e) {
-    var massOflistItems = peopleRootElement.getElementsByClassName("list-of-counted-items__item");
+  fillMapPeople();
+  add_elements_event_people();
+  document.getElementById("navigation-bar__people-list__clean-button").addEventListener("click", function (e) {
+    var massOflistPeopleItems = peopleRootElement.getElementsByClassName("list-of-counted-items__item");
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = massOflistItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      for (var _iterator = massOflistPeopleItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var item = _step.value;
-        var massOfElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-        $(massOfElements[2]).text(0);
-        mapOfPeopleStrings.set(massOfElements[0].innerHTML, $(massOfElements[2]).text());
+        var massOfPeopleElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+        $(massOfPeopleElements[2]).text(0);
+        mapOfPeopleStrings.set(massOfPeopleElements[0].innerHTML, $(massOfPeopleElements[2]).text());
       }
     } catch (err) {
       _didIteratorError = true;
@@ -155,12 +154,12 @@ $(document).ready(function () {
       }
     }
 
-    fillTextField();
+    fillTextFieldPeople();
   }); //document.getElementById("list-of-counted-items__save-button").addEventListener()
 });
 
-function add_elements_event() {
-  var massOfButtons = peopleRootElement.getElementsByClassName('button');
+function add_elements_event_people() {
+  var massPeopleOfButtons = peopleRootElement.getElementsByClassName('button');
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
@@ -168,15 +167,16 @@ function add_elements_event() {
   try {
     var _loop = function _loop() {
       var item = _step2.value;
+      //alert(item.class);
       item.addEventListener("mousedown", function (e) {
         item.classList.add("pushed-up");
 
-        if (item.id == "minus-button") {
-          decrement(item);
+        if (item.classList.contains("button_minus")) {
+          decrementPeople(item);
         }
 
-        if (item.id == "plus-button") {
-          increment(item);
+        if (item.classList.contains("button_plus")) {
+          incrementPeople(item);
         }
       });
       item.addEventListener("mouseup", function (e) {
@@ -184,7 +184,7 @@ function add_elements_event() {
       });
     };
 
-    for (var _iterator2 = massOfButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    for (var _iterator2 = massPeopleOfButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       _loop();
     }
   } catch (err) {
@@ -203,14 +203,14 @@ function add_elements_event() {
   }
 }
 
-function fillMap() {
-  var massOfItems = peopleRootElement.getElementsByClassName('list-of-counted-items__item');
+function fillMapPeople() {
+  var massOfPeopleItems = peopleRootElement.getElementsByClassName('list-of-counted-items__item');
   var _iteratorNormalCompletion3 = true;
   var _didIteratorError3 = false;
   var _iteratorError3 = undefined;
 
   try {
-    for (var _iterator3 = massOfItems[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    for (var _iterator3 = massOfPeopleItems[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
       var key = _step3.value;
       mapOfPeopleStrings.set(key.children[0].innerHTML, 0); //alert(mapOfStrings.get(key.children[0].innerHTML));
     }
@@ -230,28 +230,28 @@ function fillMap() {
   }
 }
 
-function increment(item) {
-  var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-  $(massOfItems[2]).text(Number.parseInt($(massOfItems[2]).text()) + 1);
-  mapOfPeopleStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
-  fillTextField();
+function incrementPeople(item) {
+  var massOfPeopleItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+  $(massOfPeopleItems[2]).text(Number.parseInt($(massOfPeopleItems[2]).text()) + 1);
+  mapOfPeopleStrings.set(massOfPeopleItems[0].innerHTML, $(massOfPeopleItems[2]).text());
+  fillTextFieldPeople();
 }
 
-function decrement(item) {
-  var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-  var count = Number.parseInt($(massOfItems[2]).text());
+function decrementPeople(item) {
+  var massOfPeopleItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+  var count = Number.parseInt($(massOfPeopleItems[2]).text());
 
   if (count != 0) {
-    $(massOfItems[2]).text(count - 1);
+    $(massOfPeopleItems[2]).text(count - 1);
   } else {
-    $(massOfItems[2]).text(0);
+    $(massOfPeopleItems[2]).text(0);
   }
 
-  mapOfPeopleStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
-  fillTextField();
+  mapOfPeopleStrings.set(massOfPeopleItems[0].innerHTML, $(massOfPeopleItems[2]).text());
+  fillTextFieldPeople();
 }
 
-function fillTextField() {
+function fillTextFieldPeople() {
   var resultString = "";
   var count = 0;
   var _iteratorNormalCompletion4 = true;
@@ -330,7 +330,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65534" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59118" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

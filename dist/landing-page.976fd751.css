@@ -441,10 +441,10 @@ body {
 .list-of-counted-items .list-of-counted-items__down-buttons {
   margin-top: 19px;
 }
-.list-of-counted-items #list-of-counted-items__clean-button {
+.list-of-counted-items .list-of-counted-items__down-buttons :first-child {
   margin-left: 15px;
 }
-.list-of-counted-items #list-of-counted-items__save-button {
+.list-of-counted-items .list-of-counted-items__down-buttons :last-child {
   margin-right: 7px;
 }
 .list-of-counted-items .clear-accept-buttons {
@@ -505,11 +505,11 @@ body {
 .list-of-counted-items .list-of-counted-items__item .pushed-up {
   background: rgba(179, 179, 179, 0.479);
 }
-.list-of-counted-items .list-of-counted-items__item #minus-button {
+.list-of-counted-items .list-of-counted-items__item .button_minus {
   line-height: 25px;
   margin-right: 10px;
 }
-.list-of-counted-items .list-of-counted-items__item #plus-button {
+.list-of-counted-items .list-of-counted-items__item .button_plus {
   line-height: 30px;
   margin-left: 10px;
   margin-right: 7px;

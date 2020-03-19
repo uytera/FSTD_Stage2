@@ -9,14 +9,16 @@
 
     .list-of-counted-items__down-buttons{
         margin-top: 19px;
-    }
-    #list-of-counted-items__clean-button{
-        margin-left: 15px;
-    }
 
-    #list-of-counted-items__save-button{
-        margin-right: 7px;
+        :first-child{
+            margin-left: 15px;
+        }
+
+        :last-child{
+            margin-right: 7px;
+        }
     }
+    
 
     @import "../buttons/clear-accept-buttons/clear-accept-buttons";
 
@@ -58,11 +60,11 @@
             background: rgba(179, 179, 179, 0.479);
         }
 
-        #minus-button{
+        .button_minus{
             line-height: 25px;
             margin-right: 10px;
         }
-        #plus-button{
+        .button_plus{
             line-height: 30px;
             margin-left: 10px;
             margin-right: 7px;

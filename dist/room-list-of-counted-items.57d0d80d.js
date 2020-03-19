@@ -124,21 +124,20 @@ var mapOfRoomConjugations = new Map([["СПАЛЬНИ", ["спальня", "сп
 var roomRootElement;
 $(document).ready(function () {
   roomRootElement = document.getElementsByClassName("navigation-bar__room-list")[0];
-  fillMap();
-  add_elements_event(); //fillTextField()    
-
-  peopleRootElement.getElementById("list-of-counted-items__clean-button").addEventListener("click", function (e) {
-    var massOflistItems = roomRootElement.getElementsByClassName("list-of-counted-items__item");
+  fillMapRoom();
+  add_elements_event_room();
+  document.getElementById("navigation-bar__room-list__clean-button").addEventListener("click", function (e) {
+    var massOflistRoomItems = roomRootElement.getElementsByClassName("list-of-counted-items__item");
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
 
     try {
-      for (var _iterator = massOflistItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      for (var _iterator = massOflistRoomItems[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var item = _step.value;
-        var massOfElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-        $(massOfElements[2]).text(0);
-        mapOfRoomStrings.set(massOfElements[0].innerHTML, $(massOfElements[2]).text());
+        var massOfRoomElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+        $(massOfRoomElements[2]).text(0);
+        mapOfRoomStrings.set(massOfRoomElements[0].innerHTML, $(massOfRoomElements[2]).text());
       }
     } catch (err) {
       _didIteratorError = true;
@@ -155,12 +154,12 @@ $(document).ready(function () {
       }
     }
 
-    fillTextField();
+    fillTextFieldRoom();
   }); //document.getElementById("list-of-counted-items__save-button").addEventListener()
 });
 
-function add_elements_event() {
-  var massOfButtons = roomRootElement.getElementsByClassName('button');
+function add_elements_event_room() {
+  var massOfRoomButtons = roomRootElement.getElementsByClassName('button');
   var _iteratorNormalCompletion2 = true;
   var _didIteratorError2 = false;
   var _iteratorError2 = undefined;
@@ -171,12 +170,12 @@ function add_elements_event() {
       item.addEventListener("mousedown", function (e) {
         item.classList.add("pushed-up");
 
-        if (item.id == "minus-button") {
-          decrement(item);
+        if (item.classList.contains("button_minus")) {
+          decrementRoom(item);
         }
 
-        if (item.id == "plus-button") {
-          increment(item);
+        if (item.classList.contains("button_plus")) {
+          incrementRoom(item);
         }
       });
       item.addEventListener("mouseup", function (e) {
@@ -184,7 +183,7 @@ function add_elements_event() {
       });
     };
 
-    for (var _iterator2 = massOfButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+    for (var _iterator2 = massOfRoomButtons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
       _loop();
     }
   } catch (err) {
@@ -203,14 +202,14 @@ function add_elements_event() {
   }
 }
 
-function fillMap() {
-  var massOfItems = roomRootElement.getElementsByClassName('list-of-counted-items__item');
+function fillMapRoom() {
+  var massOfRoomItems = roomRootElement.getElementsByClassName('list-of-counted-items__item');
   var _iteratorNormalCompletion3 = true;
   var _didIteratorError3 = false;
   var _iteratorError3 = undefined;
 
   try {
-    for (var _iterator3 = massOfItems[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+    for (var _iterator3 = massOfRoomItems[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
       var key = _step3.value;
       mapOfRoomStrings.set(key.children[0].innerHTML, 0); //alert(mapOfStrings.get(key.children[0].innerHTML));
     }
@@ -230,28 +229,28 @@ function fillMap() {
   }
 }
 
-function increment(item) {
-  var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-  $(massOfItems[2]).text(Number.parseInt($(massOfItems[2]).text()) + 1);
-  mapOfRoomStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
-  fillTextField();
+function incrementRoom(item) {
+  var massOfRoomItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+  $(massOfRoomItems[2]).text(Number.parseInt($(massOfRoomItems[2]).text()) + 1);
+  mapOfRoomStrings.set(massOfRoomItems[0].innerHTML, $(massOfRoomItems[2]).text());
+  fillTextFieldRoom();
 }
 
-function decrement(item) {
-  var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-  var count = Number.parseInt($(massOfItems[2]).text());
+function decrementRoom(item) {
+  var massOfRoomItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+  var count = Number.parseInt($(massOfRoomItems[2]).text());
 
   if (count != 0) {
-    $(massOfItems[2]).text(count - 1);
+    $(massOfRoomItems[2]).text(count - 1);
   } else {
-    $(massOfItems[2]).text(0);
+    $(massOfRoomItems[2]).text(0);
   }
 
-  mapOfRoomStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
-  fillTextField();
+  mapOfRoomStrings.set(massOfRoomItems[0].innerHTML, $(massOfRoomItems[2]).text());
+  fillTextFieldRoom();
 }
 
-function fillTextField() {
+function fillTextFieldRoom() {
   var resultString = "";
   var count = 0;
   var _iteratorNormalCompletion4 = true;
@@ -292,9 +291,9 @@ function fillTextField() {
   }
 
   if (count != 0) {
-    $(".navigation-bar__people-input-field").val(resultString);
+    $(".navigation-bar__room-input-field").val(resultString);
   } else {
-    $(".navigation-bar__people-input-field").val("");
+    $(".navigation-bar__room-input-field").val("");
   }
 }
 
@@ -330,7 +329,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65534" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59118" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

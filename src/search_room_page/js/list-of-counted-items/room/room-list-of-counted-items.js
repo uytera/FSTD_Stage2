@@ -13,37 +13,36 @@ $(document).ready(function () {
 
     roomRootElement = document.getElementsByClassName("navigation-bar__room-list")[0];
 
-    fillMap();
-    add_elements_event();
+    fillMapRoom();
+    add_elements_event_room();
+  
+    document.getElementById("navigation-bar__room-list__clean-button").addEventListener("click", (e) => {
+        var massOflistRoomItems = roomRootElement.getElementsByClassName("list-of-counted-items__item");
 
-    //fillTextField()    
-    peopleRootElement.getElementById("list-of-counted-items__clean-button").addEventListener("click", (e) => {
-        var massOflistItems = roomRootElement.getElementsByClassName("list-of-counted-items__item");
-
-        for (let item of massOflistItems) {
-            var massOfElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-            $(massOfElements[2]).text(0);
-            mapOfRoomStrings.set(massOfElements[0].innerHTML, $(massOfElements[2]).text());
+        for (let item of massOflistRoomItems) {
+            var massOfRoomElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+            $(massOfRoomElements[2]).text(0);
+            mapOfRoomStrings.set(massOfRoomElements[0].innerHTML, $(massOfRoomElements[2]).text());
         }
 
-        fillTextField()
+        fillTextFieldRoom()
     })
 
     //document.getElementById("list-of-counted-items__save-button").addEventListener()
 });
 
-function add_elements_event(){
+function add_elements_event_room(){
 
-    var massOfButtons = roomRootElement.getElementsByClassName('button');
+    var massOfRoomButtons = roomRootElement.getElementsByClassName('button');
 
-    for (let item of massOfButtons) {
+    for (let item of massOfRoomButtons) {
         item.addEventListener("mousedown", (e) => {    
             item.classList.add("pushed-up");
-            if(item.id == "minus-button"){
-                decrement(item)
+            if(item.classList.contains("button_minus")){
+                decrementRoom(item)
             }
-            if(item.id == "plus-button"){
-                increment(item)
+            if(item.classList.contains("button_plus")){
+                incrementRoom(item)
             }
         }); 
 
@@ -53,39 +52,39 @@ function add_elements_event(){
     }
 }
 
-function fillMap(){
-    var massOfItems = roomRootElement.getElementsByClassName('list-of-counted-items__item');
+function fillMapRoom(){
+    var massOfRoomItems = roomRootElement.getElementsByClassName('list-of-counted-items__item');
 
-    for (let key of massOfItems) {
+    for (let key of massOfRoomItems) {
         mapOfRoomStrings.set(key.children[0].innerHTML, 0);
         //alert(mapOfStrings.get(key.children[0].innerHTML));
     }
 }
 
-function increment(item){
-    var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-    $(massOfItems[2]).text(Number.parseInt($(massOfItems[2]).text()) + 1);
-    mapOfRoomStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
+function incrementRoom(item){
+    var massOfRoomItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+    $(massOfRoomItems[2]).text(Number.parseInt($(massOfRoomItems[2]).text()) + 1);
+    mapOfRoomStrings.set(massOfRoomItems[0].innerHTML, $(massOfRoomItems[2]).text());
 
-    fillTextField()
+    fillTextFieldRoom()
 }
 
-function decrement(item){
-    var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-    var count = Number.parseInt($(massOfItems[2]).text());
+function decrementRoom(item){
+    var massOfRoomItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+    var count = Number.parseInt($(massOfRoomItems[2]).text());
 
     if(count != 0){
-        $(massOfItems[2]).text(count - 1);
+        $(massOfRoomItems[2]).text(count - 1);
     }
     else{
-        $(massOfItems[2]).text(0);      
+        $(massOfRoomItems[2]).text(0);      
     }
-    mapOfRoomStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
+    mapOfRoomStrings.set(massOfRoomItems[0].innerHTML, $(massOfRoomItems[2]).text());
 
-    fillTextField()
+    fillTextFieldRoom()
 }
 
-function fillTextField(){
+function fillTextFieldRoom(){
     var resultString = "";
     var count = 0;
     for(let string of mapOfRoomStrings){
@@ -103,10 +102,10 @@ function fillTextField(){
         }
     }
     if(count != 0){
-        $(".navigation-bar__people-input-field").val(resultString)
+        $(".navigation-bar__room-input-field").val(resultString)
     }
     else{
-        $(".navigation-bar__people-input-field").val("")
+        $(".navigation-bar__room-input-field").val("")
     }
 }
 

@@ -14,10 +14,12 @@
 }
 
 .main{
-    padding: 100px;
+    //padding: 100px;
     background: white;
     
     .main__navigation-bar{
+        margin-top: 30px;
+        margin-left: 7.5%;
         position: relative;
 
         
@@ -251,8 +253,9 @@
         }
 
         .navigation-bar__additional-options{
-            margin-top: 16px;
+            margin-top: 30px;
             width: 266px;
+            height: 15px;
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -275,5 +278,19 @@
                 color: rgba(31, 32, 65, 0.5);
             }
         }
+
+        .navigation-bar__list-of-additional-options{
+            display: none;
+            margin-top: 17px;
+            :first-child{
+                margin-top: 0px !important;
+            }
+            .slide_down_check.checkbox-container{
+                margin-top: 10px;
+                //height: 30px;
+            }
+        }
+        
+
     }
 }

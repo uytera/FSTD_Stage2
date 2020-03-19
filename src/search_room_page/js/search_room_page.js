@@ -3,6 +3,7 @@ $(document).ready(function(){
     var angleCalendar = 0;
     var anglePeople = 0;
     var angleRoom = 0;
+    var angleOptions = 0;
     var sliderHandleValueMin = 5000;
     var sliderHandleValueMax = 10000;
     var sliderMaxValue = 15000;
@@ -34,13 +35,6 @@ $(document).ready(function(){
     document.getElementById('people-input-expand-button').addEventListener('click', (e) => {
         $('.navigation-bar__people-list').slideToggle();
 
-        mapOfCurrentWords = [
-            "ВЗРОСЛЫЕ",
-            "ДЕТИ",
-            "МЛАДЕНЦЫ"
-        ];
-        inputField = ".navigation-bar__people-input-field";
-
         anglePeople += 180;
         $('#people-input-expand-button').each(function(e) {
             if((anglePeople / 180) % 2 != 0){
@@ -62,13 +56,6 @@ $(document).ready(function(){
     document.getElementById('room-input-expand-button').addEventListener('click', (e) => {
         $('.navigation-bar__room-list').slideToggle();
 
-        mapOfCurrentWords = [
-            "СПАЛЬНИ",
-            "КРОВАТИ",
-            "ВАННЫЕ КОМНАТЫ"
-        ];
-        inputField = ".navigation-bar__room-input-field";
-
         angleRoom += 180;
         $('#room-input-expand-button').each(function(e) {
             if((angleRoom / 180) % 2 != 0){
@@ -83,6 +70,18 @@ $(document).ready(function(){
             $(this).css({
                 transition: 'transform 0.5s',
                 transform: 'rotate('+ angleRoom +'deg)'
+            })
+        });
+    })
+
+    document.getElementById('additional-options-expand-button').addEventListener('click', (e) => {
+        $('.navigation-bar__list-of-additional-options').slideToggle();
+
+        angleOptions += 180;
+        $('#additional-options-expand-button').each(function(e) {
+            $(this).css({
+                transition: 'transform 0.5s',
+                transform: 'rotate('+ angleOptions +'deg)'
             })
         });
     })

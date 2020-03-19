@@ -13,37 +13,37 @@ $(document).ready(function () {
 
     peopleRootElement = document.getElementsByClassName("navigation-bar__people-list")[0];
 
-    fillMap();
-    add_elements_event();
+    fillMapPeople();
+    add_elements_event_people();
 
-    //fillTextField()    
-    peopleRootElement.getElementById("list-of-counted-items__clean-button").addEventListener("click", (e) => {
-        var massOflistItems = peopleRootElement.getElementsByClassName("list-of-counted-items__item");
+    document.getElementById("navigation-bar__people-list__clean-button").addEventListener("click", (e) => {
+        var massOflistPeopleItems = peopleRootElement.getElementsByClassName("list-of-counted-items__item");
 
-        for (let item of massOflistItems) {
-            var massOfElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-            $(massOfElements[2]).text(0);
-            mapOfPeopleStrings.set(massOfElements[0].innerHTML, $(massOfElements[2]).text());
+        for (let item of massOflistPeopleItems) {
+            var massOfPeopleElements = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+            $(massOfPeopleElements[2]).text(0);
+            mapOfPeopleStrings.set(massOfPeopleElements[0].innerHTML, $(massOfPeopleElements[2]).text());
         }
 
-        fillTextField()
+        fillTextFieldPeople()
     })
 
     //document.getElementById("list-of-counted-items__save-button").addEventListener()
 });
 
-function add_elements_event(){
+function add_elements_event_people(){
 
-    var massOfButtons = peopleRootElement.getElementsByClassName('button');
+    var massPeopleOfButtons = peopleRootElement.getElementsByClassName('button');
 
-    for (let item of massOfButtons) {
-        item.addEventListener("mousedown", (e) => {    
+    for (let item of massPeopleOfButtons) {
+        //alert(item.class);
+        item.addEventListener("mousedown", (e) => { 
             item.classList.add("pushed-up");
-            if(item.id == "minus-button"){
-                decrement(item)
+            if(item.classList.contains("button_minus")){
+                decrementPeople(item)
             }
-            if(item.id == "plus-button"){
-                increment(item)
+            if(item.classList.contains("button_plus")){
+                incrementPeople(item)
             }
         }); 
 
@@ -53,39 +53,39 @@ function add_elements_event(){
     }
 }
 
-function fillMap(){
-    var massOfItems = peopleRootElement.getElementsByClassName('list-of-counted-items__item');
+function fillMapPeople(){
+    var massOfPeopleItems = peopleRootElement.getElementsByClassName('list-of-counted-items__item');
 
-    for (let key of massOfItems) {
+    for (let key of massOfPeopleItems) {
         mapOfPeopleStrings.set(key.children[0].innerHTML, 0);
         //alert(mapOfStrings.get(key.children[0].innerHTML));
     }
 }
 
-function increment(item){
-    var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-    $(massOfItems[2]).text(Number.parseInt($(massOfItems[2]).text()) + 1);
-    mapOfPeopleStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
+function incrementPeople(item){
+    var massOfPeopleItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+    $(massOfPeopleItems[2]).text(Number.parseInt($(massOfPeopleItems[2]).text()) + 1);
+    mapOfPeopleStrings.set(massOfPeopleItems[0].innerHTML, $(massOfPeopleItems[2]).text());
 
-    fillTextField()
+    fillTextFieldPeople()
 }
 
-function decrement(item){
-    var massOfItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
-    var count = Number.parseInt($(massOfItems[2]).text());
+function decrementPeople(item){
+    var massOfPeopleItems = item.closest(".list-of-counted-items__item").querySelectorAll('*');
+    var count = Number.parseInt($(massOfPeopleItems[2]).text());
 
     if(count != 0){
-        $(massOfItems[2]).text(count - 1);
+        $(massOfPeopleItems[2]).text(count - 1);
     }
     else{
-        $(massOfItems[2]).text(0);      
+        $(massOfPeopleItems[2]).text(0);      
     }
-    mapOfPeopleStrings.set(massOfItems[0].innerHTML, $(massOfItems[2]).text());
+    mapOfPeopleStrings.set(massOfPeopleItems[0].innerHTML, $(massOfPeopleItems[2]).text());
 
-    fillTextField()
+    fillTextFieldPeople()
 }
 
-function fillTextField(){
+function fillTextFieldPeople(){
     var resultString = "";
     var count = 0;
     for(let string of mapOfPeopleStrings){

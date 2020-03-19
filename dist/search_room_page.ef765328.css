@@ -1126,10 +1126,10 @@ body {
 .list-of-counted-items .list-of-counted-items__down-buttons {
   margin-top: 19px;
 }
-.list-of-counted-items #list-of-counted-items__clean-button {
+.list-of-counted-items .list-of-counted-items__down-buttons :first-child {
   margin-left: 15px;
 }
-.list-of-counted-items #list-of-counted-items__save-button {
+.list-of-counted-items .list-of-counted-items__down-buttons :last-child {
   margin-right: 7px;
 }
 .list-of-counted-items .clear-accept-buttons {
@@ -1190,11 +1190,11 @@ body {
 .list-of-counted-items .list-of-counted-items__item .pushed-up {
   background: rgba(179, 179, 179, 0.479);
 }
-.list-of-counted-items .list-of-counted-items__item #minus-button {
+.list-of-counted-items .list-of-counted-items__item .button_minus {
   line-height: 25px;
   margin-right: 10px;
 }
-.list-of-counted-items .list-of-counted-items__item #plus-button {
+.list-of-counted-items .list-of-counted-items__item .button_plus {
   line-height: 30px;
   margin-left: 10px;
   margin-right: 7px;
@@ -1244,10 +1244,11 @@ body {
 }
 
 .main {
-  padding: 100px;
   background: white;
 }
 .main .main__navigation-bar {
+  margin-top: 30px;
+  margin-left: 7.5%;
   position: relative;
 }
 .main .main__navigation-bar .navigation-bar__date-input-description {
@@ -1449,8 +1450,9 @@ body {
   z-index: 15;
 }
 .main .main__navigation-bar .navigation-bar__additional-options {
-  margin-top: 16px;
+  margin-top: 30px;
   width: 266px;
+  height: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -1470,6 +1472,16 @@ body {
   line-height: 44px;
   width: 45px;
   color: rgba(31, 32, 65, 0.5);
+}
+.main .main__navigation-bar .navigation-bar__list-of-additional-options {
+  display: none;
+  margin-top: 17px;
+}
+.main .main__navigation-bar .navigation-bar__list-of-additional-options :first-child {
+  margin-top: 0px !important;
+}
+.main .main__navigation-bar .navigation-bar__list-of-additional-options .slide_down_check.checkbox-container {
+  margin-top: 10px;
 }
 
 /*# sourceMappingURL=/search_room_page.ef765328.css.map */

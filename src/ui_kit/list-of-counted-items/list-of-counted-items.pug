@@ -4,8 +4,8 @@ mixin list-of-counted-items(modificator, script, ...items)
         each item in items
             div.list-of-counted-items__item
                 div.list-of-counted-items__item-description= item
-                div.button#minus-button -
+                div.button.button_minus(id = modificator + "__minus-button") -
                 div.item-number 0
-                div.button#plus-button +
+                div.button.button_plus(id = modificator + "__plus-button") + 
         include ../buttons/clear-accept-buttons/clear-accept-buttons.pug
-        +clear-accept-buttons("list-of-counted-items__down-buttons", "list-of-counted-items__clean-button", "list-of-counted-items__save-button")
+        +clear-accept-buttons("list-of-counted-items__down-buttons", modificator + "__clean-button", modificator + "__save-button")

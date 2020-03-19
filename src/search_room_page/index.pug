@@ -5,6 +5,7 @@ mixin light_button(modificator, text)
 html(lang="ru")
     head
         meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
         title= "Страница поиска комнат"
         link(rel = "stylesheet" href = "search_room_page.scss")
         script(src="js/library.js")
@@ -90,12 +91,12 @@ html(lang="ru")
                     div.navigation-bar__additional-options-description ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА
                     i.material-icons.additional-options-expand-elemet#additional-options-expand-button expand_more
                 div.navigation-bar__list-of-additional-options
-                    +checkbox("navigation-bar__breakfast-option", 'breakfast-id', 'breakfast-option', "../ui_kit/icons/chekboxes/tick.svg", 'Завтрак')
-                    +checkbox("navigation-bar__table-option", 'table-id', 'table-option', "../ui_kit/icons/chekboxes/tick.svg", 'Письменный стол')
-                    +checkbox("navigation-bar__chair-option", 'chair-id', 'chair-option', "../ui_kit/icons/chekboxes/tick.svg", 'Стул для кормления')
-                    +checkbox("navigation-bar__bed-option", 'bed-id', 'bed-option', "../ui_kit/icons/chekboxes/tick.svg", 'Кроватка')
-                    +checkbox("navigation-bar__television-option", 'television-id', 'television-option', "../ui_kit/icons/chekboxes/tick.svg", 'Телевизор')
-                    +checkbox("navigation-bar__shampue-option", 'shampue-id', 'shampue-option', "../ui_kit/icons/chekboxes/tick.svg", 'Шампунь')
+                    +checkbox("slide_down_check navigation-bar__breakfast-option", 'breakfast-id', 'breakfast-option', "../ui_kit/icons/chekboxes/tick.svg", 'Завтрак')
+                    +checkbox("slide_down_check navigation-bar__table-option", 'table-id', 'table-option', "../ui_kit/icons/chekboxes/tick.svg", 'Письменный стол')
+                    +checkbox("slide_down_check navigation-bar__chair-option", 'chair-id', 'chair-option', "../ui_kit/icons/chekboxes/tick.svg", 'Стул для кормления')
+                    +checkbox("slide_down_check navigation-bar__bed-option", 'bed-id', 'bed-option', "../ui_kit/icons/chekboxes/tick.svg", 'Кроватка')
+                    +checkbox("slide_down_check navigation-bar__television-option", 'television-id', 'television-option', "../ui_kit/icons/chekboxes/tick.svg", 'Телевизор')
+                    +checkbox("slide_down_check navigation-bar__shampue-option", 'shampue-id', 'shampue-option', "../ui_kit/icons/chekboxes/tick.svg", 'Шампунь')
 
             include ../ui_kit/room_element/room.pug
     <!--    +room("№ 888", "люкс", "9 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg") -->
