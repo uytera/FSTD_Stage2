@@ -1,6 +1,5 @@
 @import "../ui_kit/header/header-registration/header-registration";
 @import "../ui_kit/footer/footer_elements/footer-main-content/footer-main-content";
-@import "../ui_kit/fonts/montserrat/montserrat.css";
 @import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
 @import "../ui_kit/fonts/Material_Icons/material-icons.css";
 @import "../ui_kit/room_element/room.scss";
@@ -9,6 +8,9 @@
 @import "../ui_kit/jq/styles/jquery-ui.css";
 @import "../ui_kit/checkbox/checkbox.scss";
 
+@import "../ui_kit/fonts/montserrat/montserrat.css";
+@import "../ui_kit/fonts/quicksand/quicksand.css";
+
 * {
     font-family: Montserrat;
 }
@@ -16,6 +18,7 @@
 .main{
     //padding: 100px;
     background: white;
+    display: flex;
     
     .main__navigation-bar{
         margin-top: 30px;
@@ -292,5 +295,69 @@
         }
         
 
+    }
+
+    .main__room-place{
+        margin-top: 30px;
+        margin-left: 59px;
+        .main__room-description{
+            margin-left: 12px;
+            font-family: Quicksand;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 30px;
+            color: #1F2041;
+        }
+
+        .main__room-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            [class^=room-]{
+                margin: 21px 12px;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 991px){
+    .main__room-place{
+        .main__room-container{
+            flex-direction: column !important;
+            align-items: center;
+
+            [class^=room-]{
+                width: 80%;
+                
+                .material-icons{
+                    font-size: 30px !important; 
+                }
+
+                .up-container__type {
+                    * {
+                        font-size: 17px !important;
+                    }
+                }
+
+                .up-container__price {
+                    * {
+                        font-size: 17px !important;
+                    }
+                }
+
+                .down-container__rewiews{
+                    * {
+                        font-size: 17px !important;
+                    }
+                }
+                .down-container__rating{
+                    * {
+                        font-size: 24px !important;
+                    }
+                }
+            }
+        }
     }
 }

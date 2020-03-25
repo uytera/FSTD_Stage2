@@ -1,55 +1,117 @@
 //window.jQuery = window.$ = require('jquery');
 
-var numberOfSlide = 1;
-
 $(document).ready(function() {
-    document.getElementById('slider__right-button-area').addEventListener('click', (e) => {
-        right_button_click()
-    })
 
-    document.getElementById('slider__right-button').addEventListener('click', (e) => {
-        right_button_click()
-    })
+    $('[class^=room-]').height($('[class^=room-]').width()/1.05);
 
-    document.getElementById('slider__left-button-area').addEventListener('click', (e) => {
-        left_button_click()
-    })
+    $(window).resize(function(){
+        $('[class^=room-]').height($('[class^=room-]').width()/1.05);
+    });
 
-    document.getElementById('slider__left-button').addEventListener('click', (e) => {
-        left_button_click()
-    }) 
-});
+    $('[class^=room-] .slider__image-container').height($('[class^=room-] .slider__image-container').width()/1.78);
 
-function left_button_click() {
-    if(numberOfSlide != 1){
-        numberOfSlide -= 1;
-        $('.slider__image-container :nth-child(' + numberOfSlide +')').fadeIn();      
+    $(window).resize(function(){
+        $('[class^=room-] .slider__image-container').height($('[class^=room-] .slider__image-container').width()/1.78);
+    });
+
+    $('[class^=room-] .room__description-container').height($('[class^=room-]').height() - $('[class^=room-] .slider__image-container').height());
+
+    $(window).resize(function(){
+        $('[class^=room-] .room__description-container').height($('[class^=room-]').height() - $('[class^=room-] .slider__image-container').height());
+
+    });
+
+    var ivs = document.getElementsByTagName("i");
+    //alert(ivs.length);
+
+    for (var a = 0; a < ivs.length; a++)
+    {
+        var i = ivs[a];
+        if (0 == i.id.indexOf("slider__right-button"))
+        {
+            //alert(i.id)
+            i.addEventListener('click', (e) => {
+                right_button_click(e.target)
+            })
+        }
+
+        if (0 == i.id.indexOf("slider__left-button"))
+        {
+            //alert(i.id)
+            i.addEventListener('click', (e) => {
+                left_button_click(e.target)
+            }) 
+        }
     }
 
-    $('.slider__legend :nth-child(' + numberOfSlide +')').css({
+    var divs = document.getElementsByTagName("div");
+    for (var i=0; i<divs.length; i++)
+    {
+        var div = divs[i];
+
+        //комнаты
+        if (div.classList.length != 0 && 0 == div.classList[0].indexOf("room"))
+        {
+            div.addEventListener('click', (e) => {
+                rootElem = div.classList[0]
+            })
+        }
+
+        if (0 == div.id.indexOf("slider__right-area-button"))
+        {
+            div.addEventListener('click', (e) => {
+                right_button_click(e.target)
+            })
+        }
+
+        if (0 == div.id.indexOf("slider__left-area-button"))
+        {
+            div.addEventListener('click', (e) => {
+                left_button_click(e.target)
+            }) 
+        }
+    }
+});
+
+function left_button_click(currElement) {
+    rootElem = currElement.parentNode.parentNode;
+    var numberOfSlide = Number.parseInt(rootElem.dataset.numberOfSlide);
+
+    if(numberOfSlide != 1){
+        numberOfSlide -= 1;
+        $("." + rootElem.classList[0] + ' .slider__image-container :nth-child(' + numberOfSlide +')').fadeIn();      
+    }
+
+    $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + numberOfSlide +')').css({
         background: "white"
     })
 
     if(numberOfSlide != 4){
-        $('.slider__legend :nth-child(' + (numberOfSlide + 1) +')').css({
+        $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + (numberOfSlide + 1) +')').css({
             background: "none"
         })
     }
+    rootElem.dataset.numberOfSlide = numberOfSlide;
 }
 
-function right_button_click() {
+function right_button_click(currElement) {
+    rootElem = currElement.parentNode.parentNode;
+    var numberOfSlide = Number.parseInt(rootElem.dataset.numberOfSlide);
+
     if(numberOfSlide != 4){
-        $('.slider__image-container :nth-child(' + numberOfSlide +')').fadeOut();
+        $("." + rootElem.classList[0] + ' .slider__image-container :nth-child(' + numberOfSlide +')').fadeOut();
         numberOfSlide += 1;
     }
 
-    $('.slider__legend :nth-child(' + numberOfSlide +')').css({
+    $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + numberOfSlide +')').css({
         background: "white"
     })
     
     if(numberOfSlide != 1){
-        $('.slider__legend :nth-child(' + (numberOfSlide - 1) +')').css({
+        $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + (numberOfSlide - 1) +')').css({
             background: "none"
         })
     }
+
+    rootElem.dataset.numberOfSlide = numberOfSlide;
 }

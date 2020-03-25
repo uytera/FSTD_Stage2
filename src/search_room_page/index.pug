@@ -97,9 +97,24 @@ html(lang="ru")
                     +checkbox("slide_down_check navigation-bar__bed-option", 'bed-id', 'bed-option', "../ui_kit/icons/chekboxes/tick.svg", 'Кроватка')
                     +checkbox("slide_down_check navigation-bar__television-option", 'television-id', 'television-option', "../ui_kit/icons/chekboxes/tick.svg", 'Телевизор')
                     +checkbox("slide_down_check navigation-bar__shampue-option", 'shampue-id', 'shampue-option', "../ui_kit/icons/chekboxes/tick.svg", 'Шампунь')
-
             include ../ui_kit/room_element/room.pug
-    <!--    +room("№ 888", "люкс", "9 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg") -->
+            div.main__room-place
+                div.main__room-description Номера, которые мы для вас подобрали
+                div.main__room-container
+                    script(src="../ui_kit/room_element/room_script.js")
+                    +room("№ 888", "люкс", "9 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 919", "люкс", "10 990₽", 4, 145, "../ui_kit/images/room_images/840.svg", "../ui_kit/images/room_images/888.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 785", "люкс", "8 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/888.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 868", "люкс", "7 990₽", 4, 145, "../ui_kit/images/room_images/980.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 153", "люкс", "5 990₽", 4, 145, "../ui_kit/images/room_images/956.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 900", "люкс", "11 990₽", 4, 145, "../ui_kit/images/room_images/840.svg", "../ui_kit/images/room_images/888.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 888", "люкс", "9 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 919", "люкс", "10 990₽", 4, 145, "../ui_kit/images/room_images/840.svg", "../ui_kit/images/room_images/888.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 785", "люкс", "8 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/888.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 868", "люкс", "7 990₽", 4, 145, "../ui_kit/images/room_images/980.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 153", "люкс", "5 990₽", 4, 145, "../ui_kit/images/room_images/956.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                    +room("№ 900", "люкс", "11 990₽", 4, 145, "../ui_kit/images/room_images/840.svg", "../ui_kit/images/room_images/888.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
+                
         footer
             include ../ui_kit/footer/footer_elements/footer-main-content/footer-main-content.pug
             +footer-main-content("search-room-footer")
@@ -110,3 +125,5 @@ html(lang="ru")
             $(document).ready(function(){
                 $('.navigation-bar__calendar').css('display', "none");
             });
+
+        
