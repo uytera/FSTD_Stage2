@@ -1,0 +1,51 @@
+doctype
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+        title= "Страница комнаты"
+        link(rel = "stylesheet" href = "room_page.scss")
+        script(src="js/library.js")
+    body
+        header
+            include ../ui_kit/header/header-registration/header-registration.pug
+            +header-registration("room-page-header")
+        .main
+            div.main__image_container
+                div.main__central_image
+                div.main__vertical_images
+                    div.main__second_image
+                    div.main__third_image
+            div.main__content
+                div.main__information-block
+                    div.main__benefits
+                        div.main__benefits-header Сведения о номере
+                        div.main__benefit
+                            div.material-icons.main__pic insert_emoticon
+                            div.main__benefit-description <b>Комфорт</b><br>Шумопоглощающие стены
+                        div.main__benefit
+                            div.material-icons.main__pic location_city
+                            div.main__benefit-description <b>Удобство</b><br>Окно в каждой из спален
+                        div.main__benefit
+                            div.material-icons.main__pic whatshot
+                            div.main__benefit-description <b>Уют</b><br>Номер оснащён камином
+                    div.main__disco-reviews
+                        <svg>
+                            <linearGradient id="linear-gradient">
+                                <stop offset="0%" stop-color="#FFE39C"/>
+                                <stop offset="100%" stop-color="#FFBA9C"/>
+                            </linearGradient>
+                            <circle class="circle"></circle>
+                            <circle class="circle2"></circle>
+                        </svg>
+                div.main__text-reviews
+                div.main__addirional-information-block
+                    div.main__rules
+                    div.main__cancel-rules
+                
+                    
+        footer
+            include ../ui_kit/footer/footer_elements/footer-main-content/footer-main-content.pug
+            +footer-main-content("room-page-footer")
+            include ../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content.pug
+            +footer-underline-content("room-page-footer-underline")

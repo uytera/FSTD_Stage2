@@ -8,6 +8,31 @@ $(document).ready(function(){
     var sliderHandleValueMax = 10000;
     var sliderMaxValue = 15000;
 
+    var currentRoomWidth = ($('[class^=room-]').width() + 24)
+    var currentRoomPagesMargin = Math.floor($('.main__room-container').width()/currentRoomWidth) * currentRoomWidth / 2 - 120; 
+
+    if(document.body.clientWidth > 990){
+        $('.main__room_pages').css({
+            marginLeft :  currentRoomPagesMargin + "px"
+        })
+        $('.main__room_pages_description').css({
+            marginLeft :  currentRoomPagesMargin + "px"
+        })
+    }       
+
+    $(window).resize(function(){
+        if(document.body.clientWidth > 990){
+            currentRoomWidth = ($('[class^=room-]').width() + 24)
+            currentRoomPagesMargin = Math.floor($('.main__room-container').width()/currentRoomWidth) * currentRoomWidth / 2 - 120;
+            $('.main__room_pages').css({
+                marginLeft :  currentRoomPagesMargin + "px"
+            })
+            $('.main__room_pages_description').css({
+                marginLeft :  currentRoomPagesMargin + "px"
+            })
+        }
+    });
+
     $("#slider").slider({
         animate: "slow",
         range: true,
@@ -85,4 +110,23 @@ $(document).ready(function(){
             })
         });
     })
+
+    window.addEventListener(`resize`, event => {
+        var nodes = document.querySelectorAll('[class^=room-]');
+        var number = 0;
+
+        if(document.body.clientWidth < 900){
+            nodes.forEach(element => {
+                number += 1;
+                if(number > 4){
+                    element.style.display = 'none';
+                }
+            });
+        }
+        else{
+            nodes.forEach(element => {
+                element.style.display = 'block';
+            });
+        }
+      }, false);
 })
