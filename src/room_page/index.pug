@@ -30,14 +30,47 @@ html(lang="ru")
                             div.material-icons.main__pic whatshot
                             div.main__benefit-description <b>Уют</b><br>Номер оснащён камином
                     div.main__disco-reviews
-                        <svg>
-                            <linearGradient id="linear-gradient">
-                                <stop offset="0%" stop-color="#FFE39C"/>
-                                <stop offset="100%" stop-color="#FFBA9C"/>
-                            </linearGradient>
-                            <circle class="circle"></circle>
-                            <circle class="circle2"></circle>
-                        </svg>
+                        div.main__disco-description Впечатления от номера
+                        div.main__disco-content
+                            div.main__disco-img
+                                <svg class="main__disco-circle">
+                                    <linearGradient id="bad-gradient">
+                                        <stop offset="0%" stop-color="#919191"/>
+                                        <stop offset="100%" stop-color="#3D4975"/>
+                                    </linearGradient>
+                                    <linearGradient id="norm-gradient">
+                                        <stop offset="0%" stop-color="#BC9CFF"/>
+                                        <stop offset="100%" stop-color="#8BA4F9"/>
+                                    </linearGradient>
+                                    <linearGradient id="good-gradient">
+                                        <stop offset="0%" stop-color="#6FCF97"/>
+                                        <stop offset="100%" stop-color="#66D2EA"/>
+                                    </linearGradient>
+                                    <linearGradient id="delis-gradient">
+                                        <stop offset="0%" stop-color="#FFE39C"/>
+                                        <stop offset="100%" stop-color="#FFBA9C"/>
+                                    </linearGradient>
+                                    <circle class="circleBad"></circle>
+                                    <circle class="circleNorm"></circle>
+                                    <circle class="circleGood"></circle>
+                                    <circle class="circleDelis"></circle>
+                                </svg>
+                                div.main__disco-text
+                                    span 260
+                                    span голосов
+                            div.main__disco-description
+                                div.main__disco-description-row
+                                    div.main__disco_descritpion-color
+                                    span Великолепно
+                                div.main__disco-description-row
+                                    div.main__disco_descritpion-color
+                                    span Хорошо
+                                div.main__disco-description-row
+                                    div.main__disco_descritpion-color
+                                    span Удовлетворительно
+                                div.main__disco-description-row
+                                    div.main__disco_descritpion-color
+                                    span Разочарован
                 div.main__text-reviews
                 div.main__addirional-information-block
                     div.main__rules

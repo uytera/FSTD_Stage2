@@ -109,27 +109,152 @@
                 width: 50%;
                 height: 100%;
 
-                .circle {
-                    cx: 60px;
-                    cy: 60px;
-                    r: 50px;
-                    fill: #fff;
-                    stroke: url(#linear-gradient);
-                    stroke-width: 4px;
-                    stroke-dasharray: 157px 157px;
-                    stroke-dashoffset: -77px;
+                .main__disco-description {
+                    //font-family: Quicksand;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 19px;
+                    line-height: 24px;
+                    color: #1F2041;
                 }
-                  
-                .circle2 {
-                    cx: 61px;
-                    cy: 60px;
-                    r: 50px;
-                    fill: transparent;
-                    stroke: orange;
-                    stroke-width: 4px;
-                    stroke-dasharray: 564px;
-                    stroke-dashoffset: 500px;
-                    transform: rotate(-90deg) translateX(-121px);
+                .main__disco-content{
+
+                    display: flex;
+                    flex-direction: row;
+                    
+                    .main__disco-img{
+                        margin-top: 21px;
+                        position: relative;
+                        width: 121px;
+                        height: 121px;
+                        .main__disco-circle{
+                            
+                            .circleBad {
+                                cx: 60px;
+                                cy: 60px;
+                                r: 60px;
+                                fill: transparent;
+                                stroke: url(#bad-gradient);
+                                stroke-width: 0px;
+                                stroke-dasharray: 157px 157px;
+                                stroke-dashoffset: -77px;
+                            }
+
+                            .circleNorm {
+                                cx: 62px;
+                                cy: 63px;
+                                r: 60px;
+                                fill: transparent;
+                                stroke: url(#norm-gradient);
+                                stroke-width: 4px;
+                                stroke-dasharray: 138px 343px;
+                                stroke-dashoffset: 197px;
+                            }
+
+                            .circleGood {
+                                cx: 62px;
+                                cy: 63px;
+                                r: 60px;
+                                fill: transparent;
+                                stroke: url(#good-gradient);
+                                stroke-width: 4px;
+                                stroke-dasharray: 90px 309px;
+                                stroke-dashoffset: -2px;
+                            }
+                            
+                            .circleDelis {
+                                cx: 62px;
+                                cy: 63px;
+                                r: 60px;
+                                fill: transparent;
+                                stroke: url(#delis-gradient);
+                                stroke-width: 4px;
+                                stroke-dasharray: 186px 186px;
+                                stroke-dashoffset: -95px;
+                            }
+                        }
+
+                        .main__disco-text{
+                            position: absolute;
+                            top: 39px;
+                            left: 35px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            span {
+                                //font-family: Quicksand;
+                                font-style: normal;
+                                font-weight: bold;
+                                color: #BC9CFF;
+                            }
+
+                            :first-child{
+                                font-size: 24px;
+                                line-height: 30px;
+                            }
+
+                            :last-child{
+                                font-size: 12px;
+                                line-height: 15px;
+                            }
+                        }
+                    }
+                    
+                    .main__disco-description{
+                        margin-left: 30px;
+                        margin-top: 54px;
+                        height: 96px;
+                        width: 160px;
+                        display: flex;
+                        flex-direction: column;
+
+                        .main__disco-description-row{
+                            height: 24px;
+                            display: flex;
+                            flex-direction: row;
+                            align-items: center;
+
+                            .main__disco_descritpion-color{
+                                width: 10px;
+                                height: 10px;
+                                margin-right: 5px;
+                                border-radius: 5px;
+                            }
+
+                            span{
+                                font-style: normal;
+                                font-weight: normal;
+                                font-size: 14px;
+                                line-height: 24px;                            
+                                color: rgba(31, 32, 65, 0.75);
+                            }
+                        }
+
+                        :nth-child(1){
+                            .main__disco_descritpion-color{
+                                background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+                            }
+                        }
+
+                        :nth-child(2){
+                            .main__disco_descritpion-color{
+                                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+                            }
+                        }
+
+                        :nth-child(3){
+                            .main__disco_descritpion-color{
+                                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                            }
+                        }
+
+                        :nth-child(4){
+                            .main__disco_descritpion-color{
+                                background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+                            }
+                        }
+                    }
                 }
             }
         }
