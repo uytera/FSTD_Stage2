@@ -1,0 +1,10 @@
+mixin review(modificator, image_src, name_and_date, likes, text)
+    div(class=modificator + "__review")
+        div.high_content
+            img.profile_picture(src=image_src, alt="none")
+            div.author_and_date!= name_and_date
+        div.down_content
+            div.reviews
+                div.material-icons favorite_border
+                span= likes
+            div.main_text= text

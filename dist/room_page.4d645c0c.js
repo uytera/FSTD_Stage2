@@ -117,109 +117,41 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"ui_kit/room_element/room_script.js":[function(require,module,exports) {
-//window.jQuery = window.$ = require('jquery');
+})({"room_page/js/room_page.js":[function(require,module,exports) {
 $(document).ready(function () {
-  $('[class^=room-]').height($('[class^=room-]').width() / 1.05);
-  $(window).resize(function () {
-    $('[class^=room-]').height($('[class^=room-]').width() / 1.05);
-  });
-  $('[class^=room-] .slider__image-container').height($('[class^=room-] .slider__image-container').width() / 1.78);
-  $(window).resize(function () {
-    $('[class^=room-] .slider__image-container').height($('[class^=room-] .slider__image-container').width() / 1.78);
-  });
-  $('[class^=room-] .room__description-container').height($('[class^=room-]').height() - $('[class^=room-] .slider__image-container').height());
-  $(window).resize(function () {
-    $('[class^=room-] .room__description-container').height($('[class^=room-]').height() - $('[class^=room-] .slider__image-container').height());
-  });
-  var ivs = document.getElementsByTagName("i"); //alert(ivs.length);
+  var buttons = document.getElementsByClassName("reviews");
+  var _iteratorNormalCompletion = true;
+  var _didIteratorError = false;
+  var _iteratorError = undefined;
 
-  for (var a = 0; a < ivs.length; a++) {
-    var i = ivs[a];
-
-    if (0 == i.id.indexOf("slider__right-button")) {
-      //alert(i.id)
-      i.addEventListener('click', function (e) {
-        right_button_click(e.target);
+  try {
+    var _loop = function _loop() {
+      var button = _step.value;
+      button.addEventListener("click", function (e) {
+        button.classList.add("reviews-click");
+        button.querySelector(".material-icons").innerHTML = "favorite";
+        button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML) + 1;
       });
+    };
+
+    for (var _iterator = buttons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      _loop();
     }
-
-    if (0 == i.id.indexOf("slider__left-button")) {
-      //alert(i.id)
-      i.addEventListener('click', function (e) {
-        left_button_click(e.target);
-      });
-    }
-  }
-
-  var divs = document.getElementsByTagName("div");
-
-  for (var i = 0; i < divs.length; i++) {
-    var div = divs[i]; //комнаты
-
-    if (div.classList.length != 0 && 0 == div.classList[0].indexOf("room")) {
-      div.addEventListener('click', function (e) {
-        rootElem = div.classList[0];
-      });
-    }
-
-    if (0 == div.id.indexOf("slider__right-area-button")) {
-      div.addEventListener('click', function (e) {
-        right_button_click(e.target);
-      });
-    }
-
-    if (0 == div.id.indexOf("slider__left-area-button")) {
-      div.addEventListener('click', function (e) {
-        left_button_click(e.target);
-      });
+  } catch (err) {
+    _didIteratorError = true;
+    _iteratorError = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion && _iterator.return != null) {
+        _iterator.return();
+      }
+    } finally {
+      if (_didIteratorError) {
+        throw _iteratorError;
+      }
     }
   }
 });
-
-function left_button_click(currElement) {
-  rootElem = currElement.parentNode.parentNode;
-  var numberOfSlide = Number.parseInt(rootElem.dataset.numberOfSlide);
-
-  if (numberOfSlide != 1) {
-    numberOfSlide -= 1;
-    $("." + rootElem.classList[0] + ' .slider__image-container :nth-child(' + numberOfSlide + ')').fadeIn();
-  }
-
-  $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + numberOfSlide + ')').css({
-    background: "white"
-  });
-
-  if (numberOfSlide != 4) {
-    $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + (numberOfSlide + 1) + ')').css({
-      background: "none"
-    });
-  }
-
-  rootElem.dataset.numberOfSlide = numberOfSlide;
-}
-
-function right_button_click(currElement) {
-  rootElem = currElement.parentNode.parentNode;
-  var numberOfSlide = Number.parseInt(rootElem.dataset.numberOfSlide);
-
-  if (numberOfSlide != 4) {
-    $("." + rootElem.classList[0] + ' .slider__image-container :nth-child(' + numberOfSlide + ')').fadeOut();
-    numberOfSlide += 1;
-  }
-
-  $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + numberOfSlide + ')').css({
-    background: "white"
-  });
-
-  if (numberOfSlide != 1) {
-    $("." + rootElem.classList[0] + ' .slider__legend :nth-child(' + (numberOfSlide - 1) + ')').css({
-      background: "none"
-    });
-  }
-
-  rootElem.dataset.numberOfSlide = numberOfSlide;
-}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -424,5 +356,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/room_element/room_script.js"], null)
-//# sourceMappingURL=/room_script.53aac84a.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","room_page/js/room_page.js"], null)
+//# sourceMappingURL=/room_page.4d645c0c.js.map

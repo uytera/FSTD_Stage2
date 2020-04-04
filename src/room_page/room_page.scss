@@ -4,6 +4,7 @@
 @import "../ui_kit/fonts/Material_Icons/material-icons.css";
 @import "../ui_kit/calendar/calendar";
 @import "../ui_kit/list-of-counted-items/list-of-counted-items";
+@import "../ui_kit/review/review.scss";
 
 @import "../ui_kit/fonts/montserrat/montserrat.css";
 @import "../ui_kit/fonts/quicksand/quicksand.css";
@@ -63,7 +64,7 @@
                 width: 50%;
                 height: 100%;
 
-                .main__benefits-header{
+                .main__benefits-description{
                     //font-family: Quicksand;
                     font-style: normal;
                     font-weight: bold;
@@ -259,24 +260,115 @@
             }
         }
         .main__text-reviews{
-            height: 34%;
+            //height: 34%;
             width: 100%;
-            background-color: darkgray;
+
+            
+            .main__text-review-description{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                :first-child{
+                    //font-family: Quicksand;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 19px;
+                    line-height: 24px;
+                    color: #1F2041;
+                }
+
+                :last-child{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 14px;
+                    text-align: right;
+
+                    color: rgba(31, 32, 65, 0.5);
+                }
+            }
+
+                            
+            [class$= __review]{
+                margin-top: 23px;
+            }
+
         }
 
         .main__addirional-information-block{
             height: 26%;
             display: flex;
             flex-direction: row;
+            margin-top: 30px;
+
             .main__rules{
-                background-color: royalblue;
                 width: 50%;
                 height: 100%;
+
+                .main__rules-description{
+                    //font-family: Quicksand;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 19px;
+                    line-height: 24px;
+                    color: #1F2041;
+                    margin-left: 20px;
+                }
+                ul{
+                    padding-inline-start: 20px;
+                    margin-block-start: 20px;
+                    :first-child{
+                        margin-top: 0px;
+                    }
+
+                    li{
+                        position: relative;
+                        list-style-type: none;
+                        margin-top: 10px;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: rgba(31, 32, 65, 0.75);
+                    }
+
+                    li:before {
+                        top: 6.5px;
+                        left: -16px;
+                        position: absolute;
+                        content: "";
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 5px;
+                        background: rgba(31, 32, 65, 0.25);
+                    }
+                }
             }
             .main__cancel-rules{
-                background-color: black;
                 width: 50%;
                 height: 100%;
+
+                .main__cancel-description{
+                    //font-family: Quicksand;
+                    font-style: normal;
+                    font-weight: bold;
+                    font-size: 19px;
+                    line-height: 24px;
+                    color: #1F2041;
+                    margin-left: 20px;
+                }
+
+                .main__cancel-text{
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 24px;
+                    color: rgba(31, 32, 65, 0.75);
+                }   
             }
         }
     }
@@ -297,6 +389,108 @@
             div{
                 width: 50% !important;
                 height: 100% !important;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1130px){
+    .main{
+        .main__content{
+            height: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+
+            div.main__information-block{
+                width: 85%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 30px;
+
+                .main__benefits{
+                    width: 100%;
+                    .main__benefits-description{
+                        text-align: center;
+                    }
+                    .main__benefit{
+                        margin-left: auto;
+                        margin-right: auto;
+                        justify-content: center;
+                    }
+                }
+                .main__disco-reviews{
+                    width: 100%;
+
+                    .main__disco-description{
+                        text-align: center;
+                    }
+
+                    .main__disco-content{
+                        justify-content: center;
+                    }
+                }
+            }
+
+            div.main__text-reviews{
+                width: 60%;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            div.main__addirional-information-block{
+                width: 50%;
+                height: auto;
+                margin-left: auto;
+                margin-right: auto;
+                flex-direction: column;
+
+                .main__rules{
+                    width: 100%;
+                    .main__rules-description{
+                        margin-left: 0px;
+                        text-align: center;
+                    }
+                }
+
+                .main__cancel-rules{
+                    width: 100%;
+                    .main__cancel-description{
+                        margin-left: 0px;
+                        text-align: center;
+                    }
+                    .main__cancel-text{
+                        margin-left: 0px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1130px){
+    .main{
+        .main__content{
+            div.main__information-block{
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1130px){
+    .main{
+        .main__content{
+            div.main__information-block{
+                width: 90% !important;
+            }
+            div.main__text-reviews{
+                width: 90% !important;
+            }
+            div.main__addirional-information-block{
+                width: 90% !important;
             }
         }
     }

@@ -1,0 +1,110 @@
+[class$= __review]{
+    .high_content{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+
+        img{
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+
+        .author_and_date{
+            font-style: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+    }
+
+    .down_content{
+        margin-top: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        .reviews{
+            width: 40px;
+            height: 20px;
+            background: white;
+            background-clip: padding-box;
+            position: relative;
+            border-radius: 20px;
+
+            :first-child{
+                color: rgba(31, 32, 65, 0.25);
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                line-height: 20px;
+                text-align: center;   
+            }
+
+            :last-child{
+                vertical-align: middle;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 10px;
+                line-height: 20px;
+                text-align: center;
+                color: rgba(31, 32, 65, 0.25);
+            }
+        }
+
+        .reviews::after {
+            position: absolute;
+            top: -1px; bottom: -1px;
+            left: -1px; right: -1px;
+            background: rgba(31, 32, 65, 0.25);
+            content: '';
+            z-index: -1;
+            border-radius: 10px;
+            border-radius: 22px;
+        }
+
+
+        .reviews-click{
+            :first-child{
+                color: #BC9CFF;
+                width: 20px;
+                height: 20px;
+                font-size: 10px;
+                line-height: 20px;
+                text-align: center;   
+            }
+
+            :last-child{
+                vertical-align: middle;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 10px;
+                line-height: 20px;
+                text-align: center;
+                color: #BC9CFF;
+            }
+        }
+
+        .reviews-click::after {
+            position: absolute;
+            top: -1px; bottom: -1px;
+            left: -1px; right: -1px;
+            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+            content: '';
+            z-index: -1;
+            border-radius: 10px;
+            border-radius: 22px;
+        }
+
+        .main_text{
+            margin-left: 18px;
+            width: 90%;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: rgba(31, 32, 65, 0.75);
+        }
+        
+    }
+}
