@@ -830,32 +830,271 @@ body {
   background-image: url("/980.b2aaa143.svg");
   background-size: cover;
 }
-.main .main__content {
-  margin-left: 140px;
-  margin-top: 70px;
-  width: 50%;
-  height: 800px;
-}
-.main .main__content .main__information-block {
-  height: 40%;
+.main .down-content {
   display: flex;
   flex-direction: row;
 }
-.main .main__content .main__information-block .main__benefits {
-  width: 50%;
-  height: 100%;
+.main .down-content .main__price-calculator {
+  position: relative;
+  width: 380px;
+  height: 511px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 70px;
+  margin-left: 70px;
 }
-.main .main__content .main__information-block .main__benefits .main__benefits-description {
+.main .down-content .main__price-calculator .main__calculator-description {
+  margin-top: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.main .down-content .main__price-calculator .main__calculator-description .number {
+  font-family: Quicksand;
+  width: 64px;
+  height: 30px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 17px;
+  color: #1F2041;
+  margin-right: 5px;
+}
+.main .down-content .main__price-calculator .main__calculator-description .type {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #BC9CFF;
+  margin-right: 110px;
+}
+.main .down-content .main__price-calculator .main__calculator-description .price {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 320px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input :nth-child(1) {
+  margin-right: auto;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place input {
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field .main__price-calculator-start-date {
+  width: 106px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field .main__price-calculator-end-date {
+  width: 106px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field .calendar-expand-elemet {
+  cursor: pointer;
+  text-align: center;
+  line-height: 44px;
+  width: 44px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-start-date-desctiption {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+  margin-bottom: 5px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-end-date-desctiption {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+  margin-bottom: 5px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-end-date {
+  width: 150px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-people-input {
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-desctiption {
+  font-family: Montserrat;
+  width: 320px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #1F2041;
+}
+.main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-input-field {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  width: 318px;
+  border-radius: 4px;
+  display: flex;
+  align-content: center;
+}
+.main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-input-field .main__price-calculator-number-of-people {
+  margin-right: auto;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 13px;
+  text-overflow: ellipsis;
+  width: 280px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-input-field .people-expand-elemet {
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 44px;
+  width: 44px;
+  color: rgba(31, 32, 65, 0.5);
+}
+.main .down-content .main__price-calculator .main__price-description-container {
+  margin-top: 20px;
+}
+.main .down-content .main__price-calculator .main__price-description-container :last-child {
+  margin-bottom: 0px;
+}
+.main .down-content .main__price-calculator .main__price-description-container .main__price_row {
+  margin-bottom: 16px;
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.main .down-content .main__price-calculator .main__price-description-container .main__price_row * {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+.main .down-content .main__price-calculator .main__price-description-container .main__price_row .main__price-description {
+  width: 214px;
+}
+.main .down-content .main__price-calculator .main__price-description-container .main__price_row .main__price-inf {
+  margin-left: 5px;
+  margin-right: auto;
+  border-radius: 10px;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 20px;
+  color: rgba(31, 32, 65, 0.25);
+  border: 1px solid rgba(31, 32, 65, 0.25);
+}
+.main .down-content .main__price-calculator .price-result {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  width: 320px;
+  height: 24px;
+  display: flex;
+  flex-direction: row;
+}
+.main .down-content .main__price-calculator .price-result * {
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
   line-height: 24px;
   color: #1F2041;
 }
-.main .main__content .main__information-block .main__benefits :last-child {
+.main .down-content .main__price-calculator .price-result .delimiter {
+  margin-bottom: 5px;
+  align-self: flex-end;
+  width: 182px;
+  height: 0px;
+  border: 1px dashed rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+}
+.main .down-content .main__price-calculator .room-list-of-counted-people {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 224px;
+  left: 30px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-button-filled {
+  width: 320px;
+  height: 44px;
+  padding: 0px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+.main .down-content .main__price-calculator .main__price-calculator-button-filled .additional-icon {
+  left: 276px;
+}
+.main .down-content .main__price-calculator .room-calculator-calendar {
+  z-index: 20;
+  position: absolute;
+  top: 150px;
+  left: 30px;
+}
+.main .down-content .main__content {
+  margin-left: 140px;
+  margin-top: 70px;
+  width: 50%;
+  height: 800px;
+}
+.main .down-content .main__content .main__information-block {
+  height: 40%;
+  display: flex;
+  flex-direction: row;
+}
+.main .down-content .main__content .main__information-block .main__benefits {
+  width: 50%;
+  height: 100%;
+}
+.main .down-content .main__content .main__information-block .main__benefits .main__benefits-description {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: #1F2041;
+}
+.main .down-content .main__content .main__information-block .main__benefits :last-child {
   border-bottom: none !important;
 }
-.main .main__content .main__information-block .main__benefits .main__benefit {
+.main .down-content .main__content .main__information-block .main__benefits .main__benefit {
   height: 65px;
   width: 280px;
   display: flex;
@@ -863,7 +1102,7 @@ body {
   margin-top: 20px;
   border-bottom: 1px solid rgba(31, 32, 65, 0.1);
 }
-.main .main__content .main__information-block .main__benefits .main__benefit .main__pic {
+.main .down-content .main__content .main__information-block .main__benefits .main__benefit .main__pic {
   width: 48px;
   height: 48px;
   text-align: center;
@@ -873,35 +1112,35 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.main .main__content .main__information-block .main__benefits .main__benefit .main__benefit-description {
+.main .down-content .main__content .main__information-block .main__benefits .main__benefit .main__benefit-description {
   margin-left: 10px;
   font-family: Montserrat;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
 }
-.main .main__content .main__information-block .main__disco-reviews {
+.main .down-content .main__content .main__information-block .main__disco-reviews {
   width: 50%;
   height: 100%;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-description {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-description {
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
   line-height: 24px;
   color: #1F2041;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content {
   display: flex;
   flex-direction: row;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img {
   margin-top: 21px;
   position: relative;
   width: 121px;
   height: 121px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleBad {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleBad {
   cx: 60px;
   cy: 60px;
   r: 60px;
@@ -911,7 +1150,7 @@ body {
   stroke-dasharray: 157px 157px;
   stroke-dashoffset: -77px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleNorm {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleNorm {
   cx: 62px;
   cy: 63px;
   r: 60px;
@@ -921,7 +1160,7 @@ body {
   stroke-dasharray: 138px 343px;
   stroke-dashoffset: 197px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleGood {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleGood {
   cx: 62px;
   cy: 63px;
   r: 60px;
@@ -931,7 +1170,7 @@ body {
   stroke-dasharray: 90px 309px;
   stroke-dashoffset: -2px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleDelis {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-circle .circleDelis {
   cx: 62px;
   cy: 63px;
   r: 60px;
@@ -941,7 +1180,7 @@ body {
   stroke-dasharray: 186px 186px;
   stroke-dashoffset: -95px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text {
   position: absolute;
   top: 39px;
   left: 35px;
@@ -949,20 +1188,20 @@ body {
   flex-direction: column;
   align-items: center;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text span {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text span {
   font-style: normal;
   font-weight: bold;
   color: #BC9CFF;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text :first-child {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text :first-child {
   font-size: 24px;
   line-height: 30px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text :last-child {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-img .main__disco-text :last-child {
   font-size: 12px;
   line-height: 15px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description {
   margin-left: 30px;
   margin-top: 54px;
   height: 96px;
@@ -970,54 +1209,54 @@ body {
   display: flex;
   flex-direction: column;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description .main__disco-description-row {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description .main__disco-description-row {
   height: 24px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description .main__disco-description-row .main__disco_descritpion-color {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description .main__disco-description-row .main__disco_descritpion-color {
   width: 10px;
   height: 10px;
   margin-right: 5px;
   border-radius: 5px;
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description .main__disco-description-row span {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description .main__disco-description-row span {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(1) .main__disco_descritpion-color {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(1) .main__disco_descritpion-color {
   background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(2) .main__disco_descritpion-color {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(2) .main__disco_descritpion-color {
   background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(3) .main__disco_descritpion-color {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(3) .main__disco_descritpion-color {
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
 }
-.main .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(4) .main__disco_descritpion-color {
+.main .down-content .main__content .main__information-block .main__disco-reviews .main__disco-content .main__disco-description :nth-child(4) .main__disco_descritpion-color {
   background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
 }
-.main .main__content .main__text-reviews {
+.main .down-content .main__content .main__text-reviews {
   width: 100%;
 }
-.main .main__content .main__text-reviews .main__text-review-description {
+.main .down-content .main__content .main__text-reviews .main__text-review-description {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.main .main__content .main__text-reviews .main__text-review-description :first-child {
+.main .down-content .main__content .main__text-reviews .main__text-review-description :first-child {
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
   line-height: 24px;
   color: #1F2041;
 }
-.main .main__content .main__text-reviews .main__text-review-description :last-child {
+.main .down-content .main__content .main__text-reviews .main__text-review-description :last-child {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -1025,20 +1264,20 @@ body {
   text-align: right;
   color: rgba(31, 32, 65, 0.5);
 }
-.main .main__content .main__text-reviews [class$=__review] {
+.main .down-content .main__content .main__text-reviews [class$=__review] {
   margin-top: 23px;
 }
-.main .main__content .main__addirional-information-block {
+.main .down-content .main__content .main__addirional-information-block {
   height: 26%;
   display: flex;
   flex-direction: row;
   margin-top: 30px;
 }
-.main .main__content .main__addirional-information-block .main__rules {
+.main .down-content .main__content .main__addirional-information-block .main__rules {
   width: 50%;
   height: 100%;
 }
-.main .main__content .main__addirional-information-block .main__rules .main__rules-description {
+.main .down-content .main__content .main__addirional-information-block .main__rules .main__rules-description {
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -1046,14 +1285,14 @@ body {
   color: #1F2041;
   margin-left: 20px;
 }
-.main .main__content .main__addirional-information-block .main__rules ul {
+.main .down-content .main__content .main__addirional-information-block .main__rules ul {
   padding-inline-start: 20px;
   margin-block-start: 20px;
 }
-.main .main__content .main__addirional-information-block .main__rules ul :first-child {
+.main .down-content .main__content .main__addirional-information-block .main__rules ul :first-child {
   margin-top: 0px;
 }
-.main .main__content .main__addirional-information-block .main__rules ul li {
+.main .down-content .main__content .main__addirional-information-block .main__rules ul li {
   position: relative;
   list-style-type: none;
   margin-top: 10px;
@@ -1063,7 +1302,7 @@ body {
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
 }
-.main .main__content .main__addirional-information-block .main__rules ul li:before {
+.main .down-content .main__content .main__addirional-information-block .main__rules ul li:before {
   top: 6.5px;
   left: -16px;
   position: absolute;
@@ -1073,11 +1312,11 @@ body {
   border-radius: 5px;
   background: rgba(31, 32, 65, 0.25);
 }
-.main .main__content .main__addirional-information-block .main__cancel-rules {
+.main .down-content .main__content .main__addirional-information-block .main__cancel-rules {
   width: 50%;
   height: 100%;
 }
-.main .main__content .main__addirional-information-block .main__cancel-rules .main__cancel-description {
+.main .down-content .main__content .main__addirional-information-block .main__cancel-rules .main__cancel-description {
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
@@ -1085,7 +1324,7 @@ body {
   color: #1F2041;
   margin-left: 20px;
 }
-.main .main__content .main__addirional-information-block .main__cancel-rules .main__cancel-text {
+.main .down-content .main__content .main__addirional-information-block .main__cancel-rules .main__cancel-text {
   margin-top: 20px;
   margin-left: 20px;
   font-style: normal;
@@ -1115,83 +1354,83 @@ body {
   }
 }
 @media all and (max-width: 1130px) {
-  .main .main__content {
+  .main .down-content .main__content {
     height: auto;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
   }
-  .main .main__content div.main__information-block {
+  .main .down-content .main__content div.main__information-block {
     width: 85%;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
   }
-  .main .main__content div.main__information-block .main__benefits {
+  .main .down-content .main__content div.main__information-block .main__benefits {
     width: 100%;
   }
-  .main .main__content div.main__information-block .main__benefits .main__benefits-description {
+  .main .down-content .main__content div.main__information-block .main__benefits .main__benefits-description {
     text-align: center;
   }
-  .main .main__content div.main__information-block .main__benefits .main__benefit {
+  .main .down-content .main__content div.main__information-block .main__benefits .main__benefit {
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
   }
-  .main .main__content div.main__information-block .main__disco-reviews {
+  .main .down-content .main__content div.main__information-block .main__disco-reviews {
     width: 100%;
   }
-  .main .main__content div.main__information-block .main__disco-reviews .main__disco-description {
+  .main .down-content .main__content div.main__information-block .main__disco-reviews .main__disco-description {
     text-align: center;
   }
-  .main .main__content div.main__information-block .main__disco-reviews .main__disco-content {
+  .main .down-content .main__content div.main__information-block .main__disco-reviews .main__disco-content {
     justify-content: center;
   }
-  .main .main__content div.main__text-reviews {
+  .main .down-content .main__content div.main__text-reviews {
     width: 60%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
   }
-  .main .main__content div.main__addirional-information-block {
+  .main .down-content .main__content div.main__addirional-information-block {
     width: 50%;
     height: auto;
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
   }
-  .main .main__content div.main__addirional-information-block .main__rules {
+  .main .down-content .main__content div.main__addirional-information-block .main__rules {
     width: 100%;
   }
-  .main .main__content div.main__addirional-information-block .main__rules .main__rules-description {
+  .main .down-content .main__content div.main__addirional-information-block .main__rules .main__rules-description {
     margin-left: 0px;
     text-align: center;
   }
-  .main .main__content div.main__addirional-information-block .main__cancel-rules {
+  .main .down-content .main__content div.main__addirional-information-block .main__cancel-rules {
     width: 100%;
   }
-  .main .main__content div.main__addirional-information-block .main__cancel-rules .main__cancel-description {
+  .main .down-content .main__content div.main__addirional-information-block .main__cancel-rules .main__cancel-description {
     margin-left: 0px;
     text-align: center;
   }
-  .main .main__content div.main__addirional-information-block .main__cancel-rules .main__cancel-text {
+  .main .down-content .main__content div.main__addirional-information-block .main__cancel-rules .main__cancel-text {
     margin-left: 0px;
     text-align: center;
   }
 }
 @media all and (max-width: 1130px) {
-  .main .main__content div.main__information-block {
+  .main .down-content .main__content div.main__information-block {
     flex-direction: column;
   }
 }
 @media all and (max-width: 1130px) {
-  .main .main__content div.main__information-block {
+  .main .down-content .main__content div.main__information-block {
     width: 90% !important;
   }
-  .main .main__content div.main__text-reviews {
+  .main .down-content .main__content div.main__text-reviews {
     width: 90% !important;
   }
-  .main .main__content div.main__addirional-information-block {
+  .main .down-content .main__content div.main__addirional-information-block {
     width: 90% !important;
   }
 }

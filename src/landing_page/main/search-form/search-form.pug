@@ -5,7 +5,7 @@ mixin search-form(modificator)
         +calendar('search-form-calendar')
 
         include ../../../ui_kit/list-of-counted-items/list-of-counted-items.pug
-        +list-of-counted-items('search-form-list', '../ui_kit/list-of-counted-items/list-of-counted-items.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
+        +list-of-counted-items('search-form-list', 'main/search-form/list-of-counted-people.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
 
         div.search-form-desctiption Найдём номера под ваши пожелания
         form(action="")

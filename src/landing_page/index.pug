@@ -8,9 +8,10 @@ html(lang="ru")
         title= "Главная страница"
         link(rel = "stylesheet" href = "landing-page.scss")
         script(src="library.js")
-        script(type="text/javascript"). 
+        script(type="text/javascript").
             $(function(){ var CalendarStartDate = "someText"; var CalendarEndDate = "someText";});
-            var inputField;
+            var modificator = "search-form-list";
+            var inputField = "search-form-list";
             function fillDate() {
                 if(CalendarStartDate == "" || CalendarEndDate == ""){
                     $('.search-form__start-date').val("");

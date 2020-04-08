@@ -7,6 +7,18 @@ html(lang="ru")
         link(rel = "stylesheet" href = "room_page.scss")
         script(src="js/library.js")
         script(src="js/room_page.js")
+        script(type="text/javascript"). 
+            $(function(){ var CalendarStartDate = "someText"; var CalendarEndDate = "someText";});
+            var inputField;
+            function fillDate() {
+                if(CalendarStartDate == "" || CalendarEndDate == ""){
+                    $('.main__price-calculator-start-date').val("");
+                    $('.main__price-calculator-end-date').val("");
+                    return;
+                }
+                $('.main__price-calculator-start-date').val(CalendarStartDate.getDate() + "." + CalendarStartDate.getMonth() + "." + CalendarStartDate.getFullYear());
+                $('.main__price-calculator-end-date').val(CalendarEndDate.getDate() + "." + CalendarEndDate.getMonth() + "." + CalendarEndDate.getFullYear());
+            }
     body
         header
             include ../ui_kit/header/header-registration/header-registration.pug
@@ -17,83 +29,133 @@ html(lang="ru")
                 div.main__vertical_images
                     div.main__second_image
                     div.main__third_image
-            div.main__content
-                div.main__information-block
-                    div.main__benefits
-                        div.main__benefits-description Сведения о номере
-                        div.main__benefit
-                            div.material-icons.main__pic insert_emoticon
-                            div.main__benefit-description <b>Комфорт</b><br>Шумопоглощающие стены
-                        div.main__benefit
-                            div.material-icons.main__pic location_city
-                            div.main__benefit-description <b>Удобство</b><br>Окно в каждой из спален
-                        div.main__benefit
-                            div.material-icons.main__pic whatshot
-                            div.main__benefit-description <b>Уют</b><br>Номер оснащён камином
-                    div.main__disco-reviews
-                        div.main__disco-description Впечатления от номера
-                        div.main__disco-content
-                            div.main__disco-img
-                                <svg class="main__disco-circle">
-                                    <linearGradient id="bad-gradient">
-                                        <stop offset="0%" stop-color="#919191"/>
-                                        <stop offset="100%" stop-color="#3D4975"/>
-                                    </linearGradient>
-                                    <linearGradient id="norm-gradient">
-                                        <stop offset="0%" stop-color="#BC9CFF"/>
-                                        <stop offset="100%" stop-color="#8BA4F9"/>
-                                    </linearGradient>
-                                    <linearGradient id="good-gradient">
-                                        <stop offset="0%" stop-color="#6FCF97"/>
-                                        <stop offset="100%" stop-color="#66D2EA"/>
-                                    </linearGradient>
-                                    <linearGradient id="delis-gradient">
-                                        <stop offset="0%" stop-color="#FFE39C"/>
-                                        <stop offset="100%" stop-color="#FFBA9C"/>
-                                    </linearGradient>
-                                    <circle class="circleBad"></circle>
-                                    <circle class="circleNorm"></circle>
-                                    <circle class="circleGood"></circle>
-                                    <circle class="circleDelis"></circle>
-                                </svg>
-                                div.main__disco-text
-                                    span 260
-                                    span голосов
-                            div.main__disco-description
-                                div.main__disco-description-row
-                                    div.main__disco_descritpion-color
-                                    span Великолепно
-                                div.main__disco-description-row
-                                    div.main__disco_descritpion-color
-                                    span Хорошо
-                                div.main__disco-description-row
-                                    div.main__disco_descritpion-color
-                                    span Удовлетворительно
-                                div.main__disco-description-row
-                                    div.main__disco_descritpion-color
-                                    span Разочарован
-                div.main__text-reviews
-                    div.main__text-review-description
-                        span Отзывы посетителей номера
-                        span 2 отзыва
-                    include ../ui_kit/review/review.pug
-                    +review("main", "../ui_kit/icons/profile/1.svg", "<b>Мурад Сарафанов</b><br>5 дней назад", 12, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
-                    +review("main", "../ui_kit/icons/profile/2.svg", "<b>Патрисия Стёклышкова</b><br>Неделю назад", 2, "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент")
+            div.down-content
+                div.main__content
+                    div.main__information-block
+                        div.main__benefits
+                            div.main__benefits-description Сведения о номере
+                            div.main__benefit
+                                div.material-icons.main__pic insert_emoticon
+                                div.main__benefit-description <b>Комфорт</b><br>Шумопоглощающие стены
+                            div.main__benefit
+                                div.material-icons.main__pic location_city
+                                div.main__benefit-description <b>Удобство</b><br>Окно в каждой из спален
+                            div.main__benefit
+                                div.material-icons.main__pic whatshot
+                                div.main__benefit-description <b>Уют</b><br>Номер оснащён камином
+                        div.main__disco-reviews
+                            div.main__disco-description Впечатления от номера
+                            div.main__disco-content
+                                div.main__disco-img
+                                    <svg class="main__disco-circle">
+                                        <linearGradient id="bad-gradient">
+                                            <stop offset="0%" stop-color="#919191"/>
+                                            <stop offset="100%" stop-color="#3D4975"/>
+                                        </linearGradient>
+                                        <linearGradient id="norm-gradient">
+                                            <stop offset="0%" stop-color="#BC9CFF"/>
+                                            <stop offset="100%" stop-color="#8BA4F9"/>
+                                        </linearGradient>
+                                        <linearGradient id="good-gradient">
+                                            <stop offset="0%" stop-color="#6FCF97"/>
+                                            <stop offset="100%" stop-color="#66D2EA"/>
+                                        </linearGradient>
+                                        <linearGradient id="delis-gradient">
+                                            <stop offset="0%" stop-color="#FFE39C"/>
+                                            <stop offset="100%" stop-color="#FFBA9C"/>
+                                        </linearGradient>
+                                        <circle class="circleBad"></circle>
+                                        <circle class="circleNorm"></circle>
+                                        <circle class="circleGood"></circle>
+                                        <circle class="circleDelis"></circle>
+                                    </svg>
+                                    div.main__disco-text
+                                        span 260
+                                        span голосов
+                                div.main__disco-description
+                                    div.main__disco-description-row
+                                        div.main__disco_descritpion-color
+                                        span Великолепно
+                                    div.main__disco-description-row
+                                        div.main__disco_descritpion-color
+                                        span Хорошо
+                                    div.main__disco-description-row
+                                        div.main__disco_descritpion-color
+                                        span Удовлетворительно
+                                    div.main__disco-description-row
+                                        div.main__disco_descritpion-color
+                                        span Разочарован
+                    div.main__text-reviews
+                        div.main__text-review-description
+                            span Отзывы посетителей номера
+                            span 2 отзыва
+                        include ../ui_kit/review/review.pug
+                        +review("main", "../ui_kit/icons/profile/1.svg", "<b>Мурад Сарафанов</b><br>5 дней назад", 12, "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.")
+                        +review("main", "../ui_kit/icons/profile/2.svg", "<b>Патрисия Стёклышкова</b><br>Неделю назад", 2, "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент")
 
-                div.main__addirional-information-block
-                    div.main__rules
-                        div.main__rules-description Правила
-                        ul.main__list-of-rules
-                            li Нельзя с питомцами
-                            li Без вечеринок и мероприятий
-                            li Время прибытия — после 13:00, а выезд до 12:00
-                    div.main__cancel-rules
-                        div.main__cancel-description Отмена
-                        div.main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-                
-                    
+                    div.main__addirional-information-block
+                        div.main__rules
+                            div.main__rules-description Правила
+                            ul.main__list-of-rules
+                                li Нельзя с питомцами
+                                li Без вечеринок и мероприятий
+                                li Время прибытия — после 13:00, а выезд до 12:00
+                        div.main__cancel-rules
+                            div.main__cancel-description Отмена
+                            div.main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                div.main__price-calculator
+                    div.main__calculator-description
+                        span.number №888
+                        span.type люкс
+                        span.price <b>9 990₽</b> в сутки
+                        span.period 
+                    include ../ui_kit/list-of-counted-items/list-of-counted-items.pug
+                    +list-of-counted-items('room-list-of-counted-people', 'js/list-of-people.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
+                    include ../ui_kit/calendar/calendar.pug
+                    +calendar('room-calculator-calendar')
+                    div.main__price-calculator-date-input
+                        div.main__price-calculator-date-input-place
+                            div.main__price-calculator-start-date-desctiption выезд
+                            div.main__price-calculator-date-input-field#start-date-input-field
+                                input.main__price-calculator-start-date(type="text" disabled)
+                                i.material-icons.calendar-expand-elemet#start-date-expand expand_more
+                        div.main__price-calculator-date-input-place
+                            div.main__price-calculator-end-date-desctiption прибытие
+                            div.main__price-calculator-date-input-field#end-date-input-field
+                                input.main__price-calculator-end-date(type="text" disabled)
+                                i.material-icons.calendar-expand-elemet#end-date-expand expand_more
+                    div.main__price-calculator-people-input
+                        div.main__price-calculator-input-field
+                            div.main__price-calculator-number-of-people-desctiption гости
+                            div.main__price-calculator-number-of-people-input-field
+                                input.main__price-calculator-number-of-people(type="text" placeholder="Сколько гостей" disabled)
+                                i.material-icons.people-expand-elemet#people-expand expand_more
+                    div.main__price-description-container
+                        div.main__price_row
+                            div.main__price-description 9 990₽ х 4 суток
+                            div.main__price-inf i
+                            div.main__price 39 960₽
+                        div.main__price_row
+                            div.main__price-description Сбор за услуги: скидка 2 179₽
+                            div.main__price-inf i 
+                            div.main__price 0₽
+                        div.main__price_row
+                            div.main__price-description Сбор за дополнительные услуги
+                            div.main__price-inf i
+                            div.main__price 300₽
+                    div.price-result
+                        div Итого
+                        div.delimiter
+                        div.summary-price 38 081₽ 
+                    include ../ui_kit/buttons/filled/button-filled.pug
+                    +button-filled("main__price-calculator-button-filled", "ПОДОБРАТЬ НОМЕР", "arrow_forward")
         footer
             include ../ui_kit/footer/footer_elements/footer-main-content/footer-main-content.pug
             +footer-main-content("room-page-footer")
             include ../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content.pug
             +footer-underline-content("room-page-footer-underline")
+
+        script(type="text/javascript").
+            $(document).ready(function(){
+                $('.room-calculator-calendar').css('display', "none");
+            });

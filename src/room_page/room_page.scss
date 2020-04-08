@@ -50,325 +50,604 @@
         }
     }
 
-    .main__content{
-        margin-left: 140px;
-        margin-top: 70px;
-        width: 50%;
-        height: 800px;
+    .down-content{
+        display: flex;
+        flex-direction: row;
 
-        .main__information-block{
-            height: 40%;
-            display: flex;
-            flex-direction: row;
-            .main__benefits{
-                width: 50%;
-                height: 100%;
+        .main__price-calculator{
+            position: relative;
+            width: 380px;
+            height: 511px;
+            background: #FFFFFF;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            box-sizing: border-box;
+            box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            margin-top: 70px;
+            margin-left: 70px;
 
-                .main__benefits-description{
-                    //font-family: Quicksand;
+            .main__calculator-description{
+                margin-top: 40px;
+                margin-left: 30px;
+                margin-right: 30px;
+
+                .number{
+                    font-family: Quicksand;
+                    width: 64px;
+                    height: 30px;
                     font-style: normal;
                     font-weight: bold;
-                    font-size: 19px;
-                    line-height: 24px;
+                    font-size: 20px;
+                    line-height: 17px;
                     color: #1F2041;
+                    margin-right: 5px;
                 }
 
-                :last-child{
-                    border-bottom: none !important;
-                }
-
-                .main__benefit{
-                    height: 65px;
-                    width: 280px;
-                    display: flex;
-                    flex-direction: row;
-                    margin-top: 20px;
-
-                    .main__pic{
-                        width: 48px;
-                        height: 48px;
-                        text-align: center;
-                        font-family: Material Icons;
-                        font-size: 48px;
-                        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
-
-                    .main__benefit-description {
-                        margin-left: 10px;
-                        font-family: Montserrat;
-                        font-size: 14px;
-                        line-height: 24px;
-                        color: rgba(31, 32, 65, 0.75);
-                    }
-
-                    border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-                }
-            }
-            .main__disco-reviews{
-                width: 50%;
-                height: 100%;
-
-                .main__disco-description {
-                    //font-family: Quicksand;
+                .type{
+                    font-family: Montserrat;
                     font-style: normal;
                     font-weight: bold;
-                    font-size: 19px;
-                    line-height: 24px;
-                    color: #1F2041;
+                    font-size: 12px;
+                    line-height: 15px;
+                    text-transform: uppercase;
+                    color: #BC9CFF;
+                    margin-right: 110px;
                 }
-                .main__disco-content{
 
-                    display: flex;
-                    flex-direction: row;
-                    
-                    .main__disco-img{
-                        margin-top: 21px;
-                        position: relative;
-                        width: 121px;
-                        height: 121px;
-                        .main__disco-circle{
-                            
-                            .circleBad {
-                                cx: 60px;
-                                cy: 60px;
-                                r: 60px;
-                                fill: transparent;
-                                stroke: url(#bad-gradient);
-                                stroke-width: 0px;
-                                stroke-dasharray: 157px 157px;
-                                stroke-dashoffset: -77px;
-                            }
-
-                            .circleNorm {
-                                cx: 62px;
-                                cy: 63px;
-                                r: 60px;
-                                fill: transparent;
-                                stroke: url(#norm-gradient);
-                                stroke-width: 4px;
-                                stroke-dasharray: 138px 343px;
-                                stroke-dashoffset: 197px;
-                            }
-
-                            .circleGood {
-                                cx: 62px;
-                                cy: 63px;
-                                r: 60px;
-                                fill: transparent;
-                                stroke: url(#good-gradient);
-                                stroke-width: 4px;
-                                stroke-dasharray: 90px 309px;
-                                stroke-dashoffset: -2px;
-                            }
-                            
-                            .circleDelis {
-                                cx: 62px;
-                                cy: 63px;
-                                r: 60px;
-                                fill: transparent;
-                                stroke: url(#delis-gradient);
-                                stroke-width: 4px;
-                                stroke-dasharray: 186px 186px;
-                                stroke-dashoffset: -95px;
-                            }
-                        }
-
-                        .main__disco-text{
-                            position: absolute;
-                            top: 39px;
-                            left: 35px;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-
-                            span {
-                                //font-family: Quicksand;
-                                font-style: normal;
-                                font-weight: bold;
-                                color: #BC9CFF;
-                            }
-
-                            :first-child{
-                                font-size: 24px;
-                                line-height: 30px;
-                            }
-
-                            :last-child{
-                                font-size: 12px;
-                                line-height: 15px;
-                            }
-                        }
-                    }
-                    
-                    .main__disco-description{
-                        margin-left: 30px;
-                        margin-top: 54px;
-                        height: 96px;
-                        width: 160px;
-                        display: flex;
-                        flex-direction: column;
-
-                        .main__disco-description-row{
-                            height: 24px;
-                            display: flex;
-                            flex-direction: row;
-                            align-items: center;
-
-                            .main__disco_descritpion-color{
-                                width: 10px;
-                                height: 10px;
-                                margin-right: 5px;
-                                border-radius: 5px;
-                            }
-
-                            span{
-                                font-style: normal;
-                                font-weight: normal;
-                                font-size: 14px;
-                                line-height: 24px;                            
-                                color: rgba(31, 32, 65, 0.75);
-                            }
-                        }
-
-                        :nth-child(1){
-                            .main__disco_descritpion-color{
-                                background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
-                            }
-                        }
-
-                        :nth-child(2){
-                            .main__disco_descritpion-color{
-                                background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-                            }
-                        }
-
-                        :nth-child(3){
-                            .main__disco_descritpion-color{
-                                background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-                            }
-                        }
-
-                        :nth-child(4){
-                            .main__disco_descritpion-color{
-                                background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        .main__text-reviews{
-            //height: 34%;
-            width: 100%;
-
-            
-            .main__text-review-description{
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                justify-content: space-between;
-
-                :first-child{
-                    //font-family: Quicksand;
+                .price{
                     font-style: normal;
-                    font-weight: bold;
-                    font-size: 19px;
-                    line-height: 24px;
-                    color: #1F2041;
-                }
-
-                :last-child{
-                    font-style: normal;
-                    font-weight: normal;
                     font-size: 14px;
-                    line-height: 14px;
-                    text-align: right;
-
+                    line-height: 18px;
                     color: rgba(31, 32, 65, 0.5);
                 }
             }
 
-                            
-            [class$= __review]{
-                margin-top: 23px;
+            .main__price-calculator-date-input{
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                width: 320px;
+                margin-top: 20px;
+                margin-left: 30px;
+                
+                :nth-child(1){
+                    margin-right: auto;
+                }
+
+                .main__price-calculator-date-input-place{
+
+                    input{    
+                        background: none;
+                        border: none;
+                        box-sizing: border-box;
+                        padding-left: 15px;
+                    }
+            
+                    .main__price-calculator-date-input-field{
+                        display: flex;
+                        flex-direction: row;
+                        align-content: center;
+                        background: #FFFFFF;
+                        border: 1px solid rgba(31, 32, 65, 0.25);
+                        box-sizing: border-box;
+                        border-radius: 4px;
+            
+                        .main__price-calculator-start-date{
+                            width: 106px;
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                        }
+            
+                        .main__price-calculator-end-date{
+                            width: 106px;
+                            padding-top: 12px;
+                            padding-bottom: 12px;
+                        }
+            
+                        .calendar-expand-elemet{
+                            cursor: pointer;
+                            text-align: center;
+                            line-height: 44px;
+                            width: 44px;
+                            color: rgba(31, 32, 65, 0.5);
+                        }
+                    }
+            
+                    .main__price-calculator-start-date-desctiption{
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 12px;
+                        line-height: 15px;
+                        text-transform: uppercase;
+                        color: #1F2041;
+                        margin-bottom: 5px;
+                    }
+            
+                    .main__price-calculator-end-date-desctiption{
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 12px;
+                        line-height: 15px;
+                        text-transform: uppercase;
+                        color: #1F2041;
+                        margin-bottom: 5px;
+                    }
+            
+                    .main__price-calculator-end-date{
+                        width: 150px;
+                        padding-top: 12px;
+                        padding-bottom: 12px;
+                    }
+                }
             }
 
-        }
-
-        .main__addirional-information-block{
-            height: 26%;
-            display: flex;
-            flex-direction: row;
-            margin-top: 30px;
-
-            .main__rules{
-                width: 50%;
-                height: 100%;
-
-                .main__rules-description{
-                    //font-family: Quicksand;
+            .main__price-calculator-people-input{
+                margin-top: 20px;
+                margin-left: 30px;
+                .main__price-calculator-number-of-people-desctiption{
+                    font-family: Montserrat;
+                    width: 320px;
                     font-style: normal;
                     font-weight: bold;
-                    font-size: 19px;
-                    line-height: 24px;
+                    font-size: 12px;
+                    line-height: 15px;
+                    text-transform: uppercase;
                     color: #1F2041;
-                    margin-left: 20px;
                 }
-                ul{
-                    padding-inline-start: 20px;
-                    margin-block-start: 20px;
-                    :first-child{
-                        margin-top: 0px;
+        
+                .main__price-calculator-number-of-people-input-field{
+                    border: 1px solid rgba(31, 32, 65, 0.25);
+                    width: 318px;
+                    border-radius: 4px;
+                    display: flex;
+                    align-content: center;
+        
+                    .main__price-calculator-number-of-people{
+                        margin-right: auto;
+                        background: none;
+                        border: none;
+                        box-sizing: border-box;
+                        padding-left: 13px;
+                        text-overflow: ellipsis;
+                        width: 280px;
                     }
+        
+                    .people-expand-elemet{
+                        -webkit-user-select: none;
+                        cursor: pointer;
+                        text-align: center;
+                        line-height: 44px;
+                        width: 44px;
+                        color: rgba(31, 32, 65, 0.5);
+                    }
+                } 
+            }
 
-                    li{
-                        position: relative;
-                        list-style-type: none;
-                        margin-top: 10px;
+            .main__price-description-container{
+
+                margin-top: 20px;
+
+                :last-child{
+                    margin-bottom: 0px;
+                }
+
+                .main__price_row{
+                    margin-bottom: 16px;
+                    margin-left: 30px;
+                    margin-right: 30px;
+                    width: 320px;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+
+                    *{
                         font-style: normal;
                         font-weight: normal;
                         font-size: 14px;
                         line-height: 24px;
                         color: rgba(31, 32, 65, 0.75);
                     }
+                    
+                    .main__price-description{
+                        width: 214px;
+                    }
 
-                    li:before {
-                        top: 6.5px;
-                        left: -16px;
-                        position: absolute;
-                        content: "";
-                        width: 10px;
-                        height: 10px;
-                        border-radius: 5px;
-                        background: rgba(31, 32, 65, 0.25);
+                    .main__price-inf {
+                        margin-left: 5px;
+                        margin-right: auto;
+                        border-radius: 10px;
+                        width: 18px;
+                        height: 18px;
+                        text-align: center;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 12px;
+                        line-height: 20px;
+                        color: rgba(31, 32, 65, 0.25);
+
+                        border: 1px solid rgba(31, 32, 65, 0.25);
                     }
                 }
             }
-            .main__cancel-rules{
-                width: 50%;
-                height: 100%;
 
-                .main__cancel-description{
+            .price-result{
+                margin-top: 30px;
+                margin-left: 30px;
+                margin-right: 30px;
+                width: 320px;
+                height: 24px;
+                display: flex;
+                flex-direction: row;
+
+                *{
                     //font-family: Quicksand;
                     font-style: normal;
                     font-weight: bold;
                     font-size: 19px;
                     line-height: 24px;
                     color: #1F2041;
-                    margin-left: 20px;
                 }
 
-                .main__cancel-text{
-                    margin-top: 20px;
-                    margin-left: 20px;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 14px;
-                    line-height: 24px;
-                    color: rgba(31, 32, 65, 0.75);
-                }   
+                .delimiter{
+                    margin-bottom: 5px;
+                    align-self: flex-end;
+                    width: 182px;
+                    height: 0px;
+
+                    border: 1px dashed rgba(31, 32, 65, 0.25);
+                    box-sizing: border-box;
+                }
+            }
+
+            .room-list-of-counted-people{
+                display: none;
+                position: absolute;
+                z-index: 10;
+                top: 224px;
+                left: 30px;
+            }
+
+            .main__price-calculator-button-filled{
+                width: 320px;
+                height: 44px;
+                padding: 0px;
+                margin-top: 20px;
+                margin-left: 30px;
+                margin-bottom: 30px;
+        
+                .additional-icon{
+                    left: 276px;
+                }
+            }
+
+            .room-calculator-calendar{
+                z-index: 20;
+                position: absolute;
+                top: 150px;
+                left: 30px;
+            }
+        }
+
+        .main__content{
+            margin-left: 140px;
+            margin-top: 70px;
+            width: 50%;
+            height: 800px;
+
+            .main__information-block{
+                height: 40%;
+                display: flex;
+                flex-direction: row;
+                .main__benefits{
+                    width: 50%;
+                    height: 100%;
+
+                    .main__benefits-description{
+                        //font-family: Quicksand;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 19px;
+                        line-height: 24px;
+                        color: #1F2041;
+                    }
+
+                    :last-child{
+                        border-bottom: none !important;
+                    }
+
+                    .main__benefit{
+                        height: 65px;
+                        width: 280px;
+                        display: flex;
+                        flex-direction: row;
+                        margin-top: 20px;
+
+                        .main__pic{
+                            width: 48px;
+                            height: 48px;
+                            text-align: center;
+                            font-family: Material Icons;
+                            font-size: 48px;
+                            background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;
+                        }
+
+                        .main__benefit-description {
+                            margin-left: 10px;
+                            font-family: Montserrat;
+                            font-size: 14px;
+                            line-height: 24px;
+                            color: rgba(31, 32, 65, 0.75);
+                        }
+
+                        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+                    }
+                }
+                .main__disco-reviews{
+                    width: 50%;
+                    height: 100%;
+
+                    .main__disco-description {
+                        //font-family: Quicksand;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 19px;
+                        line-height: 24px;
+                        color: #1F2041;
+                    }
+                    .main__disco-content{
+
+                        display: flex;
+                        flex-direction: row;
+                        
+                        .main__disco-img{
+                            margin-top: 21px;
+                            position: relative;
+                            width: 121px;
+                            height: 121px;
+                            .main__disco-circle{
+                                
+                                .circleBad {
+                                    cx: 60px;
+                                    cy: 60px;
+                                    r: 60px;
+                                    fill: transparent;
+                                    stroke: url(#bad-gradient);
+                                    stroke-width: 0px;
+                                    stroke-dasharray: 157px 157px;
+                                    stroke-dashoffset: -77px;
+                                }
+
+                                .circleNorm {
+                                    cx: 62px;
+                                    cy: 63px;
+                                    r: 60px;
+                                    fill: transparent;
+                                    stroke: url(#norm-gradient);
+                                    stroke-width: 4px;
+                                    stroke-dasharray: 138px 343px;
+                                    stroke-dashoffset: 197px;
+                                }
+
+                                .circleGood {
+                                    cx: 62px;
+                                    cy: 63px;
+                                    r: 60px;
+                                    fill: transparent;
+                                    stroke: url(#good-gradient);
+                                    stroke-width: 4px;
+                                    stroke-dasharray: 90px 309px;
+                                    stroke-dashoffset: -2px;
+                                }
+                                
+                                .circleDelis {
+                                    cx: 62px;
+                                    cy: 63px;
+                                    r: 60px;
+                                    fill: transparent;
+                                    stroke: url(#delis-gradient);
+                                    stroke-width: 4px;
+                                    stroke-dasharray: 186px 186px;
+                                    stroke-dashoffset: -95px;
+                                }
+                            }
+
+                            .main__disco-text{
+                                position: absolute;
+                                top: 39px;
+                                left: 35px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+
+                                span {
+                                    //font-family: Quicksand;
+                                    font-style: normal;
+                                    font-weight: bold;
+                                    color: #BC9CFF;
+                                }
+
+                                :first-child{
+                                    font-size: 24px;
+                                    line-height: 30px;
+                                }
+
+                                :last-child{
+                                    font-size: 12px;
+                                    line-height: 15px;
+                                }
+                            }
+                        }
+                        
+                        .main__disco-description{
+                            margin-left: 30px;
+                            margin-top: 54px;
+                            height: 96px;
+                            width: 160px;
+                            display: flex;
+                            flex-direction: column;
+
+                            .main__disco-description-row{
+                                height: 24px;
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+
+                                .main__disco_descritpion-color{
+                                    width: 10px;
+                                    height: 10px;
+                                    margin-right: 5px;
+                                    border-radius: 5px;
+                                }
+
+                                span{
+                                    font-style: normal;
+                                    font-weight: normal;
+                                    font-size: 14px;
+                                    line-height: 24px;                            
+                                    color: rgba(31, 32, 65, 0.75);
+                                }
+                            }
+
+                            :nth-child(1){
+                                .main__disco_descritpion-color{
+                                    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+                                }
+                            }
+
+                            :nth-child(2){
+                                .main__disco_descritpion-color{
+                                    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+                                }
+                            }
+
+                            :nth-child(3){
+                                .main__disco_descritpion-color{
+                                    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+                                }
+                            }
+
+                            :nth-child(4){
+                                .main__disco_descritpion-color{
+                                    background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .main__text-reviews{
+                //height: 34%;
+                width: 100%;
+
+                
+                .main__text-review-description{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    :first-child{
+                        //font-family: Quicksand;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 19px;
+                        line-height: 24px;
+                        color: #1F2041;
+                    }
+
+                    :last-child{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 14px;
+                        text-align: right;
+
+                        color: rgba(31, 32, 65, 0.5);
+                    }
+                }
+
+                                
+                [class$= __review]{
+                    margin-top: 23px;
+                }
+
+            }
+
+            .main__addirional-information-block{
+                height: 26%;
+                display: flex;
+                flex-direction: row;
+                margin-top: 30px;
+
+                .main__rules{
+                    width: 50%;
+                    height: 100%;
+
+                    .main__rules-description{
+                        //font-family: Quicksand;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 19px;
+                        line-height: 24px;
+                        color: #1F2041;
+                        margin-left: 20px;
+                    }
+                    ul{
+                        padding-inline-start: 20px;
+                        margin-block-start: 20px;
+                        :first-child{
+                            margin-top: 0px;
+                        }
+
+                        li{
+                            position: relative;
+                            list-style-type: none;
+                            margin-top: 10px;
+                            font-style: normal;
+                            font-weight: normal;
+                            font-size: 14px;
+                            line-height: 24px;
+                            color: rgba(31, 32, 65, 0.75);
+                        }
+
+                        li:before {
+                            top: 6.5px;
+                            left: -16px;
+                            position: absolute;
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            border-radius: 5px;
+                            background: rgba(31, 32, 65, 0.25);
+                        }
+                    }
+                }
+                .main__cancel-rules{
+                    width: 50%;
+                    height: 100%;
+
+                    .main__cancel-description{
+                        //font-family: Quicksand;
+                        font-style: normal;
+                        font-weight: bold;
+                        font-size: 19px;
+                        line-height: 24px;
+                        color: #1F2041;
+                        margin-left: 20px;
+                    }
+
+                    .main__cancel-text{
+                        margin-top: 20px;
+                        margin-left: 20px;
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 14px;
+                        line-height: 24px;
+                        color: rgba(31, 32, 65, 0.75);
+                    }   
+                }
             }
         }
     }
@@ -396,73 +675,75 @@
 
 @media all and (max-width: 1130px){
     .main{
-        .main__content{
-            height: auto;
-            margin-left: auto;
-            margin-right: auto;
-            width: 100%;
-
-            div.main__information-block{
-                width: 85%;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 30px;
-
-                .main__benefits{
-                    width: 100%;
-                    .main__benefits-description{
-                        text-align: center;
-                    }
-                    .main__benefit{
-                        margin-left: auto;
-                        margin-right: auto;
-                        justify-content: center;
-                    }
-                }
-                .main__disco-reviews{
-                    width: 100%;
-
-                    .main__disco-description{
-                        text-align: center;
-                    }
-
-                    .main__disco-content{
-                        justify-content: center;
-                    }
-                }
-            }
-
-            div.main__text-reviews{
-                width: 60%;
+        .down-content{
+            .main__content{
                 height: auto;
                 margin-left: auto;
                 margin-right: auto;
-            }
+                width: 100%;
 
-            div.main__addirional-information-block{
-                width: 50%;
-                height: auto;
-                margin-left: auto;
-                margin-right: auto;
-                flex-direction: column;
+                div.main__information-block{
+                    width: 85%;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 30px;
 
-                .main__rules{
-                    width: 100%;
-                    .main__rules-description{
-                        margin-left: 0px;
-                        text-align: center;
+                    .main__benefits{
+                        width: 100%;
+                        .main__benefits-description{
+                            text-align: center;
+                        }
+                        .main__benefit{
+                            margin-left: auto;
+                            margin-right: auto;
+                            justify-content: center;
+                        }
+                    }
+                    .main__disco-reviews{
+                        width: 100%;
+
+                        .main__disco-description{
+                            text-align: center;
+                        }
+
+                        .main__disco-content{
+                            justify-content: center;
+                        }
                     }
                 }
 
-                .main__cancel-rules{
-                    width: 100%;
-                    .main__cancel-description{
-                        margin-left: 0px;
-                        text-align: center;
+                div.main__text-reviews{
+                    width: 60%;
+                    height: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+
+                div.main__addirional-information-block{
+                    width: 50%;
+                    height: auto;
+                    margin-left: auto;
+                    margin-right: auto;
+                    flex-direction: column;
+
+                    .main__rules{
+                        width: 100%;
+                        .main__rules-description{
+                            margin-left: 0px;
+                            text-align: center;
+                        }
                     }
-                    .main__cancel-text{
-                        margin-left: 0px;
-                        text-align: center;
+
+                    .main__cancel-rules{
+                        width: 100%;
+                        .main__cancel-description{
+                            margin-left: 0px;
+                            text-align: center;
+                        }
+                        .main__cancel-text{
+                            margin-left: 0px;
+                            text-align: center;
+                        }
                     }
                 }
             }
@@ -472,9 +753,11 @@
 
 @media all and (max-width: 1130px){
     .main{
-        .main__content{
-            div.main__information-block{
-                flex-direction: column;
+        .down-content{
+            .main__content{
+                div.main__information-block{
+                    flex-direction: column;
+                }
             }
         }
     }
@@ -482,15 +765,17 @@
 
 @media all and (max-width: 1130px){
     .main{
-        .main__content{
-            div.main__information-block{
-                width: 90% !important;
-            }
-            div.main__text-reviews{
-                width: 90% !important;
-            }
-            div.main__addirional-information-block{
-                width: 90% !important;
+        .down-content{
+            .main__content{
+                div.main__information-block{
+                    width: 90% !important;
+                }
+                div.main__text-reviews{
+                    width: 90% !important;
+                }
+                div.main__addirional-information-block{
+                    width: 90% !important;
+                }
             }
         }
     }

@@ -119,22 +119,59 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   return newRequire;
 })({"room_page/js/room_page.js":[function(require,module,exports) {
 $(document).ready(function () {
-  var buttons = document.getElementsByClassName("reviews");
+  var massOfCalendarButtons = document.getElementsByClassName('calendar-expand-elemet');
+  var angleCalendar = 0;
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
     var _loop = function _loop() {
-      var button = _step.value;
-      button.addEventListener("click", function (e) {
-        button.classList.add("reviews-click");
-        button.querySelector(".material-icons").innerHTML = "favorite";
-        button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML) + 1;
+      var item = _step.value;
+      item.addEventListener("click", function (e) {
+        angleCalendar += 180;
+
+        if (item.id == 'start-date-expand') {
+          if (angleCalendar / 180 % 2 != 0) {
+            $('#start-date-input-field').css({
+              border: "1px solid #BC9CFF"
+            });
+          } else {
+            $('#start-date-input-field').css({
+              border: "1px solid rgba(31, 32, 65, 0.25)"
+            });
+            $('#end-date-input-field').css({
+              border: "1px solid rgba(31, 32, 65, 0.25)"
+            });
+          }
+        }
+
+        if (item.id == 'end-date-expand') {
+          if (angleCalendar / 180 % 2 != 0) {
+            $('#end-date-input-field').css({
+              border: "1px solid #BC9CFF"
+            });
+          } else {
+            $('#start-date-input-field').css({
+              border: "1px solid rgba(31, 32, 65, 0.25)"
+            });
+            $('#end-date-input-field').css({
+              border: "1px solid rgba(31, 32, 65, 0.25)"
+            });
+          }
+        }
+
+        $('.room-calculator-calendar').slideToggle();
+        $('.calendar-expand-elemet').each(function (e) {
+          $(this).css({
+            transition: 'transform 0.5s',
+            transform: 'rotate(' + angleCalendar + 'deg)'
+          });
+        });
       });
     };
 
-    for (var _iterator = buttons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+    for (var _iterator = massOfCalendarButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
       _loop();
     }
   } catch (err) {
@@ -148,6 +185,61 @@ $(document).ready(function () {
     } finally {
       if (_didIteratorError) {
         throw _iteratorError;
+      }
+    }
+  }
+
+  var anglePeople = 0;
+  document.getElementById("people-expand").addEventListener("click", function (e) {
+    anglePeople += 180;
+    $('.room-list-of-counted-people').slideToggle();
+
+    if (anglePeople / 180 % 2 != 0) {
+      $('.main__price-calculator-number-of-people-input-field').css({
+        border: "1px solid rgba(31, 32, 65, 0.5)"
+      });
+    } else {
+      $('.main__price-calculator-number-of-people-input-field').css({
+        border: "1px solid rgba(31, 32, 65, 0.25)"
+      });
+    }
+
+    $('.people-expand-elemet').each(function (e) {
+      $(this).css({
+        transition: 'transform 0.5s',
+        transform: 'rotate(' + anglePeople + 'deg)'
+      });
+    });
+  });
+  var buttons = document.getElementsByClassName("reviews");
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    var _loop2 = function _loop2() {
+      var button = _step2.value;
+      button.addEventListener("click", function (e) {
+        button.classList.add("reviews-click");
+        button.querySelector(".material-icons").innerHTML = "favorite";
+        button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML) + 1;
+      });
+    };
+
+    for (var _iterator2 = buttons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      _loop2();
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
       }
     }
   }
@@ -180,7 +272,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50192" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59196" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

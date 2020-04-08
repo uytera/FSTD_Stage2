@@ -14,7 +14,7 @@ $(document).ready(function () {
     fillMap();
     add_elements_event();
     //fillTextField()    
-    document.getElementById("list-of-counted-items__clean-button").addEventListener("click", (e) => {
+    document.getElementById(modificator + "__clean-button").addEventListener("click", (e) => {
         var massOflistItems = document.getElementsByClassName("list-of-counted-items__item");
 
         for (let item of massOflistItems) {
