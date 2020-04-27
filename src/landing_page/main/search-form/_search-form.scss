@@ -1,6 +1,8 @@
 @import "../../../ui_kit/list-of-counted-items/list-of-counted-items";
 @import "../../../ui_kit/buttons/filled/button-filled.scss";
-@import "../ui_kit/calendar/calendar";
+@import "../../../ui_kit/calendar/calendar";
+@import "../../../ui_kit/input_fields/two_places/two_places_input.scss";
+@import "../../../ui_kit/input_fields/one_place/one_place_input.scss";
 
 .search-form{
     align-self: center;
@@ -14,39 +16,123 @@
     box-sizing: border-box;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
 
     .search-form__button-filled{
-        width: 320px;
+        width: 100%;
         height: 44px;
         padding: 0px;
         margin-top: 31px;
         margin-bottom: 30px;
 
         .additional-icon{
-            left: 276px;
+            left: 86%;
         }
     }
 
     .search-form-desctiption{
         margin-top: 40px;
-        margin-bottom: 20px;
-        width: 320px;
-        height: 60px;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    
+    input{
+        font-family: Montserrat;
         font-style: normal;
-        font-weight: bold;
-        font-size: 24px;
-        line-height: 30px;
-        color: #1F2041;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 18px;
+        color: rgba(31, 32, 65, 0.75);
+        height: 42px;
+
+        background: none;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        box-sizing: border-box;
+        border-radius: 4px;
+        padding-left: 15px;
     }
 
     .search-form__date-input{
         display: flex;
         flex-direction: row;
         align-items: flex-start;
-        width: 320px;
+        width: 100%;
         margin-bottom: 20px;
         :nth-child(1){
             margin-right: auto;
+        }
+
+        .search-form__date-input-place{
+            width: 47.2%;
+
+            input{    
+                background: none;
+                border: none;
+                box-sizing: border-box;
+                padding-left: 15px;
+            }
+    
+            .search-form__date-input-field{
+                display: flex;
+                flex-direction: row;
+                align-content: center;
+                background: #FFFFFF;
+                border: 1px solid rgba(31, 32, 65, 0.25);
+                box-sizing: border-box;
+                border-radius: 4px;
+    
+                .search-form__start-date{
+                    width: 106px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+    
+                .search-form__end-date{
+                    width: 106px;
+                    padding-top: 12px;
+                    padding-bottom: 12px;
+                }
+    
+                .calendar-expand-elemet{
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 42px;
+                    width: 44px;
+                    color: rgba(31, 32, 65, 0.5);
+                }
+            }
+    
+            .search-form__start-date-desctiption{
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 9px;
+                margin-bottom: 7px;
+                text-transform: uppercase;
+                color: #1F2041;
+            }
+    
+            .search-form__end-date-desctiption{
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 12px;
+                line-height: 9px;
+                margin-bottom: 7px;
+                text-transform: uppercase;
+                color: #1F2041;
+            }
+    
+            .search-form__end-date{
+                width: 150px;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
         }
     }
 
@@ -84,7 +170,7 @@
                 -webkit-user-select: none;
                 cursor: pointer;
                 text-align: center;
-                line-height: 44px;
+                line-height: 42px;
                 width: 44px;
                 color: rgba(31, 32, 65, 0.5);
             }
@@ -92,100 +178,22 @@
         
     }
 
-    input{
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        line-height: 18px;
-        color: rgba(31, 32, 65, 0.75);
-        height: 44px;
-
-        background: none;
-        border: 1px solid rgba(31, 32, 65, 0.25);
-        box-sizing: border-box;
-        border-radius: 4px;
-        padding-left: 15px;
-    }
-
     .search-form-calendar{
-        //display: none;
+        left: 30px;
+        right: 30px;
+        display: none;
         position: absolute;
         z-index: 1000;
-        top: 185px;
+        top: 200px;
     }
 
     .search-form-list{
+        left: 30px;
+        right: 30px;
         display: none;
         position: absolute;
-        top: 258px;
+        top: 270px;
         z-index: 100;
-    }
-
-    .search-form__date-input-place{
-
-        input{    
-            background: none;
-            border: none;
-            box-sizing: border-box;
-            padding-left: 15px;
-        }
-
-        .search-form__date-input-field{
-            display: flex;
-            flex-direction: row;
-            align-content: center;
-            background: #FFFFFF;
-            border: 1px solid rgba(31, 32, 65, 0.25);
-            box-sizing: border-box;
-            border-radius: 4px;
-
-            .search-form__start-date{
-                width: 106px;
-                padding-top: 12px;
-                padding-bottom: 12px;
-            }
-
-            .search-form__end-date{
-                width: 106px;
-                padding-top: 12px;
-                padding-bottom: 12px;
-            }
-
-            .calendar-expand-elemet{
-                cursor: pointer;
-                text-align: center;
-                line-height: 44px;
-                width: 44px;
-                color: rgba(31, 32, 65, 0.5);
-            }
-        }
-
-        .search-form__start-date-desctiption{
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            text-transform: uppercase;
-            color: #1F2041;
-        }
-
-        .search-form__end-date-desctiption{
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            text-transform: uppercase;
-            color: #1F2041;
-        }
-
-        .search-form__end-date{
-            width: 150px;
-            padding-top: 12px;
-            padding-bottom: 12px;
-        }
     }
 }
 

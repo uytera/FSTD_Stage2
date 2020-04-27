@@ -10,7 +10,7 @@ html(lang="ru")
         link(rel = "stylesheet" href = "search_room_page.scss")
         script(src="js/library.js")
         script(src="js/search_room_page.js" type="text/javascript")
-            
+
         script(type="text/javascript").
             let months = {     
                 0: "янв",  
@@ -43,52 +43,40 @@ html(lang="ru")
             +header-registration("search-room-header")
         .main
             div.main__navigation-bar
-
-                div.navigation-bar__date-input-description.navigation-bar__window-input-description ДАТЫ ПРЕБЫВАНИЯ В ОТЕЛЕ
-                div.navigation-bar__date-input.navigation-bar__window-input
-                    input.navigation-bar__date-input-field.navigation-bar__window-input-field(type="text" disabled)
-                    i.material-icons.date-input-expand-elemet.window-input-expand-elemet#date-input-expand-button expand_more
+                include ../ui_kit/input_fields/one_place/one_place_input.pug
+                +one_place_input("navigation-bar-date", "ДАТЫ ПРЕБЫВАНИЯ В ОТЕЛЕ", "", "navigation-bar__date-input-field", "date-input")
                 include ../ui_kit/calendar/calendar.pug
                 +calendar('navigation-bar__calendar')
 
-                include ../ui_kit/list-of-counted-items/list-of-counted-items.pug
-                div.navigation-bar__people-input-description.navigation-bar__window-input-description ГОСТИ
-                div.navigation-bar__people-input-container
-                    div.navigation-bar__people-input.navigation-bar__window-input
-                        input.navigation-bar__people-input-field.navigation-bar__window-input-field(type="text" disabled)
-                        i.material-icons.people-input-expand-elemet.window-input-expand-elemet#people-input-expand-button expand_more
-                    +list-of-counted-items('navigation-bar__people-list', 'js/list-of-counted-items/people/people-list-of-counted-items.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
+                +one_place_input("navigation-bar-people", "ГОСТИ", "", "navigation-bar__people-input-field", "people-input")
+                include ../ui_kit/list-of-counted-items/list-of-counted-items.pug               
+                +list-of-counted-items('navigation-bar__people-list', 'js/list-of-counted-items/people/people-list-of-counted-items.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
 
                 div.navigation-bar__slider-description
-                    span.navigation-bar__slider-description-row ДИАПАЗОН ЦЕНЫ
+                    span.navigation-bar__slider-description-row.sub-text-header ДИАПАЗОН ЦЕНЫ
                     input.navigation-bar__slider-values
                 div.navigation-bar__slider
                     #slider
                 div.navigation-bar__slider-annotation Стоимость за сутки пребывания в номере
                 
                 include ../ui_kit/checkbox/checkbox.pug
-                div.navigation-bar__options-description ОПЦИИ                
+                div.navigation-bar__options-description.sub-text-header ОПЦИИ                
                 div.navigation-bar__options
                     +checkbox("navigation-bar__smoke-option", 'smoke-id', 'smoke-option', "../ui_kit/icons/chekboxes/tick.svg", 'Можно курить')
                     +checkbox("navigation-bar__pet-option", 'pet-id', 'pet-option', "../ui_kit/icons/chekboxes/tick.svg", 'Можно с питомцами')
                     +checkbox("navigation-bar__guests-option", 'guests-id', 'guests-option', "../ui_kit/icons/chekboxes/tick.svg", 'Можно пригласить гостей<br>(до 10 человек)')
 
-                div.navigation-bar__availability-options-description ДОСТУПНОСТЬ    
+                div.navigation-bar__availability-options-description.sub-text-header ДОСТУПНОСТЬ    
                 div.navigation-bar__availability-options
                     +checkbox("navigation-bar__wide-option", 'wide-id', 'wide-option', "../ui_kit/icons/chekboxes/tick.svg", 'Широкий коридор')
                     div.navigation-bar__chekbox-addition Ширина коридоров в номере<br>не менее 91 см.
                     +checkbox("navigation-bar__helper-option", 'helper-id', 'helper-option', "../ui_kit/icons/chekboxes/tick.svg", 'Помощник для инвалидов')
                     div.navigation-bar__chekbox-addition На 1 этаже вас встретит<br>специалист и проводит до номера.
-
-                div.navigation-bar__room-input-description.navigation-bar__window-input-description УДОБСТВА НОМЕРА
-                div.navigation-bar__room-input-container
-                    div.navigation-bar__room-input.navigation-bar__window-input
-                        input.navigation-bar__room-input-field.navigation-bar__window-input-field(type="text" disabled)
-                        i.material-icons.room-input-expand-elemet.window-input-expand-elemet#room-input-expand-button expand_more
-                    +list-of-counted-items('navigation-bar__room-list', 'js/list-of-counted-items/room/room-list-of-counted-items.js', 'СПАЛЬНИ', 'КРОВАТИ', 'ВАННЫЕ КОМНАТЫ')
+                +one_place_input("navigation-bar-room", "УДОБСТВА НОМЕРА", "", "navigation-bar__room-input-field", "room-input")
+                +list-of-counted-items('navigation-bar__room-list', 'js/list-of-counted-items/room/room-list-of-counted-items.js', 'СПАЛЬНИ', 'КРОВАТИ', 'ВАННЫЕ КОМНАТЫ')
 
                 div.navigation-bar__additional-options
-                    div.navigation-bar__additional-options-description ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА
+                    div.navigation-bar__additional-options-description.sub-text-header ДОПОЛНИТЕЛЬНЫЕ УДОБСТВА
                     i.material-icons.additional-options-expand-elemet#additional-options-expand-button expand_more
                 div.navigation-bar__list-of-additional-options
                     +checkbox("slide_down_check navigation-bar__breakfast-option", 'breakfast-id', 'breakfast-option', "../ui_kit/icons/chekboxes/tick.svg", 'Завтрак')
@@ -99,7 +87,7 @@ html(lang="ru")
                     +checkbox("slide_down_check navigation-bar__shampue-option", 'shampue-id', 'shampue-option', "../ui_kit/icons/chekboxes/tick.svg", 'Шампунь')
             include ../ui_kit/room_element/room.pug
             div.main__room-place
-                div.main__room-description Номера, которые мы для вас подобрали
+                div.main__room-description.text-header Номера, которые мы для вас подобрали
                 div.main__room-container
                     script(src="../ui_kit/room_element/room_script.js")
                     +room("№ 888", "люкс", "9 990₽", 4, 145, "../ui_kit/images/room_images/888.svg", "../ui_kit/images/room_images/840.svg","../ui_kit/images/room_images/956.svg","../ui_kit/images/room_images/980.svg")
@@ -131,7 +119,7 @@ html(lang="ru")
 
         script(type="text/javascript").
             $(document).ready(function(){
-                $('.navigation-bar__calendar').css('display', "none");
+                $('.navigation-bar__calendar').css('display', "hidden");
             });
 
         

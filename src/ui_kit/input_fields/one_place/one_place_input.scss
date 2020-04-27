@@ -1,0 +1,30 @@
+[class $= __one-input]{
+    margin-top: 24px;
+    width: 100%;
+
+    .one-input-field {
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+        display: flex;
+        align-content: center;
+
+        .one-input-text{
+            margin-right: auto;
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            padding-left: 13px;
+            text-overflow: ellipsis;
+            width: 87%;
+        }
+
+        .one-input-expand-elemet{
+            -webkit-user-select: none;
+            cursor: pointer;
+            text-align: center;
+            line-height: 42px;
+            width: 16.5%;
+            color: rgba(31, 32, 65, 0.5);
+        }
+    } 
+}

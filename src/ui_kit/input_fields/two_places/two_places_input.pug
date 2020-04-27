@@ -1,0 +1,12 @@
+mixin two_places_input(modificator, first_place_input, first_description, second_place_input, second_description)
+    div(class = modificator + "__date-input")
+        div.date-input-place
+            div.start-date-desctiption.sub-text-header= first_description
+            div.date-input-field#start-date-input-field
+                input(class = first_place_input)(type="text" disabled)
+                i.material-icons.two-places-expand-elemet#start-date-expand expand_more
+        div.date-input-place
+            div.end-date-desctiption.sub-text-header= second_description
+            div.date-input-field#end-date-input-field
+                input(class = second_place_input)(type="text" disabled)
+                i.material-icons.two-places-expand-elemet#end-date-expand expand_more

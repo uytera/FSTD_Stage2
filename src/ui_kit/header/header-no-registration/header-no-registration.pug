@@ -6,12 +6,12 @@ mixin header-no-registration(modificator)
         .header-content__navigation
             include ../header_elements/navigation/drop-down/drop-down-element.pug
             include ../header_elements/navigation/simple/simple-element.pug
-            +simple-element("header-content__nav-simple", "Home")
-            +simple-element("header-content__nav-simple", "About Us")
-            +drop-down-element("header-content__nav-drop", "Services")
-            +simple-element("header-content__nav-simple", "Careers")
-            +simple-element("header-content__nav-simple", "News")
-            +drop-down-element("header-content__nav-drop", "Documentation")
+            +simple-element("header-content__nav-simple", "Домой")
+            +simple-element("header-content__nav-simple", "О нас")
+            +drop-down-element("header-content__nav-drop", "Услуги")
+            +simple-element("header-content__nav-simple", "Вакансии")
+            +simple-element("header-content__nav-simple", "Новости")
+            +drop-down-element("header-content__nav-drop", "Соглашения")
         .header-content__username
             include ../header_elements/username/username.pug
             +username("header-content__username-line", "Cosmin Negoita")

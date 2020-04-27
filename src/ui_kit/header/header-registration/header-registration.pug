@@ -6,15 +6,15 @@ mixin header-registration(modificator)
         .header-content__navigation
             include ../header_elements/navigation/simple/simple-element.pug
             include ../header_elements/navigation/drop-down/drop-down-element.pug
-            +simple-element("header-content__nav-simple", "Home")
-            +simple-element("header-content__nav-simple", "About Us")
-            +drop-down-element("header-content__nav-drop", "Services")
-            +simple-element("header-content__nav-simple", "Careers")
-            +simple-element("header-content__nav-simple", "News")
-            +drop-down-element("header-content__nav-drop", "Documentation")
+            //+simple-element("header-content__nav-simple", "Home")
+            +simple-element("header-content__nav-simple", "О нас")
+            +drop-down-element("header-content__nav-drop", "Услуги")
+            +simple-element("header-content__nav-simple", "Вакансии")
+            +simple-element("header-content__nav-simple", "Новости")
+            +drop-down-element("header-content__nav-drop", "Соглашения")
         .header-content__header-buttons
             include ../../buttons/light/button-light.pug
             include ../../buttons/filled/button-filled.pug
-            +button-light("header-content__button-light", "LOGIN")
-            +button-filled("header-content__button-filled", "REGISTRATION", "")
+            +button-light("header-content__button-light", "ВОЙТИ")
+            +button-filled("header-content__button-filled", "ЗАРЕГЕСТРИРОВАТЬСЯ", "")
         

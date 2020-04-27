@@ -1,0 +1,36 @@
+mixin reg-form(modificator)
+    div(class=modificator + "__reg-form")
+        div.reg-form-desctiption.text-header Регистрация аккаунта
+        form(action="")
+            input(name="name" type="text" placeholder="Имя").reg-form-name-input.input-field
+            input(name="sur-name" type="text" placeholder="Фамилия").reg-form-sur-name-input.input-field
+            div.reg-form-gender-select-container
+                div.reg-form-male-gender
+                    input(id="male" type="radio" name="gender").reg-form-gender-selector
+                    label(for="male") Мужчина
+                        div.selected
+                    <!-- div.reg-form-gender-description Мужчина -->
+                div.reg-form-female-gender
+                    input(id="female" type="radio" name="gender").reg-form-gender-selector
+                    label(for="female") Женщина
+                        div.selected
+                    <!-- div.reg-form-gender-description Женщина -->
+            div.reg-form-date-of-birth-select-container
+                div.reg-form-input-field-decription.sub-text-header дата рождения
+                input(name="name" type="date" placeholder="ДД.ММ.ГГГГ").reg-form-date-input.input-field
+            div.reg-form-user-info-container
+                div.reg-form-input-field-decription.sub-text-header данные для входа в сервис
+                input(name="name" type="email" pattern=".+@+.com" placeholder="Email").reg-form-email-input.input-field
+                input(name="name" type="password" placeholder="Пароль").reg-form-password-input.input-field
+            div.reg-form-special-checkbox
+                input(id="special" type="checkbox" name="special").reg-form-special-selector
+                label(for="special") Получать спецпредложения
+                    div.selected
+            include ../../../ui_kit/buttons/filled/button-filled.pug
+            +button-filled("reg-form-button-filled", "ПОДОБРАТЬ НОМЕР", "arrow_forward")
+        div.reg-form-enter-redirect
+            div.reg-form-enter-description Уже есть аккаунт на Toxin
+            include ../../../ui_kit/buttons/light/button-light.pug
+            +button-light("reg-form-button-light", "ВОЙТИ")
+                
+                    

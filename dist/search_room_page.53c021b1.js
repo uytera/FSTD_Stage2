@@ -162,26 +162,33 @@ $(document).ready(function () {
       $(".navigation-bar__slider-values").val(ui.values[0] + "₽ - " + ui.values[1] + "₽");
     }
   });
-  document.getElementById('date-input-expand-button').addEventListener('click', function (e) {
+
+  function day_resize() {
+    $('.day').height($('.day').width());
+    $('.day').css('line-height', $('.day').height() + "px");
+  }
+
+  document.getElementById('one-expand__date-input').addEventListener('click', function (e) {
     $('.navigation-bar__calendar').slideToggle();
+    day_resize();
     angleCalendar += 180;
-    $('#date-input-expand-button').each(function (e) {
+    $('#one-expand__date-input').each(function (e) {
       $(this).css({
         transition: 'transform 0.5s',
         transform: 'rotate(' + angleCalendar + 'deg)'
       });
     });
   });
-  document.getElementById('people-input-expand-button').addEventListener('click', function (e) {
+  document.getElementById('one-expand__people-input').addEventListener('click', function (e) {
     $('.navigation-bar__people-list').slideToggle();
     anglePeople += 180;
-    $('#people-input-expand-button').each(function (e) {
+    $('#one-expand__people-input').each(function (e) {
       if (anglePeople / 180 % 2 != 0) {
-        $('.navigation-bar__people-input').css({
+        $('.navigation-bar-people__one-input .one-input-field').css({
           border: "1px solid rgba(31, 32, 65, 0.5)"
         });
       } else {
-        $('.navigation-bar__people-input').css({
+        $('.navigation-bar-people__one-input .one-input-field').css({
           border: "1px solid rgba(31, 32, 65, 0.25)"
         });
       }
@@ -192,16 +199,16 @@ $(document).ready(function () {
       });
     });
   });
-  document.getElementById('room-input-expand-button').addEventListener('click', function (e) {
+  document.getElementById('one-expand__room-input').addEventListener('click', function (e) {
     $('.navigation-bar__room-list').slideToggle();
     angleRoom += 180;
-    $('#room-input-expand-button').each(function (e) {
+    $('#one-expand__room-input').each(function (e) {
       if (angleRoom / 180 % 2 != 0) {
-        $('.navigation-bar__room-input').css({
+        $('.navigation-bar-room__one-input .one-input-field').css({
           border: "1px solid rgba(31, 32, 65, 0.5)"
         });
       } else {
-        $('.navigation-bar__room-input').css({
+        $('.navigation-bar-room__one-input .one-input-field').css({
           border: "1px solid rgba(31, 32, 65, 0.25)"
         });
       }
@@ -269,7 +276,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59196" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62135" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

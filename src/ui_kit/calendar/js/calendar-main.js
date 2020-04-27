@@ -33,11 +33,6 @@ function day_resize() {
 }
 
 $(document).ready(function () {
-    
-    $(window).resize(function(){
-        day_resize();
-    });
-
     fill_calendar(currDate);
     add_elements_event();
 
@@ -61,19 +56,6 @@ $(document).ready(function () {
         fillDate();
         fill_calendar(currDate);
         add_elements_event();
-        /*if(currentState == 'start' && (endDate == null || endDate > pushedDate)){
-            startElement.classList.remove('selected-day');
-            startElement = document.createElement("div");
-            startDate = null;
-            $('.search-form__start-date').val("");
-        }
-
-        if(currentState == 'end' && (startDate == null || pushedDate > startDate)){
-            endElement.classList.remove('selected-day');
-            endElement = document.createElement("div");
-            endDate = null;
-            $('.search-form__end-date').val("");
-        }*/
     });
 
     document.getElementById('calendar__save-button').addEventListener("click", (e) => {
@@ -81,29 +63,6 @@ $(document).ready(function () {
         CalendarEndDate = endDate;
         fillDate();
         fill_calendar(currDate);
-        /*pushedDate = new Date(pushedElement.getAttribute('data-year'), pushedElement.getAttribute('data-month'), pushedElement.innerHTML); 
-  
-        if(currentState == 'start' && (endDate == null || endDate > pushedDate)){
-            startElement.classList.remove('selected-day');
-            startElement = pushedElement;
-            startDate = pushedDate;
-            pushedElement.classList.add('selected-day');
-            $('.search-form__start-date').val(pushedDate.getDate() + "." + pushedDate.getMonth() + "." + pushedDate.getFullYear());
-        }
-
-        if(currentState == 'end' && (startDate == null || pushedDate > startDate)){
-            endElement.classList.remove('selected-day');
-            endElement = pushedElement;
-            endDate = pushedDate;
-            pushedElement.classList.add('selected-day');
-            $('.search-form__end-date').val(pushedDate.getDate() + "." + pushedDate.getMonth() + "." + pushedDate.getFullYear());
-        } 
-        
-        if(startDate != null && endDate != null){
-            startDate.setHours(0,0,0,0);
-            endDate.setHours(0,0,0,0);
-            fill_days_in_calendar(currDate.getMonth(), currDate.getFullYear())
-        }*/
     });
 
 });
@@ -112,35 +71,7 @@ function add_elements_event(){
 
     var massOfDays = document.getElementsByClassName('day');
     var pushed_day = document.createElement("div");
-    /*
     for (let item of massOfDays) {
-        item.addEventListener("mouseover", (e) => {      
-            item.classList.add("mouse-on");
-        }); 
-
-        item.addEventListener("mouseout", (e) => {      
-            item.classList.remove("pushed-down");
-            item.classList.remove("mouse-on");
-        }); 
-
-        item.addEventListener("mouseup", (e) => {    
-            pushed_day.classList.remove("pushed-down");
-            item.classList.add("pushed-up");
-            pushed_day = item;
-            pushedElement = pushed_day;
-        }); 
-
-        item.addEventListener("mousedown", (e) => {
-            pushedElementsCount += 1;
-            item.classList.remove("mouse-on");   
-            pushed_day.classList.remove("pushed-up");
-            pushed_day.classList.remove("pushed-down");
-            item.classList.add("pushed-down");
-            pushed_day=item;
-        }); 
-    }
-    */
-   for (let item of massOfDays) {
         item.addEventListener("mouseover", (e) => {      
             item.classList.add("mouse-on");
         }); 
@@ -175,9 +106,6 @@ function add_elements_event(){
                     startDate = endElementDate;
                     endDate = startElementDate;
                 }
-
-                //alert(startDate.getMonth() + " " + startDate.getFullYear() + " " + startDate.getDate());
-                //alert(endDate.getMonth() + " " + endDate.getFullYear() + " " + endDate.getDate());
                 startDate.setHours(0,0,0,0);
                 endDate.setHours(0,0,0,0);
 
@@ -192,8 +120,8 @@ function add_elements_event(){
             item.classList.add("pushed-down");
             pushed_day=item;
         }); 
-    } 
-}
+    }
+} 
 
 
 

@@ -1,5 +1,7 @@
 mixin search-form(modificator)
     script(src="main/search-form/search-from.js")
+    script(src="../ui_kit/input_fields/two_places/two_places_button.js")
+    script(src="../ui_kit/input_fields/one_place/one_place_button.js")
     div(class="search-form " + modificator)
         include ../../../ui_kit/calendar/calendar.pug
         +calendar('search-form-calendar')
@@ -7,25 +9,12 @@ mixin search-form(modificator)
         include ../../../ui_kit/list-of-counted-items/list-of-counted-items.pug
         +list-of-counted-items('search-form-list', 'main/search-form/list-of-counted-people.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
 
-        div.search-form-desctiption Найдём номера под ваши пожелания
+        div.search-form-desctiption.text-header Найдём номера под ваши пожелания
         form(action="")
-            div.search-form__date-input
-                div.search-form__date-input-place
-                    div.search-form__start-date-desctiption выезд
-                    div.search-form__date-input-field#start-date-input-field
-                        input.search-form__start-date(type="text" disabled)
-                        i.material-icons.calendar-expand-elemet#start-date-expand expand_more
-                div.search-form__date-input-place
-                    div.search-form__end-date-desctiption прибытие
-                    div.search-form__date-input-field#end-date-input-field
-                        input.search-form__end-date(type="text" disabled)
-                        i.material-icons.calendar-expand-elemet#end-date-expand expand_more
-            div.search-form__people-input
-                div.search-form__input-field
-                    div.search-form__number-of-people-desctiption гости
-                    div.search-form__number-of-people-input-field
-                        input.search-form__number-of-people(type="text" placeholder="Сколько гостей" disabled)
-                        i.material-icons.people-expand-elemet#people-expand expand_more
+            include ../../../ui_kit/input_fields/two_places/two_places_input.pug
+            +two_places_input('search-form', 'search-form__start-date', 'прибытие', 'search-form__end-date', 'выезд')
+            include ../../../ui_kit/input_fields/one_place/one_place_input.pug
+            +one_place_input("search-form-people", "гости", "Сколько гостей", ".search-form__number-of-people", "people")
             include ../../../ui_kit/buttons/filled/button-filled.pug
             +button-filled("search-form__button-filled", "ПОДОБРАТЬ НОМЕР", "arrow_forward")
             

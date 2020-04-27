@@ -1,0 +1,52 @@
+[class $= __date-input]{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 30px;
+    
+    :nth-child(1){
+        margin-right: auto;
+    }
+
+    .date-input-place{
+        width: 47.2%;
+
+        input{    
+            background: none;
+            border: none;
+            box-sizing: border-box;
+            padding-left: 15px;
+        }
+
+        .date-input-field{
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            background: #FFFFFF;
+            border: 1px solid rgba(31, 32, 65, 0.25);
+            box-sizing: border-box;
+            border-radius: 4px;
+
+            :first-child{
+                width: 70%;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            .two-places-expand-elemet{
+                cursor: pointer;
+                text-align: center;
+                line-height: 42px;
+                width: 28%;
+                color: rgba(31, 32, 65, 0.5);
+            }
+        }
+
+        .end-date{
+            width: 150px;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+}

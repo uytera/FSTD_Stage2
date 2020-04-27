@@ -1,0 +1,7 @@
+mixin one_place_input(modificator, description, field_placeholder, input_field_class, additional_id)
+    div(class = modificator + "__one-input")
+        div.one-input-container                                                             
+            div.one-input-desctiption.sub-text-header= description                                          
+            div.one-input-field                                                             
+                input(class= "one-input-text " + input_field_class)(type="text" placeholder=field_placeholder disabled)
+                i.material-icons.one-input-expand-elemet(id="one-expand__" + additional_id) expand_more

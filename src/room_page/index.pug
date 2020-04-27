@@ -7,6 +7,8 @@ html(lang="ru")
         link(rel = "stylesheet" href = "room_page.scss")
         script(src="js/library.js")
         script(src="js/room_page.js")
+        script(src="../ui_kit/input_fields/two_places/two_places_button.js")
+        script(src="../ui_kit/input_fields/one_place/one_place_button.js")
         script(type="text/javascript"). 
             $(function(){ var CalendarStartDate = "someText"; var CalendarEndDate = "someText";});
             var inputField;
@@ -105,31 +107,19 @@ html(lang="ru")
                             div.main__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
                 div.main__price-calculator
                     div.main__calculator-description
-                        span.number №888
+                        span №
+                        span.number 888
                         span.type люкс
-                        span.price <b>9 990₽</b> в сутки
-                        span.period 
+                        span.price 9 990₽
+                        span.period в сутки
                     include ../ui_kit/list-of-counted-items/list-of-counted-items.pug
                     +list-of-counted-items('room-list-of-counted-people', 'js/list-of-people.js', 'ВЗРОСЛЫЕ', 'ДЕТИ', 'МЛАДЕНЦЫ')
                     include ../ui_kit/calendar/calendar.pug
                     +calendar('room-calculator-calendar')
-                    div.main__price-calculator-date-input
-                        div.main__price-calculator-date-input-place
-                            div.main__price-calculator-start-date-desctiption выезд
-                            div.main__price-calculator-date-input-field#start-date-input-field
-                                input.main__price-calculator-start-date(type="text" disabled)
-                                i.material-icons.calendar-expand-elemet#start-date-expand expand_more
-                        div.main__price-calculator-date-input-place
-                            div.main__price-calculator-end-date-desctiption прибытие
-                            div.main__price-calculator-date-input-field#end-date-input-field
-                                input.main__price-calculator-end-date(type="text" disabled)
-                                i.material-icons.calendar-expand-elemet#end-date-expand expand_more
-                    div.main__price-calculator-people-input
-                        div.main__price-calculator-input-field
-                            div.main__price-calculator-number-of-people-desctiption гости
-                            div.main__price-calculator-number-of-people-input-field
-                                input.main__price-calculator-number-of-people(type="text" placeholder="Сколько гостей" disabled)
-                                i.material-icons.people-expand-elemet#people-expand expand_more
+                    include ../ui_kit/input_fields/two_places/two_places_input.pug
+                    +two_places_input('main__price-calculator', 'main__price-calculator-start-date', 'прибытие', 'main__price-calculator-end-date', 'выезд')
+                    include ../ui_kit/input_fields/one_place/one_place_input.pug
+                    +one_place_input("main-price-calculator", "гости", "Сколько гостей", "main__price-calculator-number-of-people", "people")
                     div.main__price-description-container
                         div.main__price_row
                             div.main__price-description 9 990₽ х 4 суток
@@ -154,8 +144,3 @@ html(lang="ru")
             +footer-main-content("room-page-footer")
             include ../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content.pug
             +footer-underline-content("room-page-footer-underline")
-
-        script(type="text/javascript").
-            $(document).ready(function(){
-                $('.room-calculator-calendar').css('display', "none");
-            });

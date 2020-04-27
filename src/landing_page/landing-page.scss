@@ -3,15 +3,25 @@
 @import "../ui_kit/fonts/montserrat/montserrat.css";
 @import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
 @import "main/search-form/search-form";
+@import "main/reg-form/reg-form.scss";
 @import "../ui_kit/fonts/Material_Icons/material-icons.css";
-
-//@import "../ui_kit/icons/";
+@import "../ui_kit/text-header-style/text-header-style.scss";
 
 .main{
     .landing-page-search-form{
+        display: none;
         position: absolute;
         top: 20%;
         left: 140px; 
+    }
+    .landing-page__reg-form{
+        position: absolute;
+        top: 20%;
+        left: 140px; 
+        z-index: 0;
+        //position: absolute;
+        //top: 10%;
+        //left: 600px;
     }
 }
 .landing-page-footer-underline{
@@ -31,8 +41,10 @@
 }
 
 .filler{
+    background-image: url("../ui_kit/images/FoneImage.svg");
+    background-size: cover;
     width: 100%;
-    padding-bottom: 45%;
+    padding-bottom: 56%;
 }
 
 @media all and (max-width: 1250px){
@@ -45,13 +57,18 @@
     .landing-page-search-form{
         top: 30% !important;
     }
+
+    .landing-page__reg-form{
+        top: 30% !important;
+    }
 }
 
 @media all and (max-width: 880px){
     .filler{
-        padding-bottom: 100%;
+        padding-bottom: 150%;
     }
     .main-image{
+        margin-top: 100px;
         width: 200%;
     }
     .landing-page-search-form{
@@ -62,20 +79,79 @@
         margin-left: auto;
         margin-right: auto;
     }
+
+    .landing-page__reg-form{
+        top: 0;
+        bottom: 0;
+        left: 0 !important;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
+
 @media all and (max-width: 580px){
     .landing-page-search-form{
         top: 200px !important;
     }
+
+    .landing-page__reg-form{
+        top: 200px !important;
+    }
 }
+
 @media all and (max-width: 500px){
     .filler{
-        padding-bottom: 125%;
+        padding-bottom: 180%;
     }
     .main-image{
+        margin-top: 100px;
         width: 400%;
     }
     .landing-page-search-form{
         top: 450px !important;
+    }
+
+    .landing-page__reg-form{
+        top: 450px !important;
+    }
+}
+
+@media all and (max-width: 400px){
+
+    div.filler{
+        padding-bottom: 250%;
+    }
+
+    .search-form__button-filled{
+        .additional-icon{
+            left: 84% !important;
+        }
+    }   
+
+    div.landing-page-search-form{
+        width: 100%;
+    }
+
+    div.landing-page__reg-form{
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 346px){
+    .main{
+        div.landing-page-search-form{
+            height: 400px;
+        }
+
+        div.landing-page__reg-form{
+            height: 680px;
+
+            .reg-form-special-checkbox{
+                label{
+                    font-size: 13px;
+                }
+            }
+        }
     }
 }

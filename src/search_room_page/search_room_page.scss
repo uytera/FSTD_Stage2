@@ -7,6 +7,8 @@
 @import "../ui_kit/list-of-counted-items/list-of-counted-items";
 @import "../ui_kit/jq/styles/jquery-ui.css";
 @import "../ui_kit/checkbox/checkbox.scss";
+@import "../ui_kit/input_fields/one_place/one_place_input.scss";
+@import "../ui_kit/text-header-style/text-header-style.scss";
 
 @import "../ui_kit/fonts/montserrat/montserrat.css";
 @import "../ui_kit/fonts/quicksand/quicksand.css";
@@ -21,35 +23,37 @@
     display: flex;
     
     .main__navigation-bar{
+        width: 266px;
         margin-top: 30px;
         margin-left: 7.5%;
         position: relative;
-
         
-        .navigation-bar__date-input-description{
-            margin-bottom: 5px;
+        .navigation-bar-date__one-input{
+            margin-top: 0px;
         }
+
         .navigation-bar__calendar{
+            display: none;
             width: 266px;
             position: absolute;
             top: 70px;
             z-index: 20;
         }
 
-
-        .navigation-bar__people-input-description{
-            margin-top: 20px;
-            margin-bottom: 5px;
+        .navigation-bar__people-list{
+            display: none;
+            position: absolute;
+            width: 264px;
+            top: 140px;
+            z-index: 15;
         }
-        .navigation-bar__people-input-container{
-            position: relative;
-            .navigation-bar__people-list{
-                display: none;
-                position: absolute;
-                width: 264px;
-                top: 43px;
-                z-index: 15;
-            }
+
+        .navigation-bar__room-list{
+            display: none;
+            position: absolute;
+            width: 264px;
+            top: 666px;
+            z-index: 15;
         }
 
         //Общие свойства инпутов со занчениями///////////////////////
@@ -59,6 +63,12 @@
             font-size: 12px;
             line-height: 15px;  
             color: #1F2041;
+        }
+
+        
+        
+        .one-input-field{
+            width: 264px;
         }
 
         
@@ -104,12 +114,8 @@
                 left: 0px;
                 width: 121px;
                 height: 15px;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 12px;
-                line-height: 15px;
-                color: #1F2041;
             }
+
             .navigation-bar__slider-values{
                 position: absolute;
                 right: 0px;
@@ -169,12 +175,6 @@
             margin-top: 30px;
             left: 0px;
             width: 121px;
-            height: 15px;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            color: #1F2041;
         }
 
         .navigation-bar__options{
@@ -201,11 +201,6 @@
             left: 0px;
             width: 121px;
             height: 15px;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 12px;
-            line-height: 15px;
-            color: #1F2041;
         }
 
         .navigation-bar__availability-options{
@@ -243,17 +238,6 @@
             margin-top: 30px;
             margin-bottom: 5px;
         }
-        
-        .navigation-bar__room-input-container{
-            position: relative;
-            .navigation-bar__room-list{
-                display: none;
-                position: absolute;
-                width: 264px;
-                top: 43px;
-                z-index: 15;
-            }
-        }
 
         .navigation-bar__additional-options{
             margin-top: 30px;
@@ -265,19 +249,15 @@
             cursor: pointer;
 
             .navigation-bar__additional-options-description{
-                font-style: normal;
-                font-weight: bold;
-                font-size: 12px;
-                line-height: 15px;
-                color: #1F2041;
                 margin-right: auto;
+                margin-bottom: 0px;
             }
 
             .additional-options-expand-elemet{
                 -webkit-user-select: none;      
                 text-align: center;
                 line-height: 44px;
-                width: 45px;
+                width: 44px;
                 color: rgba(31, 32, 65, 0.5);
             }
         }
@@ -306,12 +286,6 @@
         
         .main__room-description{
             margin-left: 12px;
-            font-family: Quicksand;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 24px;
-            line-height: 30px;
-            color: #1F2041;
         }
 
         .main__room-container{

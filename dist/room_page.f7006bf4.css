@@ -37,75 +37,35 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('/montserrat-100-normal.528e37a6.woff2') format('woff2'), url('/montserrat-100-normal.aa6d81e9.woff') format('woff'), url('/montserrat-100-normal.9778cfe2.ttf') format('truetype');
-    font-weight: 100;
+    src: url('/Montserrat-Regular.6021b3d7.ttf') format('truetype');
+    font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('/montserrat-300-normal.9b3e66cd.woff2') format('woff2'), url('/montserrat-300-normal.a556932b.woff') format('woff'), url('/montserrat-300-normal.27df2654.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/montserrat-400-normal.c939c284.woff2') format('woff2'), url('/montserrat-400-normal.61bfeb48.woff') format('woff'), url('/montserrat-400-normal.77702bcf.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/montserrat-700-normal.044a811f.woff2') format('woff2'), url('/montserrat-700-normal.dd4cc21d.woff') format('woff'), url('/montserrat-700-normal.2775c4d1.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    src: url('/montserrat-900-normal.a18c7f4a.woff2') format('woff2'), url('/montserrat-900-normal.ec3dd98a.woff') format('woff'), url('/montserrat-900-normal.9ad3baf3.ttf') format('truetype');
-    font-weight: 900;
+    src: url('/Montserrat-Bold.313f1e30.ttf') format('truetype');
+    font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: 'Quicksand';
-    src: url('/quicksandlight.7f1f542a.woff2') format('woff2'), url('/quicksandlight.f3000cc3.woff') format('woff'), url('/quicksandlight.4902e850.ttf') format('truetype');
+    src: url('/Quicksand-Light.5a4d01d3.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Quicksand';
-    src: url('/quicksandlightitalic.23f65147.woff2') format('woff2'), url('/quicksandlightitalic.96deebc8.woff') format('woff'), url('/quicksandlightitalic.2bbcc170.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandregular.19fe072c.woff2') format('woff2'), url('/quicksandregular.e6e16c3a.woff') format('woff'), url('/quicksandregular.f2d0540c.ttf') format('truetype');
+    src: url('/Quicksand-Regular.c4be7c39.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Quicksand';
-    src: url('/quicksanditalic.ac7bb319.woff2') format('woff2'), url('/quicksanditalic.4e174231.woff') format('woff'), url('/quicksanditalic.d4cce413.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandbold.e37c8384.woff2') format('woff2'), url('/quicksandbold.80fe248f.woff') format('woff'), url('/quicksandbold.1b35a1b1.ttf') format('truetype');
+    src: url('/Quicksand-Bold.1194287e.ttf') format('truetype');
     font-weight: 700;
-    font-style: normal;
+    font-style: bold;
 }
-@font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandbolditalic.b1c7e7c9.woff2') format('woff2'), url('/quicksandbolditalic.c653b17e.woff') format('woff'), url('/quicksandbolditalic.da8645fc.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-}
-
 .logo {
   display: flex;
   align-items: center;
@@ -126,7 +86,6 @@
   border-radius: 22px;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   height: 34px;
-  width: 101px;
   color: white;
   padding: 0px 20px;
 }
@@ -152,10 +111,9 @@
   justify-content: center;
   position: relative;
   height: 30px;
-  border: 2px solid transparent;
   border-radius: 30px;
-  background: white;
   background-clip: padding-box;
+  background: white;
   color: #BC9CFF;
   padding: 0px 20px;
 }
@@ -232,6 +190,7 @@ body {
   margin: 0px 15px;
 }
 .header-content .header-content__header-buttons {
+  z-index: 0;
   margin-right: 140px;
   display: flex;
   align-items: center;
@@ -245,6 +204,7 @@ body {
   line-height: 15px;
 }
 .header-content .header-content__header-buttons .header-content__button-filled {
+  z-index: 10;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -313,6 +273,7 @@ body {
 }
 
 .footer-main-content {
+  border-top: 1px solid #E5E5E5;
   padding-top: 100px;
   background: #FFFFFF;
   box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
@@ -429,6 +390,7 @@ body {
 }
 
 .footer-underline-content {
+  border-top: 1px solid #E5E5E5;
   width: 100%;
   height: 70px;
   display: flex;
@@ -472,7 +434,6 @@ body {
   box-sizing: border-box;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   border-radius: 4px;
-  width: 320px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -615,7 +576,6 @@ body {
 .list-of-counted-items {
   display: flex;
   flex-direction: column;
-  width: 318px;
   height: 159px;
   border: 1px solid rgba(31, 32, 65, 0.5);
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
@@ -796,6 +756,99 @@ body {
   color: rgba(31, 32, 65, 0.75);
 }
 
+[class$=__date-input] {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 30px;
+}
+[class$=__date-input] :nth-child(1) {
+  margin-right: auto;
+}
+[class$=__date-input] .date-input-place {
+  width: 47.2%;
+}
+[class$=__date-input] .date-input-place input {
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 15px;
+}
+[class$=__date-input] .date-input-place .date-input-field {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  background: #FFFFFF;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+[class$=__date-input] .date-input-place .date-input-field :first-child {
+  width: 70%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+[class$=__date-input] .date-input-place .date-input-field .two-places-expand-elemet {
+  cursor: pointer;
+  text-align: center;
+  line-height: 42px;
+  width: 28%;
+  color: rgba(31, 32, 65, 0.5);
+}
+[class$=__date-input] .date-input-place .end-date {
+  width: 150px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+[class$=__one-input] {
+  margin-top: 24px;
+  width: 100%;
+}
+[class$=__one-input] .one-input-field {
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+  display: flex;
+  align-content: center;
+}
+[class$=__one-input] .one-input-field .one-input-text {
+  margin-right: auto;
+  background: none;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 13px;
+  text-overflow: ellipsis;
+  width: 87%;
+}
+[class$=__one-input] .one-input-field .one-input-expand-elemet {
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 42px;
+  width: 16.5%;
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.text-header {
+  width: 100%;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F2041;
+}
+
+.sub-text-header {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 9px;
+  text-transform: uppercase;
+  color: #1F2041;
+  margin-bottom: 8px;
+}
+
 .main * {
   font-family: Montserrat;
 }
@@ -836,6 +889,8 @@ body {
 }
 .main .down-content .main__price-calculator {
   position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
   width: 380px;
   height: 511px;
   background: #FFFFFF;
@@ -845,49 +900,71 @@ body {
   border-radius: 4px;
   margin-top: 70px;
   margin-left: 70px;
+  margin-bottom: 70px;
 }
 .main .down-content .main__price-calculator .main__calculator-description {
-  margin-top: 40px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-top: 46px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  line-height: 10px;
+}
+.main .down-content .main__price-calculator .main__calculator-description :first-child {
+  font-family: Quicksand;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: #1F2041;
+  margin-right: 3px;
+  align-self: flex-end;
 }
 .main .down-content .main__price-calculator .main__calculator-description .number {
   font-family: Quicksand;
-  width: 64px;
-  height: 30px;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 17px;
   color: #1F2041;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 .main .down-content .main__price-calculator .main__calculator-description .type {
   font-family: Montserrat;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 9px;
   text-transform: uppercase;
   color: #BC9CFF;
-  margin-right: 110px;
+  margin-right: auto;
 }
 .main .down-content .main__price-calculator .main__calculator-description .price {
   font-style: normal;
+  font-weight: bold;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 10px;
+  color: rgba(31, 32, 65, 0.5);
+  margin-right: 4px;
+}
+.main .down-content .main__price-calculator .main__calculator-description .period {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 8px;
   color: rgba(31, 32, 65, 0.5);
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  width: 320px;
-  margin-top: 20px;
-  margin-left: 30px;
+  width: 100%;
+  margin-top: 30px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input :nth-child(1) {
   margin-right: auto;
+}
+.main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place {
+  width: 47.2%;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place input {
   background: none;
@@ -905,39 +982,39 @@ body {
   border-radius: 4px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field .main__price-calculator-start-date {
-  width: 106px;
+  width: 70%;
   padding-top: 12px;
   padding-bottom: 12px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field .main__price-calculator-end-date {
-  width: 106px;
+  width: 70%;
   padding-top: 12px;
   padding-bottom: 12px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-date-input-field .calendar-expand-elemet {
   cursor: pointer;
   text-align: center;
-  line-height: 44px;
-  width: 44px;
+  line-height: 42px;
+  width: 28%;
   color: rgba(31, 32, 65, 0.5);
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-start-date-desctiption {
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 9px;
   text-transform: uppercase;
   color: #1F2041;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-end-date-desctiption {
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 9px;
   text-transform: uppercase;
   color: #1F2041;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-date-input .main__price-calculator-date-input-place .main__price-calculator-end-date {
   width: 150px;
@@ -945,22 +1022,20 @@ body {
   padding-bottom: 12px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-people-input {
-  margin-top: 20px;
-  margin-left: 30px;
+  margin-top: 24px;
+  width: 100%;
 }
 .main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-desctiption {
-  font-family: Montserrat;
-  width: 320px;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 9px;
+  margin-bottom: 8px;
   text-transform: uppercase;
   color: #1F2041;
 }
 .main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-input-field {
   border: 1px solid rgba(31, 32, 65, 0.25);
-  width: 318px;
   border-radius: 4px;
   display: flex;
   align-content: center;
@@ -972,27 +1047,28 @@ body {
   box-sizing: border-box;
   padding-left: 13px;
   text-overflow: ellipsis;
-  width: 280px;
+  width: 87%;
 }
 .main .down-content .main__price-calculator .main__price-calculator-people-input .main__price-calculator-number-of-people-input-field .people-expand-elemet {
   -webkit-user-select: none;
   cursor: pointer;
   text-align: center;
-  line-height: 44px;
-  width: 44px;
+  line-height: 42px;
+  width: 13%;
   color: rgba(31, 32, 65, 0.5);
 }
 .main .down-content .main__price-calculator .main__price-description-container {
   margin-top: 20px;
+}
+.main .down-content .main__price-calculator .main__price-description-container :first-child .main__price-inf {
+  visibility: hidden;
 }
 .main .down-content .main__price-calculator .main__price-description-container :last-child {
   margin-bottom: 0px;
 }
 .main .down-content .main__price-calculator .main__price-description-container .main__price_row {
   margin-bottom: 16px;
-  margin-left: 30px;
-  margin-right: 30px;
-  width: 320px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -1001,14 +1077,14 @@ body {
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 24px;
+  line-height: 20px;
   color: rgba(31, 32, 65, 0.75);
 }
 .main .down-content .main__price-calculator .main__price-description-container .main__price_row .main__price-description {
-  width: 214px;
+  width: 67.3%;
 }
 .main .down-content .main__price-calculator .main__price-description-container .main__price_row .main__price-inf {
-  margin-left: 5px;
+  margin-left: 4px;
   margin-right: auto;
   border-radius: 10px;
   width: 18px;
@@ -1023,57 +1099,58 @@ body {
 }
 .main .down-content .main__price-calculator .price-result {
   margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 30px;
-  width: 320px;
-  height: 24px;
+  width: 100%;
+  height: 14px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 .main .down-content .main__price-calculator .price-result * {
+  font-family: Quicksand;
   font-style: normal;
   font-weight: bold;
   font-size: 19px;
-  line-height: 24px;
+  line-height: 14px;
   color: #1F2041;
 }
 .main .down-content .main__price-calculator .price-result .delimiter {
-  margin-bottom: 5px;
   align-self: flex-end;
-  width: 182px;
+  width: 60%;
   height: 0px;
-  border: 1px dashed rgba(31, 32, 65, 0.25);
+  border-bottom: 1px dotted rgba(31, 32, 65, 0.25);
   box-sizing: border-box;
 }
 .main .down-content .main__price-calculator .room-list-of-counted-people {
   display: none;
   position: absolute;
   z-index: 10;
-  top: 224px;
+  width: 316px;
+  top: 234px;
   left: 30px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-button-filled {
-  width: 320px;
+  width: 100%;
   height: 44px;
   padding: 0px;
   margin-top: 20px;
-  margin-left: 30px;
   margin-bottom: 30px;
 }
 .main .down-content .main__price-calculator .main__price-calculator-button-filled .additional-icon {
-  left: 276px;
+  right: 0px;
 }
 .main .down-content .main__price-calculator .room-calculator-calendar {
   z-index: 20;
   position: absolute;
-  top: 150px;
+  display: none;
+  top: 160px;
   left: 30px;
+  right: 30px;
 }
 .main .down-content .main__content {
   margin-left: 140px;
   margin-top: 70px;
   width: 50%;
-  height: 800px;
+  height: 100%;
 }
 .main .down-content .main__content .main__information-block {
   height: 40%;
@@ -1272,6 +1349,7 @@ body {
   display: flex;
   flex-direction: row;
   margin-top: 30px;
+  margin-bottom: 70px;
 }
 .main .down-content .main__content .main__addirional-information-block .main__rules {
   width: 50%;
@@ -1334,6 +1412,19 @@ body {
   color: rgba(31, 32, 65, 0.75);
 }
 
+@media all and (max-width: 1200px) {
+  .main .down-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main .down-content div.main__price-calculator {
+    flex-direction: column;
+    margin-left: 0px;
+  }
+  .main .down-content div.main__content {
+    margin-left: 0px;
+  }
+}
 @media all and (max-width: 900px) {
   .main__image_container {
     flex-direction: column !important;
@@ -1418,9 +1509,28 @@ body {
     text-align: center;
   }
 }
-@media all and (max-width: 1130px) {
+@media all and (max-width: 670px) {
   .main .down-content .main__content div.main__information-block {
     flex-direction: column;
+  }
+}
+@media all and (max-width: 380px) {
+  .main .down-content div.main__price-calculator {
+    width: 99%;
+  }
+}
+@media all and (max-width: 375px) {
+  .main .down-content div.main__price-calculator {
+    height: 550px;
+  }
+  .main .down-content div.main__price-calculator div.price-result * {
+    font-size: 15px;
+  }
+  .main .down-content div.main__price-calculator div.main__price-description-container .main__price_row * {
+    font-size: 13.5px;
+  }
+  .main .down-content div.main__price-calculator div.main__price-description-container .main__price_row .main__price-inf {
+    margin-left: 3px;
   }
 }
 @media all and (max-width: 1130px) {
