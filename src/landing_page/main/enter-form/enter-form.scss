@@ -1,0 +1,83 @@
+[class $= __enter-form]{
+    width: 380px;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 358px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+    .input-field{
+        padding-left: 15px;
+        padding-top: 13px;
+        padding-bottom: 13px;
+        margin-bottom: 10px;
+
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(31, 32, 65, 0.25);
+
+        box-sizing: border-box;
+        width: 100%;
+        height: 44px;
+        border: 1px solid rgba(31, 32, 65, 0.25);
+        border-radius: 4px;
+    }
+
+    .input-field::-webkit-input-placeholder {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(31, 32, 65, 0.25);
+    }
+
+    .enter-form-desctiption{
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .reg-form-password-input{
+        margin-bottom: 20px;
+    }
+
+    .enter-form-button-filled{
+        width: 100%;
+        height: 44px;
+        padding: 0px;
+        margin-bottom: 30px;
+
+        .additional-icon{
+            left: 86%;
+        }
+    }
+
+    .enter-form-enter-redirect{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .enter-form-reg-description{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 18px;
+            color: #000000;
+            margin-right: auto;
+        }
+
+        .enter-form-button-light{
+            box-sizing: border-box;
+            width: 99px;
+            height: 44px;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+            line-height: 15px;
+        }
+    }
+}

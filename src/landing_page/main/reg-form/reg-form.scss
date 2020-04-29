@@ -44,7 +44,7 @@
     .reg-form-gender-select-container{
         display: flex;
         flex-direction: row;
-        margin-bottom: 20px;
+        margin-bottom: 24px;
 
         label{
             -webkit-user-select: none;
@@ -53,6 +53,7 @@
             cursor: pointer;
             font-style: normal;
             font-weight: normal;
+            line-height: 20px;
             font-size: 14px;
             color: rgba(31, 32, 65, 0.5);
         }
@@ -61,8 +62,8 @@
             content: "";
             display: inline-block;
         
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
         
             margin-right: 10px;
             position: absolute;
@@ -82,8 +83,8 @@
                 position: absolute;
                 width: 12px;
                 height: 12px;
-                left: -27px;
-                top: 2px;
+                left: -26px;
+                top: 3px;
                 background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
                 border-radius: 10px;
             }
@@ -120,6 +121,12 @@
 
     .reg-form-user-info-container{
         margin-top: 20px;
+    }
+
+    .reg-form-date-of-birth-select-container{
+        .reg-form-date-input{
+            margin-bottom: 0px;
+        }
     }
     
     .reg-form-special-checkbox {

@@ -114,7 +114,7 @@
   justify-content: center;
   position: relative;
   height: 30px;
-  border-radius: 30px;
+  border-radius: 20px;
   background-clip: padding-box;
   background: white;
   color: #BC9CFF;
@@ -980,7 +980,7 @@ body {
 [class$=__reg-form] .reg-form-gender-select-container {
   display: flex;
   flex-direction: row;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 [class$=__reg-form] .reg-form-gender-select-container label {
   -webkit-user-select: none;
@@ -989,14 +989,15 @@ body {
   cursor: pointer;
   font-style: normal;
   font-weight: normal;
+  line-height: 20px;
   font-size: 14px;
   color: rgba(31, 32, 65, 0.5);
 }
 [class$=__reg-form] .reg-form-gender-select-container label:before {
   content: "";
   display: inline-block;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   margin-right: 10px;
   position: absolute;
   left: -30px;
@@ -1012,8 +1013,8 @@ body {
   position: absolute;
   width: 12px;
   height: 12px;
-  left: -27px;
-  top: 2px;
+  left: -26px;
+  top: 3px;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 10px;
 }
@@ -1040,6 +1041,9 @@ body {
 }
 [class$=__reg-form] .reg-form-user-info-container {
   margin-top: 20px;
+}
+[class$=__reg-form] .reg-form-date-of-birth-select-container .reg-form-date-input {
+  margin-bottom: 0px;
 }
 [class$=__reg-form] .reg-form-special-checkbox {
   display: flex;
@@ -1127,6 +1131,79 @@ body {
   line-height: 15px;
 }
 
+[class$=__enter-form] {
+  width: 380px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 358px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+[class$=__enter-form] .input-field {
+  padding-left: 15px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  margin-bottom: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(31, 32, 65, 0.25);
+  box-sizing: border-box;
+  width: 100%;
+  height: 44px;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  border-radius: 4px;
+}
+[class$=__enter-form] .input-field::-webkit-input-placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: rgba(31, 32, 65, 0.25);
+}
+[class$=__enter-form] .enter-form-desctiption {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+[class$=__enter-form] .reg-form-password-input {
+  margin-bottom: 20px;
+}
+[class$=__enter-form] .enter-form-button-filled {
+  width: 100%;
+  height: 44px;
+  padding: 0px;
+  margin-bottom: 30px;
+}
+[class$=__enter-form] .enter-form-button-filled .additional-icon {
+  left: 86%;
+}
+[class$=__enter-form] .enter-form-enter-redirect {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+[class$=__enter-form] .enter-form-enter-redirect .enter-form-reg-description {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+  margin-right: auto;
+}
+[class$=__enter-form] .enter-form-enter-redirect .enter-form-button-light {
+  box-sizing: border-box;
+  width: 99px;
+  height: 44px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+}
+
 .text-header {
   width: 100%;
   font-style: normal;
@@ -1143,7 +1220,7 @@ body {
   line-height: 9px;
   text-transform: uppercase;
   color: #1F2041;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .main .landing-page-search-form {
@@ -1156,6 +1233,12 @@ body {
   position: absolute;
   top: 20%;
   left: 140px;
+  z-index: 0;
+}
+.main .landing-page__enter-form {
+  position: absolute;
+  top: 20%;
+  left: 600px;
   z-index: 0;
 }
 

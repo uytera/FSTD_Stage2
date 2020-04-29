@@ -4,6 +4,9 @@
 @import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
 @import "main/search-form/search-form";
 @import "main/reg-form/reg-form.scss";
+@import "main/enter-form/enter-form.scss";
+
+
 @import "../ui_kit/fonts/Material_Icons/material-icons.css";
 @import "../ui_kit/text-header-style/text-header-style.scss";
 
@@ -19,9 +22,13 @@
         top: 20%;
         left: 140px; 
         z-index: 0;
-        //position: absolute;
-        //top: 10%;
-        //left: 600px;
+    }
+
+    .landing-page__enter-form{
+        position: absolute;
+        top: 20%;
+        left: 600px;
+        z-index: 0;
     }
 }
 .landing-page-footer-underline{

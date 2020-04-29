@@ -111,7 +111,7 @@
   justify-content: center;
   position: relative;
   height: 30px;
-  border-radius: 30px;
+  border-radius: 20px;
   background-clip: padding-box;
   background: white;
   color: #BC9CFF;
@@ -846,7 +846,7 @@ body {
   line-height: 9px;
   text-transform: uppercase;
   color: #1F2041;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .main * {

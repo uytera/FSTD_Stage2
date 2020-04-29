@@ -1,0 +1,12 @@
+mixin enter-form(modificator)
+    div(class=modificator + "__enter-form")
+        div.enter-form-desctiption.text-header Войти
+        form(action="")
+            input(name="email" type="text" placeholder="email").reg-form-email-input.input-field
+            input(name="password" type="password" placeholder="password").reg-form-password-input.input-field
+            include ../../../ui_kit/buttons/filled/button-filled.pug
+            +button-filled("enter-form-button-filled", "ВОЙТИ", "arrow_forward")
+        div.enter-form-enter-redirect
+            div.enter-form-reg-description Уже есть аккаунт на Toxin
+            include ../../../ui_kit/buttons/light/button-light.pug
+            +button-light("enter-form-button-light", "СОЗДАТЬ")
