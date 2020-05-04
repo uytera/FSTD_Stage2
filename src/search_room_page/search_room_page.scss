@@ -11,15 +11,15 @@
 @import "../ui_kit/text-header-style/text-header-style.scss";
 
 @import "../ui_kit/fonts/montserrat/montserrat.css";
-@import "../ui_kit/fonts/quicksand/quicksand.css";
+@import "../ui_kit/fonts/openSans/opensans.css";
 
 * {
     font-family: Montserrat;
 }
 
 .main{
-    //padding: 100px;
     background: white;
+    margin-bottom: 70px;
     display: flex;
     
     .main__navigation-bar{
@@ -52,7 +52,7 @@
             display: none;
             position: absolute;
             width: 264px;
-            top: 666px;
+            top: 668px;
             z-index: 15;
         }
 

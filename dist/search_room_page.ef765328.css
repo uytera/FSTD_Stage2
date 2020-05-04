@@ -438,39 +438,63 @@ a.ui-button:active,
     font-style: normal;
 }
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandlight.7f1f542a.woff2') format('woff2'), url('/quicksandlight.f3000cc3.woff') format('woff'), url('/quicksandlight.4902e850.ttf') format('truetype');
+    font-family: 'Open Sans';
+    src: local('Open Sans Light'), local('OpenSans-Light'), url('/opensanslight.fb75cfb0.woff2') format('woff2'), url('/opensanslight.f01884c5.woff') format('woff'), url('/opensanslight.432a31e1.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandlightitalic.23f65147.woff2') format('woff2'), url('/quicksandlightitalic.96deebc8.woff') format('woff'), url('/quicksandlightitalic.2bbcc170.ttf') format('truetype');
+    font-family: 'Open Sans';
+    src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url('/opensanslightitalic.897c8e7c.woff2') format('woff2'), url('/opensanslightitalic.8ec78c76.woff') format('woff'), url('/opensanslightitalic.e85f68e7.ttf') format('truetype');
     font-weight: 300;
     font-style: italic;
 }
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandregular.19fe072c.woff2') format('woff2'), url('/quicksandregular.e6e16c3a.woff') format('woff'), url('/quicksandregular.f2d0540c.ttf') format('truetype');
+    font-family: 'Open Sans';
+    src: local('Open Sans'), local('OpenSans'), url('/opensans.dc7d3fed.woff2') format('woff2'), url('/opensans.be5ea09f.woff') format('woff'), url('/opensans.a01bf4e7.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksanditalic.ac7bb319.woff2') format('woff2'), url('/quicksanditalic.4e174231.woff') format('woff'), url('/quicksanditalic.d4cce413.ttf') format('truetype');
+    font-family: 'Open Sans';
+    src: local('Open Sans Italic'), local('OpenSans-Italic'), url('/opensansitalic.8272c2df.woff2') format('woff2'), url('/opensansitalic.ae48a9a4.woff') format('woff'), url('/opensansitalic.b2f5dc8a.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
 }
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandbold.e37c8384.woff2') format('woff2'), url('/quicksandbold.80fe248f.woff') format('woff'), url('/quicksandbold.1b35a1b1.ttf') format('truetype');
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url('/opensanssemibold.cc7ac8c4.woff2') format('woff2'), url('/opensanssemibold.359c77dd.woff') format('woff'), url('/opensanssemibold.424c4e02.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url('/opensanssemibolditalic.7582f75e.woff2') format('woff2'), url('/opensanssemibolditalic.cfca99fb.woff') format('woff'), url('/opensanssemibolditalic.e08cb90c.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold'), local('OpenSans-Bold'), url('/opensansbold.458a7ff3.woff2') format('woff2'), url('/opensansbold.4eab38b0.woff') format('woff'), url('/opensansbold.32ea57ad.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
 }
 @font-face {
-    font-family: 'Quicksand';
-    src: url('/quicksandbolditalic.b1c7e7c9.woff2') format('woff2'), url('/quicksandbolditalic.c653b17e.woff') format('woff'), url('/quicksandbolditalic.da8645fc.ttf') format('truetype');
+    font-family: 'Open Sans';
+    src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url('/opensansbolditalic.4aac5a2f.woff2') format('woff2'), url('/opensansbolditalic.063280f9.woff') format('woff'), url('/opensansbolditalic.36a3e146.ttf') format('truetype');
     font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url('/opensansextrabold.eb663802.woff2') format('woff2'), url('/opensansextrabold.738552a6.woff') format('woff'), url('/opensansextrabold.647cb3e1.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url('/opensansextrabolditalic.8d751357.woff2') format('woff2'), url('/opensansextrabolditalic.1dff4a22.woff') format('woff'), url('/opensansextrabolditalic.b804895b.ttf') format('truetype');
+    font-weight: 800;
     font-style: italic;
 }
 
@@ -572,7 +596,7 @@ body {
   margin: 0px 0px;
 }
 
-.header-content {
+[class$=__header-reg-content] {
   background: white;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   width: 100%;
@@ -582,22 +606,22 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
-.header-content * {
+[class$=__header-reg-content] * {
   font-family: Montserrat;
 }
-.header-content .header-content__company-icons {
+[class$=__header-reg-content] .header-content__company-icons {
   margin-left: 140px;
   margin-right: auto;
 }
-.header-content .header-content__navigation {
+[class$=__header-reg-content] .header-content__navigation {
   display: flex;
   flex-direction: row;
   align-content: center;
 }
-.header-content .header-content__navigation > * {
+[class$=__header-reg-content] .header-content__navigation > * {
   margin: 0px 15px;
 }
-.header-content .header-content__header-buttons {
+[class$=__header-reg-content] .header-content__header-buttons {
   z-index: 0;
   margin-right: 140px;
   display: flex;
@@ -605,13 +629,13 @@ body {
   flex-wrap: wrap;
   align-content: center;
 }
-.header-content .header-content__header-buttons .header-content__button-light {
+[class$=__header-reg-content] .header-content__header-buttons .header-content__button-light {
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
 }
-.header-content .header-content__header-buttons .header-content__button-filled {
+[class$=__header-reg-content] .header-content__header-buttons .header-content__button-filled {
   z-index: 10;
   font-style: normal;
   font-weight: bold;
@@ -621,30 +645,30 @@ body {
 }
 
 @media all and (max-width: 1250px) {
-  .header-content {
+  [class$=__header-reg-content] {
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
   }
-  .header-content > * {
+  [class$=__header-reg-content] > * {
     margin: 10px 0px !important;
   }
 }
 @media all and (max-width: 500px) {
-  .header-content {
+  [class$=__header-reg-content] {
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
   }
-  .header-content > * {
+  [class$=__header-reg-content] > * {
     flex-direction: column !important;
     align-items: center !important;
     margin: 10px 0px !important;
   }
-  .header-content .header-content__navigation > * {
+  [class$=__header-reg-content] .header-content__navigation > * {
     margin: 10px 0px !important;
   }
-  .header-content .header-content__header-buttons > * {
+  [class$=__header-reg-content] .header-content__header-buttons > * {
     margin: 5px 0px !important;
   }
 }
@@ -823,6 +847,7 @@ body {
   .footer-underline-content {
     flex-direction: column !important;
     align-items: center;
+    height: 90px;
   }
 
   .footer-underline-content__copyright {
@@ -965,7 +990,7 @@ body {
   margin-right: auto;
 }
 [class^=room-] .room__description-container .room__up-container .up-container__type :first-child {
-  font-family: Quicksand;
+  font-family: Open Sans;
   margin-right: 5px;
   color: #1F2041;
   font-weight: bold;
@@ -1042,6 +1067,7 @@ body {
   text-align: center;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   -webkit-background-clip: text;
+  -webkit-user-select: none;
   -webkit-text-fill-color: transparent;
   display: initial;
 }
@@ -1313,6 +1339,7 @@ body {
 }
 
 .text-header {
+  font-family: Open Sans;
   width: 100%;
   font-style: normal;
   font-weight: bold;
@@ -1328,7 +1355,7 @@ body {
   line-height: 9px;
   text-transform: uppercase;
   color: #1F2041;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 * {
@@ -1337,6 +1364,7 @@ body {
 
 .main {
   background: white;
+  margin-bottom: 70px;
   display: flex;
 }
 .main .main__navigation-bar {
@@ -1366,7 +1394,7 @@ body {
   display: none;
   position: absolute;
   width: 264px;
-  top: 666px;
+  top: 668px;
   z-index: 15;
 }
 .main .main__navigation-bar .navigation-bar__window-input-description {

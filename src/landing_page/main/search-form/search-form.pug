@@ -2,7 +2,7 @@ mixin search-form(modificator)
     script(src="main/search-form/search-from.js")
     script(src="../ui_kit/input_fields/two_places/two_places_button.js")
     script(src="../ui_kit/input_fields/one_place/one_place_button.js")
-    div(class="search-form " + modificator)
+    div(class= modificator + "__search-form")
         include ../../../ui_kit/calendar/calendar.pug
         +calendar('search-form-calendar')
 
@@ -14,7 +14,7 @@ mixin search-form(modificator)
             include ../../../ui_kit/input_fields/two_places/two_places_input.pug
             +two_places_input('search-form', 'search-form__start-date', 'прибытие', 'search-form__end-date', 'выезд')
             include ../../../ui_kit/input_fields/one_place/one_place_input.pug
-            +one_place_input("search-form-people", "гости", "Сколько гостей", ".search-form__number-of-people", "people")
+            +one_place_input("search-form-people", "гости", "Сколько гостей", "search-form__number-of-people", "people")
             include ../../../ui_kit/buttons/filled/button-filled.pug
             +button-filled("search-form__button-filled", "ПОДОБРАТЬ НОМЕР", "arrow_forward")
             

@@ -1,18 +1,18 @@
 mixin header-no-registration(modificator)
-    .header-content
-        .header-content__company-icons
+    div(class = modificator + "__header-no-reg-content")
+        .header-no-reg-content__company-icons
             include ../../icons/company_icon/logotype.pug
-            +logotype("header-content__header-logo")
-        .header-content__navigation
+            +logotype("header-no-reg-content__header-logo")
+        .header-no-reg-content__navigation
             include ../header_elements/navigation/drop-down/drop-down-element.pug
             include ../header_elements/navigation/simple/simple-element.pug
-            +simple-element("header-content__nav-simple", "Домой")
-            +simple-element("header-content__nav-simple", "О нас")
-            +drop-down-element("header-content__nav-drop", "Услуги")
-            +simple-element("header-content__nav-simple", "Вакансии")
-            +simple-element("header-content__nav-simple", "Новости")
-            +drop-down-element("header-content__nav-drop", "Соглашения")
-        .header-content__username
+            +simple-element("header-no-reg-content__nav-simple", "Домой")
+            +simple-element("header-no-reg-content__nav-simple", "О нас")
+            +drop-down-element("header-no-reg-content__nav-drop", "Услуги")
+            +simple-element("header-no-reg-content__nav-simple", "Вакансии")
+            +simple-element("header-no-reg-content__nav-simple", "Новости")
+            +drop-down-element("header-no-reg-content__nav-drop", "Соглашения")
+        .header-no-reg-content__username
             include ../header_elements/username/username.pug
-            +username("header-content__username-line", "Cosmin Negoita")
+            +username("header-no-reg-content__username-line", "Cosmin Negoita")
         

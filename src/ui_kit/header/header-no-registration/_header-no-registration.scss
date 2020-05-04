@@ -6,7 +6,8 @@
 body{
     margin: 0px 0px;
 }
-.header-content{
+
+[class $= __header-no-reg-content]{
     box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
     width: 100%;
     min-height: 70px;
@@ -19,12 +20,12 @@ body{
         font-family: Montserrat;
     }
 
-    .header-content__company-icons{
+    .header-no-reg-content__company-icons{
         margin-left: 140px;
         margin-right: auto;
     }
 
-    .header-content__navigation{
+    .header-no-reg-content__navigation{
         display: flex;
         flex-direction: row;
         align-content: center;
@@ -32,14 +33,14 @@ body{
             margin: 0px 15px;
         }
     }   
-    .header-content__username{
+    .header-no-reg-content__username{
         margin-left: 30px;
         margin-right: 140px;
     }
 }
 
 @media all and (max-width: 1130px){
-    .header-content{
+    [class $= __header-no-reg-content]{
         flex-direction: column;
         justify-content: space-between;
         align-content: center;
@@ -51,7 +52,7 @@ body{
 }
 
 @media all and (max-width: 500px){
-    .header-content{
+    [class $= __header-no-reg-content]{
         flex-direction: column;
         justify-content: space-between;
         align-content: center;
@@ -62,7 +63,7 @@ body{
             margin: 10px 0px !important;
         }
 
-        .header-content__navigation{
+        .header-no-reg-content__navigation{
             > * {
                 margin: 10px 0px !important;
             }

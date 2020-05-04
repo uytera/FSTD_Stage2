@@ -1,6 +1,6 @@
 mixin list-of-counted-items(modificator, script, ...items)
     script(src = script)
-    div(class="list-of-counted-items " + modificator)
+    div(class=modificator + " list-of-counted-items")
         each item in items
             div.list-of-counted-items__item
                 div.list-of-counted-items__item-description= item

@@ -2,8 +2,8 @@ mixin enter-form(modificator)
     div(class=modificator + "__enter-form")
         div.enter-form-desctiption.text-header Войти
         form(action="")
-            input(name="email" type="text" placeholder="email").reg-form-email-input.input-field
-            input(name="password" type="password" placeholder="password").reg-form-password-input.input-field
+            input(name="email" type="text" placeholder="Email").reg-form-email-input.input-field
+            input(name="password" type="password" placeholder="Password").reg-form-password-input.input-field
             include ../../../ui_kit/buttons/filled/button-filled.pug
             +button-filled("enter-form-button-filled", "ВОЙТИ", "arrow_forward")
         div.enter-form-enter-redirect

@@ -27,9 +27,11 @@ $(document).ready(function(){
 
     for(let button of buttons){
         button.addEventListener("click", (e) => {
-            button.classList.add("reviews-click");
-            button.querySelector(".material-icons").innerHTML= "favorite";
-            button.querySelector("span").innerHTML= parseInt(button.querySelector("span").innerHTML) + 1;
+            if(!button.classList.contains('reviews-click')){
+                button.classList.add("reviews-click");
+                button.querySelector(".material-icons").innerHTML= "favorite";
+                button.querySelector("span").innerHTML= parseInt(button.querySelector("span").innerHTML) + 1;
+            }
         });
     }
 });

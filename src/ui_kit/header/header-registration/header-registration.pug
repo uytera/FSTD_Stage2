@@ -1,5 +1,5 @@
 mixin header-registration(modificator)
-    .header-content
+    div(class = modificator + "__header-reg-content")
         .header-content__company-icons
             include ../../icons/company_icon/logotype.pug
             +logotype("header-content__header-logo")

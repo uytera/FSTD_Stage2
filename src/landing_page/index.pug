@@ -9,6 +9,7 @@ html(lang="ru")
         link(rel = "stylesheet" href = "landing-page.scss")
         meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
         script(src="library.js")
+        script(src="landing-page.js")
         script(type="text/javascript").
             $(function(){ var CalendarStartDate = "someText"; var CalendarEndDate = "someText";});
             var modificator = "search-form-list";
@@ -25,11 +26,15 @@ html(lang="ru")
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     body
         header
+            include ../ui_kit/header/header-no-registration/header-no-registration.pug
             include ../ui_kit/header/header-registration/header-registration.pug
-            +header-registration("landing-header")
+            
+            +header-registration("landing")
+            +header-no-registration("landing")
+
         .main
             include main/search-form/search-form.pug
-            +search-form("landing-page-search-form")
+            +search-form("landing-page")
             include main/reg-form/reg-form.pug
             +reg-form("landing-page")
             include main/enter-form/enter-form.pug

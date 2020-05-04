@@ -39,12 +39,16 @@
         font-size: 14px;
         line-height: 16px;
         color: rgba(31, 32, 65, 0.25);
+    }        
+    
+    .reg-form-sur-name-input{
+        margin-bottom: 11px;
     }
 
     .reg-form-gender-select-container{
         display: flex;
         flex-direction: row;
-        margin-bottom: 24px;
+        margin-bottom: 25px;
 
         label{
             -webkit-user-select: none;
@@ -120,7 +124,7 @@
     }
 
     .reg-form-user-info-container{
-        margin-top: 20px;
+        margin-top: 23px;
     }
 
     .reg-form-date-of-birth-select-container{
@@ -139,7 +143,7 @@
             cursor: pointer;
             font-style: normal;
             font-weight: normal;
-            line-height: 18px;
+            line-height: 20px;
             font-size: 14px;
             color: rgba(31, 32, 65, 0.5);
         }
@@ -148,8 +152,8 @@
             content: "";
             display: inline-block;
         
-            width: 38px;
-            height: 18px;
+            width: 40px;
+            height: 20px;
         
             margin-right: 10px;
             position: absolute;
@@ -170,7 +174,7 @@
                 width: 12px;
                 height: 12px;
                 left: -46px;
-                top: 2px;
+                top: 3px;
                 background: rgba(31, 32, 65, 0.25);
                 border-radius: 10px;
             }
@@ -184,7 +188,7 @@
             color: rgba(31, 32, 65, 0.75);
 
             .selected{
-                left: -28px;
+                left: -26px;
                 background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
             }
         }
@@ -198,7 +202,7 @@
         width: 100%;
         height: 44px;
         padding: 0px;
-        margin-top: 20px;
+        margin-top: 24px;
         margin-bottom: 30px;
 
         .additional-icon{
@@ -222,8 +226,8 @@
 
         .reg-form-button-light{
             box-sizing: border-box;
-            width: 99px;
-            height: 44px;
+            width: 95px;
+            height: 40px;
             font-style: normal;
             font-weight: bold;
             font-size: 12px;

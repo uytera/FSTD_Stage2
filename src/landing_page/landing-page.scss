@@ -1,23 +1,38 @@
 @import "../ui_kit/header/header-registration/header-registration";
+@import "../ui_kit/header/header-no-registration/header-no-registration";
 @import "../ui_kit/footer/footer_elements/footer-main-content/footer-main-content";
-@import "../ui_kit/fonts/montserrat/montserrat.css";
 @import "../ui_kit/footer/footer_elements/footer-underline-content/footer-underline-content";
 @import "main/search-form/search-form";
 @import "main/reg-form/reg-form.scss";
 @import "main/enter-form/enter-form.scss";
-
-
 @import "../ui_kit/fonts/Material_Icons/material-icons.css";
 @import "../ui_kit/text-header-style/text-header-style.scss";
 
+@import "../ui_kit/fonts/montserrat/montserrat.css";
+@import "../ui_kit/fonts/openSans/opensans.css";
+
+header{
+
+    .landing__header-reg-content{
+        //display: none;
+    }
+
+    .landing__header-no-reg-content{
+        display: none;
+    }
+}
+
 .main{
-    .landing-page-search-form{
+
+    .landing-page__search-form{
         display: none;
         position: absolute;
         top: 20%;
         left: 140px; 
     }
+
     .landing-page__reg-form{
+        display: none;
         position: absolute;
         top: 20%;
         left: 140px; 
@@ -27,10 +42,11 @@
     .landing-page__enter-form{
         position: absolute;
         top: 20%;
-        left: 600px;
+        left: 140px; 
         z-index: 0;
     }
 }
+
 .landing-page-footer-underline{
     margin-top: 1px;
 }
@@ -61,12 +77,16 @@
     .main-image{
         width: 200%;
     }
-    .landing-page-search-form{
+    .landing-page__search-form{
         top: 30% !important;
     }
 
     .landing-page__reg-form{
         top: 30% !important;
+    }
+
+    .landing-page__enter-form{
+        top: 30% !important; 
     }
 }
 
@@ -78,7 +98,7 @@
         margin-top: 100px;
         width: 200%;
     }
-    .landing-page-search-form{
+    .landing-page__search-form{
         top: 0;
         bottom: 0;
         left: 0 !important;
@@ -88,6 +108,15 @@
     }
 
     .landing-page__reg-form{
+        top: 0;
+        bottom: 0;
+        left: 0 !important;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .landing-page__enter-form{
         top: 0;
         bottom: 0;
         left: 0 !important;
@@ -98,12 +127,16 @@
 }
 
 @media all and (max-width: 580px){
-    .landing-page-search-form{
+    .landing-page__search-form{
         top: 200px !important;
     }
 
     .landing-page__reg-form{
         top: 200px !important;
+    }
+
+    .landing-page__enter-form{
+        top: 200px !important; 
     }
 }
 
@@ -115,11 +148,15 @@
         margin-top: 100px;
         width: 400%;
     }
-    .landing-page-search-form{
+    .landing-page__search-form{
         top: 450px !important;
     }
 
     .landing-page__reg-form{
+        top: 450px !important;
+    }
+
+    .landing-page__enter-form{
         top: 450px !important;
     }
 }
@@ -136,18 +173,22 @@
         }
     }   
 
-    div.landing-page-search-form{
+    div.landing-page__search-form{
         width: 100%;
     }
 
     div.landing-page__reg-form{
         width: 100%;
     }
+
+    div.landing-page__enter-form{
+        width: 100%;
+    }
 }
 
 @media all and (max-width: 346px){
     .main{
-        div.landing-page-search-form{
+        div.landing-page__search-form{
             height: 400px;
         }
 

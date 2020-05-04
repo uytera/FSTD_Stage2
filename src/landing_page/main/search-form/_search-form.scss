@@ -4,7 +4,7 @@
 @import "../../../ui_kit/input_fields/two_places/two_places_input.scss";
 @import "../../../ui_kit/input_fields/one_place/one_place_input.scss";
 
-.search-form{
+[class $= __search-form]{
     align-self: center;
     display: flex;
     flex-direction: column;

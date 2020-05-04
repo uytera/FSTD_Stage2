@@ -168,9 +168,11 @@ $(document).ready(function () {
     var _loop = function _loop() {
       var button = _step2.value;
       button.addEventListener("click", function (e) {
-        button.classList.add("reviews-click");
-        button.querySelector(".material-icons").innerHTML = "favorite";
-        button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML) + 1;
+        if (!button.classList.contains('reviews-click')) {
+          button.classList.add("reviews-click");
+          button.querySelector(".material-icons").innerHTML = "favorite";
+          button.querySelector("span").innerHTML = parseInt(button.querySelector("span").innerHTML) + 1;
+        }
       });
     };
 
@@ -220,7 +222,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59060" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54238" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
