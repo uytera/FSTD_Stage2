@@ -117,31 +117,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"landing_page/main/search-form/search-from.js":[function(require,module,exports) {
-//window.jQuery = window.$ = require('jquery');
+})({"ui_kit/buttons/clear-accept-buttons/clear-accept-buttons.js":[function(require,module,exports) {
 $(document).ready(function () {
-  var massOfCalendarButtons = document.getElementsByClassName('two-places-expand-elemet');
-  var form = document.querySelector('.landing-page__search-form form');
-
-  function day_resize() {
-    $('.day').height($('.day').width());
-    $('.day').css('line-height', $('.day').height() + "px");
-  }
-
-  $(".search-form__button-filled").on("click", function () {
-    form.submit();
-  });
+  var clear_buttons = document.getElementsByClassName('clean-button');
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = massOfCalendarButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var item = _step.value;
-      item.addEventListener("click", function (e) {
-        $('.search-form-calendar').slideToggle();
-        day_resize();
+    var _loop = function _loop() {
+      var clear_b = _step.value;
+      clear_b.addEventListener("mousedown", function (e) {
+        clear_b.classList.add("clear-accept-clicked");
       });
+      clear_b.addEventListener("mouseup", function (e) {
+        clear_b.classList.remove("clear-accept-clicked");
+      });
+      clear_b.addEventListener("mouseout", function (e) {
+        clear_b.classList.remove("clear-accept-clicked");
+      });
+    };
+
+    for (var _iterator = clear_buttons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      _loop();
     }
   } catch (err) {
     _didIteratorError = true;
@@ -158,11 +156,42 @@ $(document).ready(function () {
     }
   }
 
-  var anglePeople = 0;
-  document.getElementById("one-expand__people").addEventListener("click", function (e) {
-    anglePeople += 180;
-    $('.search-form-list').slideToggle();
-  });
+  var save_buttons = document.getElementsByClassName('save-button');
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    var _loop2 = function _loop2() {
+      var save_b = _step2.value;
+      save_b.addEventListener("mousedown", function (e) {
+        save_b.classList.add("clear-accept-clicked");
+      });
+      save_b.addEventListener("mouseup", function (e) {
+        save_b.classList.remove("clear-accept-clicked");
+      });
+      save_b.addEventListener("mouseout", function (e) {
+        save_b.classList.remove("clear-accept-clicked");
+      });
+    };
+
+    for (var _iterator2 = save_buttons[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+      _loop2();
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 && _iterator2.return != null) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -368,5 +397,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","landing_page/main/search-form/search-from.js"], null)
-//# sourceMappingURL=/search-from.a07c5720.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/buttons/clear-accept-buttons/clear-accept-buttons.js"], null)
+//# sourceMappingURL=/clear-accept-buttons.b09a7099.js.map

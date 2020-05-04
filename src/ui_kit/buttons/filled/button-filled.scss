@@ -11,7 +11,7 @@
     padding: 0px 20px;
 
     div {
-        font-family: Montserrat;
+        -webkit-user-select: none;
         font-style: normal;
         font-weight: bold;
         font-size: 12px;
@@ -25,4 +25,8 @@
         height: 44px;
         line-height: 44px;
     }
+}
+
+.button-filled-clicked{
+    opacity: 0.5;
 }

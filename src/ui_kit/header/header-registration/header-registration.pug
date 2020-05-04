@@ -1,6 +1,6 @@
 mixin header-registration(modificator)
     div(class = modificator + "__header-reg-content")
-        .header-content__company-icons
+        div(onclick="window.location.href='http://localhost:1234/landing_page/index.html'").header-content__company-icons
             include ../../icons/company_icon/logotype.pug
             +logotype("header-content__header-logo")
         .header-content__navigation

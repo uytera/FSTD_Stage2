@@ -10,7 +10,9 @@
     color: #BC9CFF;
     padding: 0px 20px;
 
-    div {        
+
+    div {     
+        -webkit-user-select: none;   
         margin: auto 0px; 
         align-items: center;
     }
@@ -24,4 +26,8 @@
     content: '';
     z-index: -1;
     border-radius: 22px;
+}
+
+.button-light-clicked::after{
+    opacity: 0.5;
 }

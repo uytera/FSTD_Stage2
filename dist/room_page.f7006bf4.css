@@ -90,7 +90,7 @@
   padding: 0px 20px;
 }
 .button-filled div {
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -103,6 +103,10 @@
   width: 44px;
   height: 44px;
   line-height: 44px;
+}
+
+.button-filled-clicked {
+  opacity: 0.5;
 }
 
 .button-light {
@@ -118,6 +122,7 @@
   padding: 0px 20px;
 }
 .button-light div {
+  -webkit-user-select: none;
   margin: auto 0px;
   align-items: center;
 }
@@ -132,6 +137,10 @@
   content: "";
   z-index: -1;
   border-radius: 22px;
+}
+
+.button-light-clicked::after {
+  opacity: 0.5;
 }
 
 .drop-down-element {
@@ -178,6 +187,7 @@ body {
   font-family: Montserrat;
 }
 [class$=__header-reg-content] .header-content__company-icons {
+  cursor: pointer;
   margin-left: 140px;
   margin-right: auto;
 }
@@ -554,7 +564,7 @@ body {
 }
 .calendar .clear-accept-buttons .clean-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -563,12 +573,15 @@ body {
 }
 .calendar .clear-accept-buttons .save-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   color: #BC9CFF;
+}
+.calendar .clear-accept-clicked {
+  opacity: 0.5;
 }
 .calendar .calendar__down-buttons {
   margin-top: 20px;
@@ -600,7 +613,7 @@ body {
 }
 .list-of-counted-items .clear-accept-buttons .clean-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -609,12 +622,15 @@ body {
 }
 .list-of-counted-items .clear-accept-buttons .save-button {
   cursor: pointer;
-  font-family: Montserrat;
+  -webkit-user-select: none;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
   color: #BC9CFF;
+}
+.list-of-counted-items .clear-accept-clicked {
+  opacity: 0.5;
 }
 .list-of-counted-items .list-of-counted-items__item {
   margin-top: 7px;

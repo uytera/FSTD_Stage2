@@ -117,31 +117,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"landing_page/main/search-form/search-from.js":[function(require,module,exports) {
-//window.jQuery = window.$ = require('jquery');
+})({"ui_kit/buttons/light/button-light.js":[function(require,module,exports) {
 $(document).ready(function () {
-  var massOfCalendarButtons = document.getElementsByClassName('two-places-expand-elemet');
-  var form = document.querySelector('.landing-page__search-form form');
-
-  function day_resize() {
-    $('.day').height($('.day').width());
-    $('.day').css('line-height', $('.day').height() + "px");
-  }
-
-  $(".search-form__button-filled").on("click", function () {
-    form.submit();
-  });
+  var light_buttons = document.getElementsByClassName('button-light');
   var _iteratorNormalCompletion = true;
   var _didIteratorError = false;
   var _iteratorError = undefined;
 
   try {
-    for (var _iterator = massOfCalendarButtons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-      var item = _step.value;
-      item.addEventListener("click", function (e) {
-        $('.search-form-calendar').slideToggle();
-        day_resize();
+    var _loop = function _loop() {
+      var light_b = _step.value;
+      light_b.addEventListener("mousedown", function (e) {
+        light_b.classList.add("button-light-clicked");
       });
+      light_b.addEventListener("mouseup", function (e) {
+        light_b.classList.remove("button-light-clicked");
+      });
+      light_b.addEventListener("mouseout", function (e) {
+        light_b.classList.remove("button-light-clicked");
+      });
+    };
+
+    for (var _iterator = light_buttons[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+      _loop();
     }
   } catch (err) {
     _didIteratorError = true;
@@ -157,12 +155,6 @@ $(document).ready(function () {
       }
     }
   }
-
-  var anglePeople = 0;
-  document.getElementById("one-expand__people").addEventListener("click", function (e) {
-    anglePeople += 180;
-    $('.search-form-list').slideToggle();
-  });
 });
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -368,5 +360,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","landing_page/main/search-form/search-from.js"], null)
-//# sourceMappingURL=/search-from.a07c5720.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ui_kit/buttons/light/button-light.js"], null)
+//# sourceMappingURL=/button-light.16345a69.js.map
